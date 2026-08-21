@@ -332,6 +332,18 @@
   </div>
 </div>
 
+<section style="max-width:900px;margin:0 auto;padding:0 20px 20px;">
+  <h2 style="font-size:18px;color:var(--ink-soft);text-align:center;margin-bottom:16px;">Pregledaj po kategoriji</h2>
+  <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;">
+    <a href="/sport.html" style="padding:8px 18px;border-radius:20px;background:var(--sage);color:#fff;text-decoration:none;font-weight:700;font-size:14px;">⚽ Sport</a>
+    <a href="/ples.html" style="padding:8px 18px;border-radius:20px;background:var(--rose);color:#fff;text-decoration:none;font-weight:700;font-size:14px;">💃 Ples i ritmika</a>
+    <a href="/glazba.html" style="padding:8px 18px;border-radius:20px;background:var(--sky);color:#fff;text-decoration:none;font-weight:700;font-size:14px;">🎵 Glazba</a>
+    <a href="/jezici.html" style="padding:8px 18px;border-radius:20px;background:var(--peach);color:#fff;text-decoration:none;font-weight:700;font-size:14px;">🗣️ Strani jezici</a>
+    <a href="/kreativno.html" style="padding:8px 18px;border-radius:20px;background:var(--ink);color:#fff;text-decoration:none;font-weight:700;font-size:14px;">🎨 Kreativno i STEM</a>
+    <a href="/ostalo.html" style="padding:8px 18px;border-radius:20px;background:var(--ink-soft);color:#fff;text-decoration:none;font-weight:700;font-size:14px;">✨ Ostalo</a>
+  </div>
+</section>
+
 <footer>
   <p class="note"><strong>Zagreb za Klince</strong> je vodič kroz izvannastavne aktivnosti za djecu u Zagrebu — sportske škole, plivanje, glazbene i plesne radionice, škole stranih jezika i STEM tečajeve, pretražive po zagrebačkim gradskim četvrtima i dobi djeteta (0–2, 2–6 i 6+ godina).</p>
   <p class="note">Ovo je početni, ručno prikupljeni popis stvarnih pružatelja usluga u Zagrebu — nije potpun. Adrese označene zvjezdicom (*) su okvirne; molimo provjerite točnu lokaciju i termine izravno kod pružatelja prije dolaska.</p>
@@ -1980,7 +1992,121 @@ const activities = [
     desc:"Kreativne likovne radionice za djecu od 6 do 10 godina koje istražuju umjetnike i njihove tehnike, potičući kreativnost, samoizražavanje i kritičko mišljenje.",
     url:"https://www.facebook.com/p/Kikulu-kids-61550911391842/", approx:true
   },
+  {
+    name:"Škola nogometa — NK Vrapče",
+    cat:"6+",
+    type:"sport",
+    addr:"Aleja grada Bolonje 2, Zagreb",
+    lat:45.8130628, lng:15.8961418,
+    desc:"Dugogodišnji nogometni klub u zapadnom dijelu Zagreba (osnovan 1984.) s nogometnom školom za djecu i mladež.",
+    url:"https://www.facebook.com/nkvrapce/", approx:false,
+    email:"nk-vrapce@nk-vrapce.hr"
+  },
+  {
+    name:"Univerzalna sportska škola za djecu — Sportski centar Vrapče",
+    cat:"2-6",
+    type:"sport",
+    addr:"Bolnička cesta 49A, Zagreb",
+    lat:45.8146197, lng:15.896509,
+    desc:"Nova univerzalna sportska škola za djevojčice i dječake od 3 do 7 godina, u sklopu velikog sportskog centra s dvoranama, igralištima i kafićem.",
+    url:"https://sportskicentarvrapce.hr/skola-malog-nogometa/", approx:false,
+    phone:"091 516 3263"
+  },
+  {
+    name:"Škola nogometa — NK Prigorje Markuševec",
+    cat:"2-6",
+    type:"sport",
+    addr:"Markuševačka cesta 160, Zagreb",
+    lat:45.87448, lng:16.0135377,
+    desc:"Jedini nogometni klub u četvrti Podsljeme, koji uz Markuševec okuplja djecu i mladež i iz susjednih četvrti Maksimir i Dubrava — poziva djevojčice i dječake od 5 godina naviše.",
+    url:"https://nk-prigorje.hr/", approx:false,
+    email:"nkprigorje@email.t-com.hr"
+  },
+  {
+    name:"Sportski programi za djecu — Sportiva centar Gajnice",
+    cat:"2-6",
+    type:"sport",
+    addr:"Jagnedje 24, Zagreb",
+    lat:45.8171966, lng:15.8813938,
+    desc:"Centar specijaliziran za grupne programe vježbanja i sport za djecu u Gajnicama, uz jutarnje i večernje termine te male grupe.",
+    url:"https://www.facebook.com/SportivaCentarGajnice/", approx:false,
+    phone:"091 502 7511"
+  },
+  {
+    name:"Škola nogometa — NK HAŠK 1903",
+    cat:"6+",
+    type:"sport",
+    addr:"Donje Svetice 87, Zagreb",
+    lat:45.8050963, lng:16.0166871,
+    desc:"Povijesni zagrebački nogometni klub (osnovan 1903.) koji igra na igralištu u Peščenici, s nogometnom školom za djecu i mladež.",
+    url:"https://www.hask1903.hr/", approx:false,
+    phone:"091 173 3333"
+  },
+  {
+    name:"Ritmika, ples i igraonica — Plesna Bajkovnica",
+    cat:"2-6",
+    type:"ples",
+    addr:"Jovinovačka 7, Zagreb",
+    lat:45.8147108, lng:15.8842004,
+    desc:"Ritmika, ples, bajke i likovne aktivnosti u maloj skupini do 6 djece, u obiteljskoj kući sa dvorištem u zapadnom dijelu grada — pokriva Gajnice, Stenjevec, Podsused i Vrapče.",
+    url:"https://plesnabajkovnica.hr/", approx:false,
+    phone:"091 505 9055", email:"plesnabajkovnica@gmail.com"
+  },
 ];
+
+// ---------- SCHEMA.ORG STRUCTURED DATA (SEO) ----------
+function injectSchemaOrg(){
+  const catLabel = {"0-2":"0-2 godine","2-6":"2-6 godina","6+":"6+ godina"};
+  const typeLabel = {sport:"Sport",ples:"Ples",glazba:"Glazba",jezici:"Strani jezici",kreativno:"Kreativno i STEM",ostalo:"Ostalo"};
+
+  const itemListElements = activities.map((a, i) => {
+    const item = {
+      "@type": "LocalBusiness",
+      "name": a.name,
+      "url": a.url,
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": a.addr,
+        "addressLocality": "Zagreb",
+        "addressCountry": "HR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": a.lat,
+        "longitude": a.lng
+      },
+      "description": a.desc,
+      "additionalType": typeLabel[a.type] || undefined,
+      "audience": {
+        "@type": "PeopleAudience",
+        "suggestedMinAge": a.cat === "0-2" ? 0 : a.cat === "2-6" ? 2 : 6,
+        "suggestedMaxAge": a.cat === "0-2" ? 2 : a.cat === "2-6" ? 6 : 18
+      }
+    };
+    if (a.phone) item.telephone = a.phone;
+    if (a.email) item.email = a.email;
+    return {
+      "@type": "ListItem",
+      "position": i + 1,
+      "item": item
+    };
+  });
+
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Izvannastavne aktivnosti za djecu u Zagrebu",
+    "description": "Popis sportskih, plesnih, glazbenih, jezičnih i kreativnih aktivnosti za djecu u Zagrebu po kvartovima.",
+    "numberOfItems": activities.length,
+    "itemListElement": itemListElements
+  };
+
+  const script = document.createElement('script');
+  script.type = 'application/ld+json';
+  script.textContent = JSON.stringify(schema);
+  document.head.appendChild(script);
+}
+injectSchemaOrg();
 
 // ---------- STATE ----------
 let activeCat = "sve";
