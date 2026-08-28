@@ -314,6 +314,7 @@
   <div class="tabs" id="typeTabs">
     <button class="tab active" data-type="sve"><span class="sw"></span> Sve vrste</button>
     <button class="tab" data-type="sport"><span class="sw"></span> ⚽ Sport</button>
+    <button class="tab" data-type="gimnastika"><span class="sw"></span> 🤸 Gimnastika</button>
     <button class="tab" data-type="ples"><span class="sw"></span> 💃 Ples i ritmika</button>
     <button class="tab" data-type="glazba"><span class="sw"></span> 🎵 Glazba</button>
     <button class="tab" data-type="jezici"><span class="sw"></span> 🗣️ Strani jezici</button>
@@ -337,6 +338,7 @@
   <h2 style="font-size:18px;color:var(--ink-soft);text-align:center;margin-bottom:16px;">Pregledaj po kategoriji</h2>
   <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;">
     <a href="/sport.html" style="padding:8px 18px;border-radius:20px;background:var(--sage);color:#fff;text-decoration:none;font-weight:700;font-size:14px;">⚽ Sport</a>
+    <a href="/gimnastika.html" style="padding:8px 18px;border-radius:20px;background:var(--sky-dark);color:#fff;text-decoration:none;font-weight:700;font-size:14px;">🤸 Gimnastika</a>
     <a href="/ples.html" style="padding:8px 18px;border-radius:20px;background:var(--rose);color:#fff;text-decoration:none;font-weight:700;font-size:14px;">💃 Ples i ritmika</a>
     <a href="/glazba.html" style="padding:8px 18px;border-radius:20px;background:var(--sky);color:#fff;text-decoration:none;font-weight:700;font-size:14px;">🎵 Glazba</a>
     <a href="/jezici.html" style="padding:8px 18px;border-radius:20px;background:var(--peach);color:#fff;text-decoration:none;font-weight:700;font-size:14px;">🗣️ Strani jezici</a>
@@ -590,7 +592,7 @@ const activities = [
   {
     name:"Mališani i roditelji — Gimnastički klub Trešnjevka",
     cat:"0-2",
-    type:"sport",
+    type:"gimnastika",
     addr:"Savska 120, Zagreb (+ Jarnovićeva, Ježdovečka, Rovinjska)",
     lat:45.7939684, lng:15.9577664,
     desc:"Nježan uvod u kretanje za djecu od 10 mjeseci do 3,5 godine uz roditelja — puzanje, penjanje, balans i senzorne igre bez forsiranja.",
@@ -745,29 +747,29 @@ const activities = [
     phone:"098 947 3564"
   },
   {
-    name:"RelaxKids radionice — Quantum Premium Gym Trešnjevka",
+    name:"RelaxKids — istezanje i opuštanje za djecu (3-12 god.) — Quantum Premium Gym",
     cat:"2-6",
     type:"ostalo",
-    addr:"II. Zagorska 3a, Zagreb",
+    addr:"II. Zagorska 3A, Zagreb",
     lat:45.8057439, lng:15.9407519,
-    desc:"Kvartovski gym za cijelu obitelj — RelaxKids radionice za najmlađe, u malim grupama i klimatiziranoj dvorani.",
-    url:"https://www.facebook.com/quantumpremiumgym/", approx:false,
-    phone:"099 422 0554"
+    desc:"Mirniji sat za djecu od 3 do 12 godina — istezanje, disanje i opuštanje, dok roditelji treniraju u odvojenoj dvorani u isto vrijeme. Utorkom u 18h. Prvi trening besplatan.",
+    url:"https://quantumpremiumgym.hr/djeca", approx:false,
+    phone:"099 422 0554", email:"info@quantumpremiumgym.hr"
   },
   {
-    name:"Dječji trening i Zumba Kids — Quantum Premium Gym Trešnjevka",
-    cat:"6+",
+    name:"Dječji sportski program i ZumbaKids (3-12 god.) — Quantum Premium Gym",
+    cat:"2-6",
     type:"sport",
-    addr:"II. Zagorska 3a, Zagreb",
+    addr:"II. Zagorska 3A, Zagreb",
     lat:45.8057439, lng:15.9407519,
-    desc:"Funkcionalni dječji treninzi i Zumba Kids, uz mogućnost obiteljskih treninga roditelja i djece zajedno.",
-    url:"https://www.facebook.com/quantumpremiumgym/", approx:false,
-    phone:"099 422 0554"
+    desc:"Dječji sportski program (3-5 god.) — osnove kretanja kroz igru, i ZumbaKids (6-12 god.) — ples i ritam, ponedjeljkom i srijedom u 17h i 18h. Dječji i roditeljski treninzi idu u isto vrijeme, u dvije odvojene dvorane. Prvi trening besplatan.",
+    url:"https://quantumpremiumgym.hr/djeca", approx:false,
+    phone:"099 422 0554", email:"info@quantumpremiumgym.hr"
   },
   {
     name:"Gimnastika i parkour za djecu — Gimnastički klub Brezovica",
     cat:"6+",
-    type:"sport",
+    type:"gimnastika",
     addr:"Brezovica, Zagreb *",
     lat:45.7251273, lng:15.9082653,
     desc:"Gimnastički programi za djecu od 4 do 17 godina — rekreativna gimnastika, natjecateljski program i parkour, uz program i za djecu s teškoćama u razvoju.",
@@ -797,7 +799,7 @@ const activities = [
   {
     name:"Sportska gimnastika i sportska školica — GIMGO",
     cat:"2-6",
-    type:"sport",
+    type:"gimnastika",
     addr:"Zagreb (Zapruđe, Kustošija, Vrapče) *",
     lat:45.79, lng:15.935,
     desc:"Sportska gimnastika za djecu od 2,5 do 7 godina i sportska školica koja upoznaje s osnovama više sportova, provodi se u nekoliko zagrebačkih vrtića.",
@@ -827,7 +829,7 @@ const activities = [
   {
     name:"Gimnastika za djecu — Gimnastički klub Sesvete",
     cat:"2-6",
-    type:"sport",
+    type:"gimnastika",
     addr:"Ulica Krste Hegedušića 30, Sesvete",
     lat:45.8350062, lng:16.095896,
     desc:"Škola gimnastike za djevojčice i dječake od 3. do 13. godine, na tri lokacije (Novi Jelkovec, Dugave, Brestje).",
@@ -1256,7 +1258,7 @@ const activities = [
   {
     name:"Gimnastička početnica — ZTD Hrvatski Sokol",
     cat:"2-6",
-    type:"sport",
+    type:"gimnastika",
     addr:"Trg Republike Hrvatske 6 (Sokolski dom), Zagreb",
     lat:45.808639, lng:15.970099,
     desc:"Program sportske gimnastike za djecu predškolskog uzrasta i rane školske dobi, subotom, u obnovljenim dvoranama u srcu grada; upisi mogući cijele godine.",
@@ -1266,7 +1268,7 @@ const activities = [
   {
     name:"Škola gimnastike, parkoura i akrobatike — ZTD Hrvatski Sokol",
     cat:"6+",
-    type:"sport",
+    type:"gimnastika",
     addr:"Trg Republike Hrvatske 6 (Sokolski dom), Zagreb",
     lat:45.808639, lng:15.970099,
     desc:"Škola gimnastike za uzrast od 5 do 18 godina, uz školu FIG parkoura i školu velikog trampolina i akrobatike — najnovije sprave i visokoobrazovani treneri; postoji i podružnica na Borongaju.",
@@ -1623,7 +1625,7 @@ const activities = [
   {
     name:"Ritmička gimnastika za djevojčice — Gimnastički klub Aura",
     cat:"2-6",
-    type:"sport",
+    type:"gimnastika",
     addr:"Arena Zagreb i OŠ Ivana Gundulića, Zagreb",
     lat:45.771235, lng:15.9436328,
     desc:"Klub ritmičke gimnastike koji vodi trenerica Nika Crevatini — rekreativni i natjecateljski program za djevojčice, uz mogućnost besplatnog probnog treninga prije upisa.",
@@ -2298,7 +2300,7 @@ const activities = [
   {
     name:"Rekreativna ritmička gimnastika za djevojčice — Klub ritmičke gimnastike Zagreb (KRGZ)",
     cat:"2-6",
-    type:"sport",
+    type:"gimnastika",
     addr:"X. Podbrežje 14, Zagreb",
     lat:45.7818301, lng:15.9622591,
     desc:"Rekreativni program ritmičke gimnastike za djevojčice, s treninzima u osnovnoškolskim dvoranama (Zagrebački velesajam, OŠ Rudeš i dr.) — oko 200 djevojčica godišnje, uz mogućnost prelaska u natjecateljski tim.",
@@ -2308,7 +2310,7 @@ const activities = [
   {
     name:"Škola ritmičke gimnastike — Klub ritmičke gimnastike LEDA",
     cat:"2-6",
-    type:"sport",
+    type:"gimnastika",
     addr:"Savska cesta 137, Zagreb",
     lat:45.7921638, lng:15.9576334,
     desc:"Najveći klub ritmičke gimnastike u Hrvatskoj (320 članica) — djevojčice od 3,5 godine treniraju na 5 lokacija diljem grada (Kineziološki fakultet, OŠ Dobriše Cesarića, OŠ Cvjetno naselje i dr.), od rekreativnog do natjecateljskog programa.",
@@ -2318,7 +2320,7 @@ const activities = [
   {
     name:"Škola ritmičke gimnastike — Gimnastički klub Maksimir",
     cat:"2-6",
-    type:"sport",
+    type:"gimnastika",
     addr:"Trg Krešimira Ćosića 11, Zagreb",
     lat:45.8077562, lng:15.9520326,
     desc:"Klub s najdužom tradicijom ritmičke gimnastike u Hrvatskoj (50+ godina) — oko 150 djevojčica trenira u programima od mini do seniorki, uz dodatnu lokaciju u Dugom Selu.",
@@ -2541,7 +2543,7 @@ const activities = [
   {
     name:"Gimnastika za djecu — Inner Movement",
     cat:"2-6",
-    type:"sport",
+    type:"gimnastika",
     addr:"Zagreb *",
     lat:45.81, lng:15.98,
     desc:"Gimnastika za djecu kroz koju stječu razne vještine i motoričke sposobnosti.",
@@ -2606,12 +2608,62 @@ const activities = [
     url:"https://www.musictogetherbyana.com/", approx:false,
     email:"musictogetherbyana@gmail.com"
   },
+  {
+    name:"Vježbanje za mame i bebe — Olimpići (Point centar Vrbani)",
+    cat:"0-2",
+    type:"ostalo",
+    addr:"Rudeška cesta 169a, Zagreb",
+    lat:45.7908729, lng:15.9130531,
+    desc:"Vježbanje za mame i bebe pod stručnim vodstvom trenerice kineziologinje — pilates, korektivna gimnastika i vježbe za posturu, uz jačanje emotivne i fizičke veze između mame i bebe, dva puta tjedno. Besplatan probni trening.",
+    url:"https://www.olimpici.net/vjezbanje-za-mame-i-bebe-zagreb-vrbani/", approx:false,
+    phone:"091 616 4040"
+  },
+  {
+    name:"Vježbanje mama i beba, baby fitness i masaža beba — Mama Soon",
+    cat:"0-2",
+    type:"ostalo",
+    addr:"Radoslava Cimermana 48, Zagreb",
+    lat:45.7855218, lng:15.9627768,
+    desc:"Centar za trudnice i mlade mame na Kajzerici — vježbanje mama i beba, baby fitness/gym u malim grupama uz pedijatrijsku radnu terapeutkinju, radionice masaže beba, trudničko vježbanje i savjetovanje.",
+    url:"https://mamasoon.hr/", approx:false,
+    phone:"098 980 6059", email:"info@mamasoon.hr"
+  },
+  {
+    name:"Prenatal i postnatal treninzi za mame — FitNest Centar",
+    cat:"0-2",
+    type:"ostalo",
+    addr:"Rudeška cesta 162, Zagreb",
+    lat:45.7926759, lng:15.9146597,
+    desc:"Specijalizirani centar za podršku ženama tijekom trudnoće i nakon poroda — grupni postnatal treninzi (mame vježbaju uz bebe u blizini) fokusirani na posturalnu korekciju i jačanje mišića nakon poroda, uz online programe.",
+    url:"https://www.fitnest.hr/", approx:false,
+    email:"info@fitnest.hr"
+  },
+  {
+    name:"Baby fitness — vježbe za mame i bebe (3 mj.-1 god.) — Herceg-Đonlić",
+    cat:"0-2",
+    type:"ostalo",
+    addr:"Karlovačka 44, Sesvete",
+    lat:45.8246066, lng:16.1144936,
+    desc:"Interaktivni susreti majki i beba (3 mjeseca do 1 godine) pod stručnim vodstvom fizioterapeuta u privatnoj praksi fizikalne terapije — program koji promovira i UNICEF, uz individualne satove.",
+    url:"https://fizikalna-terapija-herceg-djonlic.hr/novosti/baby-fitness-vjezbe-za-mame-i-bebe", approx:false,
+    phone:"01 2006 572", email:"fizikalnaherceg@gmail.com"
+  },
+  {
+    name:"Baby Spa — masaža i hidroterapija za bebe (od 2 tjedna)",
+    cat:"0-2",
+    type:"ostalo",
+    addr:"Jaruščica 5, Zagreb",
+    lat:45.7690835, lng:15.9417615,
+    desc:"Prvi baby spa centar u Hrvatskoj — masaža za bebe i hidroterapija (baby floating) za bebe od 2 tjedna starosti, jača vezu roditelj-beba i potiče motorički razvoj kroz dodir i opuštanje u vodi.",
+    url:"https://babyspa.hr/", approx:false,
+    phone:"095 3801 314"
+  },
 ];
 
 // ---------- SCHEMA.ORG STRUCTURED DATA (SEO) ----------
 function injectSchemaOrg(){
   const catLabel = {"0-2":"0-2 godine","2-6":"2-6 godina","6+":"6+ godina"};
-  const typeLabel = {sport:"Sport",ples:"Ples",glazba:"Glazba",jezici:"Strani jezici",kreativno:"Kreativno i STEM",ostalo:"Ostalo"};
+  const typeLabel = {sport:"Sport",gimnastika:"Gimnastika",ples:"Ples",glazba:"Glazba",jezici:"Strani jezici",kreativno:"Kreativno i STEM",ostalo:"Ostalo"};
 
   const itemListElements = activities.map((a, i) => {
     const item = {
