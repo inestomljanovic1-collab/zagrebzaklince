@@ -314,7 +314,6 @@
   <div class="tabs" id="typeTabs">
     <button class="tab active" data-type="sve"><span class="sw"></span> Sve vrste</button>
     <button class="tab" data-type="sport"><span class="sw"></span> ⚽ Sport</button>
-    <button class="tab" data-type="gimnastika"><span class="sw"></span> 🤸 Gimnastika</button>
     <button class="tab" data-type="ples"><span class="sw"></span> 💃 Ples i ritmika</button>
     <button class="tab" data-type="glazba"><span class="sw"></span> 🎵 Glazba</button>
     <button class="tab" data-type="jezici"><span class="sw"></span> 🗣️ Strani jezici</button>
@@ -338,7 +337,6 @@
   <h2 style="font-size:18px;color:var(--ink-soft);text-align:center;margin-bottom:16px;">Pregledaj po kategoriji</h2>
   <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;">
     <a href="/sport.html" style="padding:8px 18px;border-radius:20px;background:var(--sage);color:#fff;text-decoration:none;font-weight:700;font-size:14px;">⚽ Sport</a>
-    <a href="/gimnastika.html" style="padding:8px 18px;border-radius:20px;background:var(--sky-dark);color:#fff;text-decoration:none;font-weight:700;font-size:14px;">🤸 Gimnastika</a>
     <a href="/ples.html" style="padding:8px 18px;border-radius:20px;background:var(--rose);color:#fff;text-decoration:none;font-weight:700;font-size:14px;">💃 Ples i ritmika</a>
     <a href="/glazba.html" style="padding:8px 18px;border-radius:20px;background:var(--sky);color:#fff;text-decoration:none;font-weight:700;font-size:14px;">🎵 Glazba</a>
     <a href="/jezici.html" style="padding:8px 18px;border-radius:20px;background:var(--peach);color:#fff;text-decoration:none;font-weight:700;font-size:14px;">🗣️ Strani jezici</a>
@@ -440,6 +438,27 @@ const activities = [
     phone:"091 251 4430", email:"croatia@helendoron.com"
   },
   {
+    name:"English Explorers — SMIJALICE",
+    cat:"2-6",
+    type:"jezici",
+    featured:true,
+    addr:"Jazbinski odvojak VII 5, Zagreb",
+    lat:45.8095, lng:15.9755,
+    desc:"English class for kids — learn & play. Rad u malim skupinama s učenjem kroz igru. 1x tjedno blok sat.",
+    url:"https://www.smijalice.hr/", approx:false,
+    phone:"098 623 931", email:"smijalice.dc@gmail.com"
+  },
+  {
+    name:"Ciao, Bambini — SMIJALICE",
+    cat:"2-6",
+    type:"jezici",
+    addr:"Jazbinski odvojak VII 5, Zagreb",
+    lat:45.8095, lng:15.9755,
+    desc:"Tečaj talijanskog za djecu — talijanski kroz igru. 1x tjedno blok sat.",
+    url:"https://www.smijalice.hr/", approx:false,
+    phone:"098 623 931", email:"smijalice.dc@gmail.com"
+  },
+  {
     name:"Tečaj španjolskog za djecu — Helen Doron Español",
     cat:"6+",
     type:"jezici",
@@ -454,7 +473,7 @@ const activities = [
     cat:"2-6",
     type:"jezici",
     addr:"Ul. Vojina Bakića 6, Zagreb",
-    lat:45.7803922, lng:15.9847269,
+    lat:45.7775, lng:15.954,
     desc:"Učenje stranih jezika kroz igru za djecu od 4 do 15 godina, uz besplatan ogledni sat.",
     url:"https://jezici-mali-princ.com/index.html", approx:false,
     phone:"091 525 1762", email:"maliprinczagreb@gmail.com"
@@ -464,7 +483,7 @@ const activities = [
     cat:"2-6",
     type:"jezici",
     addr:"Ul. Zlatka Šulentića 9, Zagreb",
-    lat:45.8106661, lng:15.8905469,
+    lat:45.805, lng:15.92,
     desc:"Ista Mali Princ metodologija učenja jezika za djecu 4–15 godina, na lokaciji na zapadu grada.",
     url:"https://jezici-mali-princ.com/index.html", approx:false,
     phone:"095 9058 840", email:"maliprinczgzapad@gmail.com"
@@ -480,6 +499,17 @@ const activities = [
     phone:"01 3775 319"
   },
   {
+    name:"Dječji zbor — SMIJALICE",
+    cat:"2-6",
+    type:"glazba",
+    featured:true,
+    addr:"Jazbinski odvojak VII 5, Zagreb",
+    lat:45.8095, lng:15.9755,
+    desc:"Glazbene radionice za djecu — pjevamo, plešemo, stvaramo i komponiramo. 38 termina godišnje s glazbenom radionikom.",
+    url:"https://www.smijalice.hr/", approx:false,
+    phone:"098 623 931", email:"smijalice.dc@gmail.com"
+  },
+  {
     name:"Tečajevi jezika za djecu — mojPRESTO Centar",
     cat:"6+",
     type:"jezici",
@@ -490,93 +520,13 @@ const activities = [
     phone:"01 457 25 07"
   },
   {
-    name:"Univerzalna sportska škola — Balonko (OŠ Alojzija Stepinca)",
+    name:"Univerzalna sportska škola — Balonko",
     cat:"2-6",
     type:"sport",
-    addr:"Palinovečka ul. 42, Vrbani 3, Zagreb",
-    lat:45.7891113, lng:15.9145033,
-    desc:"Djeca 3–7 godina prolaze 20 različitih sportova kroz igru — nogomet, košarku, gimnastiku, rukomet i druge, prilagođeno dobi i sposobnostima.",
-    url:"https://balonko.hr/raspored-i-lokacije/", approx:false,
-    phone:"098 962 5329", email:"balonko.sport@gmail.com"
-  },
-  {
-    name:"Univerzalna sportska škola — Balonko (DV Sunčana, Špansko)",
-    cat:"2-6",
-    type:"sport",
-    addr:"Dječji trg 2, Špansko, Zagreb",
-    lat:45.8000081, lng:15.8975401,
-    desc:"Isti Balonko program (3-11 god.), na lokaciji vrtića Sunčana u Špansku.",
-    url:"https://balonko.hr/raspored-i-lokacije/", approx:false,
-    phone:"098 962 5329", email:"balonko.sport@gmail.com"
-  },
-  {
-    name:"Univerzalna sportska škola — Balonko (DV Sunčana, Vrbani)",
-    cat:"2-6",
-    type:"sport",
-    addr:"Vrbani 29, Zagreb",
-    lat:45.7939874, lng:15.9148145,
-    desc:"Isti Balonko program (3-7 god.), na lokaciji vrtića Sunčana u Vrbanima.",
-    url:"https://balonko.hr/raspored-i-lokacije/", approx:false,
-    phone:"098 962 5329", email:"balonko.sport@gmail.com"
-  },
-  {
-    name:"Univerzalna sportska škola — Balonko (Područna škola Pongračevo)",
-    cat:"2-6",
-    type:"sport",
-    addr:"Višnje Stahuljak 2, Zagreb",
-    lat:45.802558, lng:15.940085,
-    desc:"Isti Balonko program (3-11 god.), na lokaciji Područne škole Pongračevo, Trešnjevka.",
-    url:"https://balonko.hr/raspored-i-lokacije/", approx:false,
-    phone:"098 962 5329", email:"balonko.sport@gmail.com"
-  },
-  {
-    name:"Univerzalna sportska škola — Balonko (DV Remetinec, Lanište)",
-    cat:"2-6",
-    type:"sport",
-    addr:"Lanište 1d, Zagreb",
-    lat:45.7749783, lng:15.9499917,
-    desc:"Isti Balonko program (3-7 god.), na lokaciji vrtića Remetinec u Laništu.",
-    url:"https://balonko.hr/raspored-i-lokacije/", approx:false,
-    phone:"098 962 5329", email:"balonko.sport@gmail.com"
-  },
-  {
-    name:"Univerzalna sportska škola — Balonko (DV Maksimir)",
-    cat:"2-6",
-    type:"sport",
-    addr:"Aleja Antuna Augustinčića 4, Zagreb",
-    lat:45.8179618, lng:16.0244295,
-    desc:"Isti Balonko program (3-7 god.), na lokaciji vrtića u Maksimiru.",
-    url:"https://balonko.hr/raspored-i-lokacije/", approx:false,
-    phone:"098 962 5329", email:"balonko.sport@gmail.com"
-  },
-  {
-    name:"Univerzalna sportska škola — Balonko (DV Leptir)",
-    cat:"2-6",
-    type:"sport",
-    addr:"Ul. Ivana Gorana Kovačića 20, Zagreb",
-    lat:45.8182628, lng:15.9693008,
-    desc:"Isti Balonko program (3-7 god.), na lokaciji vrtića Leptir.",
-    url:"https://balonko.hr/raspored-i-lokacije/", approx:false,
-    phone:"098 962 5329", email:"balonko.sport@gmail.com"
-  },
-  {
-    name:"Univerzalna sportska škola — Balonko (DV En Ten Tini, Sesvete)",
-    cat:"2-6",
-    type:"sport",
-    addr:"Ulica 144. brigade Hrvatske vojske 8, Sesvete",
-    lat:45.8124854, lng:16.1095093,
-    desc:"Isti Balonko program (3-7 god.), na lokaciji vrtića En Ten Tini u Sesvetama.",
-    url:"https://balonko.hr/raspored-i-lokacije/", approx:false,
-    phone:"098 962 5329", email:"balonko.sport@gmail.com"
-  },
-  {
-    name:"Univerzalna sportska škola — Balonko (Velesajam)",
-    cat:"2-6",
-    type:"sport",
-    addr:"Zagrebački velesajam, paviljon 25, Zagreb",
-    lat:45.7772, lng:15.9814,
-    desc:"Isti Balonko program (3-7 god.), na lokaciji Velesajma, paviljon 25 (dvorana na katu).",
-    url:"https://balonko.hr/raspored-i-lokacije/", approx:false,
+    addr:"Višnje Stahuljak 7, Zagreb (+ 13 lokacija diljem grada)",
+    lat:45.8020777, lng:15.9406233,
+    desc:"Djeca 3–11 godina prolaze 20 različitih sportova kroz igru — nogomet, košarku, gimnastiku, rukomet i druge, prilagođeno dobi i sposobnostima.",
+    url:"https://balonko.hr/skola-sporta-za-djecu/", approx:false,
     phone:"098 962 5329", email:"balonko.sport@gmail.com"
   },
   {
@@ -600,163 +550,33 @@ const activities = [
     phone:"098 962 5329", email:"balonko.sport@gmail.com"
   },
   {
-    name:"Sportski program — Popeye Sport (DV Grigora Viteza, Ratarska)",
+    name:"Sportski program (3–7 god.) — Popeye Sport",
     cat:"2-6",
     type:"sport",
-    addr:"Ratarska ul. 5, Zagreb",
-    lat:45.7981825, lng:15.9188652,
-    desc:"Program atletike, gimnastike i korektivne gimnastike za djecu od 3 do 7 godina, u centralnom objektu vrtića Grigora Viteza.",
+    addr:"Stubička 8, Zagreb",
+    lat:45.807317, lng:15.9389365,
+    desc:"Program atletike, gimnastike i korektivne gimnastike za predškolsku djecu, u dvoranama vrtića diljem grada, uz konzultacije o odabiru sporta.",
     url:"https://www.popeye-sport.com/sportski.html", approx:false,
     phone:"091 2539 443", email:"info@popeye-sport.com"
   },
   {
-    name:"Sportski program — Popeye Sport (DV Grigora Viteza, Ožujska 10)",
+    name:"Univerzalna sportska škola — Olimpići (2,5–6 god.)",
     cat:"2-6",
     type:"sport",
-    addr:"Ožujska ul. 10, Zagreb",
-    lat:45.7926933, lng:15.9194863,
-    desc:"Isti Popeye Sport program (3-7 god.), na područnom objektu vrtića Grigora Viteza.",
-    url:"https://www.popeye-sport.com/sportski.html", approx:false,
-    phone:"091 2539 443", email:"info@popeye-sport.com"
-  },
-  {
-    name:"Sportski program — Popeye Sport (DV Grigora Viteza, Ožujska 13)",
-    cat:"2-6",
-    type:"sport",
-    addr:"Ožujska ul. 13, Zagreb",
-    lat:45.7925088, lng:15.9209069,
-    desc:"Isti Popeye Sport program (3-7 god.), na drugom područnom objektu vrtića Grigora Viteza.",
-    url:"https://www.popeye-sport.com/sportski.html", approx:false,
-    phone:"091 2539 443", email:"info@popeye-sport.com"
-  },
-  {
-    name:"Sportski program — Popeye Sport (DV Grigora Viteza, Rudeška)",
-    cat:"2-6",
-    type:"sport",
-    addr:"Rudeška cesta 71, Zagreb",
-    lat:45.7978287, lng:15.9202236,
-    desc:"Isti Popeye Sport program (3-7 god.), na područnom objektu vrtića Grigora Viteza na Rudešu.",
-    url:"https://www.popeye-sport.com/sportski.html", approx:false,
-    phone:"091 2539 443", email:"info@popeye-sport.com"
-  },
-  {
-    name:"Sportski program — Popeye Sport (DV Grigora Viteza, Rujanska)",
-    cat:"2-6",
-    type:"sport",
-    addr:"Rujanska ul. 4, Zagreb",
-    lat:45.7938178, lng:15.9200923,
-    desc:"Isti Popeye Sport program (3-7 god.), na područnom objektu vrtića Grigora Viteza na Rujanskoj.",
-    url:"https://www.popeye-sport.com/sportski.html", approx:false,
-    phone:"091 2539 443", email:"info@popeye-sport.com"
-  },
-  {
-    name:"Sportski program — Popeye Sport (DV Kustošija)",
-    cat:"2-6",
-    type:"sport",
-    addr:"Ul. Stjepana Pasanca 5, Kustošija, Zagreb",
-    lat:45.815, lng:15.905,
-    desc:"Isti Popeye Sport program (3-7 god.), na centralnom objektu vrtića Kustošija.",
-    url:"https://www.popeye-sport.com/sportski.html", approx:true,
-    phone:"091 2539 443", email:"info@popeye-sport.com"
-  },
-  {
-    name:"Sportski program — Popeye Sport (DV Vrbani 3)",
-    cat:"2-6",
-    type:"sport",
-    addr:"Palinovečka ul. 40, Zagreb",
-    lat:45.789545, lng:15.9124844,
-    desc:"Isti Popeye Sport program (3-7 god.), na područnom objektu vrtića Vrbani 3.",
-    url:"https://www.popeye-sport.com/sportski.html", approx:false,
-    phone:"091 2539 443", email:"info@popeye-sport.com"
-  },
-  {
-    name:"Sportski program — Popeye Sport (DV Bajka, Zorkovačka)",
-    cat:"2-6",
-    type:"sport",
-    addr:"Zorkovačka ul. 8, Zagreb",
-    lat:45.80163, lng:15.9452568,
-    desc:"Isti Popeye Sport program (3-7 god.), na centralnom objektu vrtića Bajka.",
-    url:"https://www.popeye-sport.com/sportski.html", approx:false,
-    phone:"091 2539 443", email:"info@popeye-sport.com"
-  },
-  {
-    name:"Sportski program — Popeye Sport (DV Bajka, Ciglenica)",
-    cat:"2-6",
-    type:"sport",
-    addr:"Humska ul. 1, Zagreb",
-    lat:45.8088873, lng:15.9382761,
-    desc:"Isti Popeye Sport program (3-7 god.), na područnom objektu Ciglenica vrtića Bajka.",
-    url:"https://www.popeye-sport.com/sportski.html", approx:false,
-    phone:"091 2539 443", email:"info@popeye-sport.com"
-  },
-  {
-    name:"Univerzalna sportska škola — Olimpići (Centar za ples, sport i fitness Savska)",
-    cat:"2-6",
-    type:"sport",
-    addr:"Savska cesta 120, Zagreb",
-    lat:45.7939684, lng:15.9577664,
-    desc:"Preko 15 sportova kroz igru i štafete, uz naglasak da svako dijete bude aktivno cijeli sat treninga, za djecu od 2,5 do 12 godina.",
-    url:"https://www.olimpici.net/lokacije/", approx:false,
+    addr:"Point centar, Vrbani, Zagreb *",
+    lat:45.7867812, lng:15.911696,
+    desc:"Preko 15 sportova kroz igru i štafete, uz naglasak da svako dijete bude aktivno cijeli sat treninga.",
+    url:"https://www.olimpici.net/upisi-u-novu-sportsku-godinu-2026-27/", approx:true,
     phone:"098 9424 186", email:"info@olimpici.net"
   },
   {
-    name:"Univerzalna sportska škola — Olimpići (2 Life Stenjevec)",
-    cat:"2-6",
+    name:"Univerzalna sportska škola — Olimpići (7–12 god.)",
+    cat:"6+",
     type:"sport",
-    addr:"Ul. Luke Ilića Oriovčanina 5, Zagreb",
-    lat:45.8179809, lng:15.8884769,
-    desc:"Isti univerzalni sportski program Olimpića (2,5-12 god.), na lokaciji u Stenjevcu.",
-    url:"https://www.olimpici.net/lokacije/", approx:false,
-    phone:"098 9424 186", email:"info@olimpici.net"
-  },
-  {
-    name:"Univerzalna sportska škola — Olimpići (OŠ Pavleka Miškine, Črnomerec)",
-    cat:"2-6",
-    type:"sport",
-    addr:"Sveti Duh 24, Zagreb",
-    lat:45.8152302, lng:15.9424222,
-    desc:"Isti univerzalni sportski program Olimpića (2,5-12 god.), na lokaciji u Črnomercu.",
-    url:"https://www.olimpici.net/lokacije/sport-za-djecu-crnomerec/", approx:false,
-    phone:"098 9424 186", email:"info@olimpici.net"
-  },
-  {
-    name:"Univerzalna sportska škola — Olimpići (Katran, Centar)",
-    cat:"2-6",
-    type:"sport",
-    addr:"Radnička cesta 27, Zagreb",
-    lat:45.8040223, lng:16.0014673,
-    desc:"Isti univerzalni sportski program Olimpića (2,5-12 god.), na lokaciji u centru grada.",
-    url:"https://www.olimpici.net/lokacije/sport-za-djecu-zagreb-centar/", approx:false,
-    phone:"098 9424 186", email:"info@olimpici.net"
-  },
-  {
-    name:"Univerzalna sportska škola — Olimpići (Dječji vrtić Prečko)",
-    cat:"2-6",
-    type:"sport",
-    addr:"Ul. Marijane Radev 1, Zagreb",
-    lat:45.7943005, lng:15.9013598,
-    desc:"Isti univerzalni sportski program Olimpića (2,5-12 god.), na lokaciji u Prečkom.",
-    url:"https://www.olimpici.net/lokacije/", approx:false,
-    phone:"098 9424 186", email:"info@olimpici.net"
-  },
-  {
-    name:"Univerzalna sportska škola — Olimpići (Dječji vrtić Vrapče, Nikole Gorjanskog)",
-    cat:"2-6",
-    type:"sport",
-    addr:"Ul. Nikole Gorjanskoga 7, Zagreb",
-    lat:45.8142193, lng:15.9011432,
-    desc:"Isti univerzalni sportski program Olimpića (2,5-12 god.), na lokaciji u Vrapču.",
-    url:"https://www.olimpici.net/lokacije/", approx:false,
-    phone:"098 9424 186", email:"info@olimpici.net"
-  },
-  {
-    name:"Univerzalna sportska škola — Olimpići (Dječji vrtić Vrapče, Rašljice)",
-    cat:"2-6",
-    type:"sport",
-    addr:"Rašljice 20, Zagreb",
-    lat:45.8186891, lng:15.8939286,
-    desc:"Isti univerzalni sportski program Olimpića (2,5-12 god.), druga vrtićka lokacija u Vrapču.",
-    url:"https://www.olimpici.net/lokacije/", approx:false,
+    addr:"Više lokacija: Vrbani, Stenjevec, Sv. Duh, Blato, Novi Zagreb, Maksimir *",
+    lat:45.7867812, lng:15.911696,
+    desc:"Isti univerzalni sportski program za školsku djecu, dostupan na osam lokacija diljem Zagreba i u Krapini.",
+    url:"https://www.olimpici.net/upisi-u-novu-sportsku-godinu-2026-27/", approx:true,
     phone:"098 9424 186", email:"info@olimpici.net"
   },
   {
@@ -800,73 +620,43 @@ const activities = [
     phone:"091 513 2112", email:"sportskapiramida@gmail.com"
   },
   {
-    name:"Mališani i roditelji — Gimnastički klub Trešnjevka (Savska)",
+    name:"Mališani i roditelji — Gimnastički klub Trešnjevka",
     cat:"0-2",
-    type:"gimnastika",
-    addr:"Savska 120, Zagreb",
+    type:"sport",
+    addr:"Savska 120, Zagreb (+ Jarnovićeva, Ježdovečka, Rovinjska)",
     lat:45.7939684, lng:15.9577664,
-    desc:"Nježan uvod u kretanje za djecu od 10 mjeseci do 3,5 godine uz roditelja — puzanje, penjanje, balans i senzorne igre bez forsiranja, u Sivoj dvorani.",
+    desc:"Nježan uvod u kretanje za djecu od 10 mjeseci do 3,5 godine uz roditelja — puzanje, penjanje, balans i senzorne igre bez forsiranja.",
     url:"https://gktresnjevka.hr/sportski-programi/malisani-i-roditelji/", approx:false,
-    phone:"091 401 0023", email:"gktresnjevka@gmail.com"
-  },
-  {
-    name:"Škola gimnastike — Gimnastički klub Trešnjevka (Prečko, Zelena dvorana)",
-    cat:"2-6",
-    type:"gimnastika",
-    addr:"Jarnovićeva 100, Prečko, Zagreb",
-    lat:45.7934796, lng:15.894447,
-    desc:"Isti program sportske gimnastike, na lokaciji u Prečkom (Zelena dvorana), uz ljetni kamp gimnastičara Trešnjića.",
-    url:"https://gktresnjevka.hr/sportski-programi/", approx:false,
-    phone:"091 401 0023", email:"gktresnjevka@gmail.com"
-  },
-  {
-    name:"Ritmička gimnastika — Gimnastički klub Trešnjevka (Rovinjska)",
-    cat:"2-6",
-    type:"gimnastika",
-    addr:"Rovinjska ul. 3, Zagreb",
-    lat:45.7993735, lng:15.9419663,
-    desc:"Program ritmičke gimnastike, na sjedišnoj lokaciji kluba na Rovinjskoj.",
-    url:"https://gktresnjevka.hr/sportski-programi/", approx:false,
-    phone:"091 401 0023", email:"gktresnjevka@gmail.com"
-  },
-  {
-    name:"Teamgym akrobatika — Gimnastički klub Trešnjevka (Lučko)",
-    cat:"6+",
-    type:"gimnastika",
-    addr:"Ježdovečka ul. 3b, Lučko",
-    lat:45.7629866, lng:15.8682453,
-    desc:"Jedini klub u Hrvatskoj koji nudi disciplinu Teamgym — posebno opremljen centar za akrobatiku u Lučkom.",
-    url:"https://gktresnjevka.hr/sportski-programi/", approx:false,
     phone:"091 401 0023", email:"gktresnjevka@gmail.com"
   },
   {
     name:"Intellidance® — Lemur",
     cat:"0-2",
     type:"ples",
-    addr:"Cankareva 17, Zagreb",
-    lat:45.8112449, lng:15.938448,
-    desc:"Certificirani plesno-glazbeni program na engleskom jeziku za bebe i mališane s roditeljima, za djecu od 8 mjeseci do 4 godine (Babies, Tykes, Tots).",
-    url:"https://www.lemur.hr/tecajevi-intellidance-r", approx:false,
+    addr:"Zagreb (sjedište: Gradišćanska 28A) *",
+    lat:45.8105304, lng:15.9398767,
+    desc:"Certificirani plesno-glazbeni program na engleskom jeziku za bebe i mališane s roditeljima, za djecu od 3 mjeseca do 3,5 godine.",
+    url:"https://www.lemur.hr/tecajevi-intellidance-r", approx:true,
     phone:"091 887 0020", email:"intellidance.hrvatska@gmail.com"
   },
   {
     name:"Ritmika i ples — Lemur",
     cat:"2-6",
     type:"ples",
-    addr:"Cankareva 17, Zagreb",
-    lat:45.8112449, lng:15.938448,
-    desc:"Razvoj koordinacije, osjećaja za ritam i mašte kroz igru i plesne priče — kraći program u vrtićima Grada Zagreba (3-7 god.) i grupa Lemurići za svu djecu 4-6 godina, uz javne nastupe dva puta godišnje.",
-    url:"https://www.lemur.hr/copy-of-te%C4%8Dajevi-za-odrasle", approx:false,
+    addr:"Zagreb (sjedište: Gradišćanska 28A) *",
+    lat:45.8105304, lng:15.9398767,
+    desc:"Razvoj koordinacije, osjećaja za ritam i mašte kroz igru i plesne priče, za djecu predškolske dobi (4–6 god.).",
+    url:"https://www.lemur.hr/copy-of-te%C4%8Dajevi-za-odrasle", approx:true,
     phone:"091 887 0020", email:"lemurples@gmail.com"
   },
   {
     name:"Balet — Lemur",
     cat:"6+",
     type:"ples",
-    addr:"Cankareva 17, Zagreb",
-    lat:45.8112449, lng:15.938448,
-    desc:"Uvod u osnove baletne tehnike uz naglasak na kreativnost, držanje i muzikalnost, za djecu 1. i 2. razreda OŠ, utorkom i četvrtkom navečer.",
-    url:"https://www.lemur.hr/kreativni-ples-za-djecu", approx:false,
+    addr:"Zagreb (sjedište: Gradišćanska 28A) *",
+    lat:45.8105304, lng:15.9398767,
+    desc:"Uvod u osnove baletne tehnike uz naglasak na kreativnost, držanje i muzikalnost, za djecu 1. i 2. razreda OŠ (6–9 god.).",
+    url:"https://www.lemur.hr/kreativni-ples-za-djecu", approx:true,
     phone:"091 887 0020", email:"lemurples@gmail.com"
   },
   {
@@ -971,7 +761,7 @@ const activities = [
     cat:"2-6",
     type:"sport",
     addr:"Kaptol centar, Nova Ves 17, Zagreb",
-    lat:45.8202778, lng:15.9777778,
+    lat:45.8199, lng:15.9779,
     desc:"Baby gym za 1,5–3 godine, a od 3. godine mala sportska akademija, likovne i dramske radionice.",
     url:"https://sport-educa.hr/", approx:false,
     phone:"091 4411 244"
@@ -981,39 +771,49 @@ const activities = [
     cat:"0-2",
     type:"kreativno",
     addr:"Ul. Florijana Andrašeca 14, Zagreb",
-    lat:45.8013613, lng:15.9612347,
+    lat:45.822, lng:15.989,
     desc:"Program poticanja razvoja za bebe od 2–12 mjeseci te kreativno-istraživačke radionice za djecu 1–3 godine.",
     url:"https://kiddocentar.hr/", approx:false,
     phone:"098 947 3564"
   },
   {
-    name:"RelaxKids — istezanje i opuštanje za djecu (3-12 god.) — Quantum Premium Gym",
+    name:"Zrnca vjere — SMIJALICE",
     cat:"2-6",
     type:"ostalo",
-    addr:"II. Zagorska 3A, Zagreb",
-    lat:45.8057439, lng:15.9407519,
-    desc:"Mirniji sat za djecu od 3 do 12 godina — istezanje, disanje i opuštanje, dok roditelji treniraju u odvojenoj dvorani u isto vrijeme. Utorkom u 18h. Prvi trening besplatan.",
-    url:"https://quantumpremiumgym.hr/djeca", approx:false,
-    phone:"099 422 0554", email:"info@quantumpremiumgym.hr"
+    addr:"Jazbinski odvojak VII 5, Zagreb",
+    lat:45.8095, lng:15.9755,
+    desc:"Igramo se kroz Biblijske priče — glazba, pjesma, ritam i pokret s kreativnim zagrijajima.",
+    url:"https://www.smijalice.hr/", approx:false,
+    phone:"098 623 931", email:"smijalice.dc@gmail.com"
   },
   {
-    name:"Dječji sportski program i ZumbaKids (3-12 god.) — Quantum Premium Gym",
+    name:"RelaxKids radionice — Quantum Premium Gym Trešnjevka",
     cat:"2-6",
-    type:"sport",
-    addr:"II. Zagorska 3A, Zagreb",
+    type:"ostalo",
+    addr:"II. Zagorska 3a, Zagreb",
     lat:45.8057439, lng:15.9407519,
-    desc:"Dječji sportski program (3-5 god.) — osnove kretanja kroz igru, i ZumbaKids (6-12 god.) — ples i ritam, ponedjeljkom i srijedom u 17h i 18h. Dječji i roditeljski treninzi idu u isto vrijeme, u dvije odvojene dvorane. Prvi trening besplatan.",
-    url:"https://quantumpremiumgym.hr/djeca", approx:false,
-    phone:"099 422 0554", email:"info@quantumpremiumgym.hr"
+    desc:"Kvartovski gym za cijelu obitelj — RelaxKids radionice za najmlađe, u malim grupama i klimatiziranoj dvorani.",
+    url:"https://www.facebook.com/quantumpremiumgym/", approx:false,
+    phone:"099 422 0554"
+  },
+  {
+    name:"Dječji trening i Zumba Kids — Quantum Premium Gym Trešnjevka",
+    cat:"6+",
+    type:"sport",
+    addr:"II. Zagorska 3a, Zagreb",
+    lat:45.8057439, lng:15.9407519,
+    desc:"Funkcionalni dječji treninzi i Zumba Kids, uz mogućnost obiteljskih treninga roditelja i djece zajedno.",
+    url:"https://www.facebook.com/quantumpremiumgym/", approx:false,
+    phone:"099 422 0554"
   },
   {
     name:"Gimnastika i parkour za djecu — Gimnastički klub Brezovica",
     cat:"6+",
-    type:"gimnastika",
-    addr:"Brezovička cesta 98, Brezovica",
-    lat:45.7258877, lng:15.9098578,
+    type:"sport",
+    addr:"Brezovica, Zagreb *",
+    lat:45.7251273, lng:15.9082653,
     desc:"Gimnastički programi za djecu od 4 do 17 godina — rekreativna gimnastika, natjecateljski program i parkour, uz program i za djecu s teškoćama u razvoju.",
-    url:"https://gk-brezovica.hr/", approx:false,
+    url:"https://gk-brezovica.hr/", approx:true,
     phone:"095 829 8775", email:"gkbrezovica@gmail.com"
   },
   {
@@ -1039,10 +839,10 @@ const activities = [
   {
     name:"Sportska gimnastika i sportska školica — GIMGO",
     cat:"2-6",
-    type:"gimnastika",
-    addr:"Zagreb (DV Mali Princ, Zapruđe, Kustošija, Vrapče) *",
+    type:"sport",
+    addr:"Zagreb (Zapruđe, Kustošija, Vrapče) *",
     lat:45.79, lng:15.935,
-    desc:"Sportska gimnastika za djecu od 2,5 do 7 godina i sportska školica koja upoznaje s osnovama više sportova (atletika, softball, košarka, rukomet i dr.), provodi se u dječjim vrtićima Mali Princ, Zapruđe, Kustošija i Vrapče.",
+    desc:"Sportska gimnastika za djecu od 2,5 do 7 godina i sportska školica koja upoznaje s osnovama više sportova, provodi se u nekoliko zagrebačkih vrtića.",
     url:"https://www.gimgo.hr/", approx:true,
     phone:"091 518 3327", email:"gimgokids@gmail.com"
   },
@@ -1069,7 +869,7 @@ const activities = [
   {
     name:"Gimnastika za djecu — Gimnastički klub Sesvete",
     cat:"2-6",
-    type:"gimnastika",
+    type:"sport",
     addr:"Ulica Krste Hegedušića 30, Sesvete",
     lat:45.8350062, lng:16.095896,
     desc:"Škola gimnastike za djevojčice i dječake od 3. do 13. godine, na tri lokacije (Novi Jelkovec, Dugave, Brestje).",
@@ -1114,18 +914,6 @@ const activities = [
     desc:"Škola plivanja za djecu od 5 godina — program Orkići za plivače te individualni treninzi za usavršavanje tehnike.",
     url:"https://pkorka.hr/jelkovec/", approx:false,
     phone:"099 823 6938", email:"orkaplivackiklub@gmail.com"
-  },
-  {
-    name:"Nogomet za djecu od 4 godine — NK Podsused",
-    cat:"2-6",
-    type:"sport",
-    priority:2,
-    highlight:true,
-    addr:"Podsused, Zagreb *",
-    lat:45.8253, lng:15.8608,
-    desc:"Ako vaše dijete voli nogomet ili želi napraviti prve sportske korake, NK Podsused nudi priliku za trening, druženje, razvoj i nova prijateljstva.",
-    url:"https://nk-podsused.hr/", approx:true,
-    phone:"099 369 5373", email:"podsused.nk@gmail.com"
   },
   {
     name:"AIKIDS — Ki Aikido Dojo Zagreb",
@@ -1290,13 +1078,23 @@ const activities = [
     name:"Vaterpolo za djecu — Vaterpolo klub Aqua",
     cat:"6+",
     type:"sport",
-    priority:1,
-    highlight:true,
-    addr:"Bazen Jelkovec, Sesvete",
+    featured:true,
+    addr:"Bazeni Jelkovec i Iver, Zagreb *",
     lat:45.81146, lng:16.1061698,
     desc:"Razvojni vaterpolo klub za djevojčice i dječake svih uzrasta na istoku grada, s natjecateljskim skupinama od mlađih kadeta do juniora.",
-    url:"https://aquapolo.hr/", approx:false,
+    url:"https://aquapolo.hr/", approx:true,
     phone:"091 118 0808", email:"aqua@aquapolo.hr"
+  },
+  {
+    name:"Nogomet za djecu od 4 godine — NK Podsused",
+    cat:"2-6",
+    type:"sport",
+    featured:true,
+    addr:"Podsused, Zagreb *",
+    lat:45.8253, lng:15.8608,
+    desc:"Klub poziva djecu na besplatne probne treninge (6 treninga / 15 dana) prije odluke o nastavku članstva.",
+    url:"https://nk-podsused.hr/", approx:true,
+    phone:"099 369 9000", email:"podsused.nk@gmail.com"
   },
   {
     name:"Mačevanje za djecu — MK Dubrava",
@@ -1343,7 +1141,7 @@ const activities = [
     cat:"2-6",
     type:"jezici",
     addr:"Četvrte Poljanice 4, Zagreb",
-    lat:45.82817, lng:16.07299,
+    lat:45.8281, lng:16.0729,
     desc:"Rano učenje stranih jezika (3–7 god.), ritmika i ples te osnove sportova (4–7 god.) — programi se provode u vlastitim prostorima te u vrtićima i školama diljem Zagreba.",
     url:"https://cvrcakgrupa.com/", approx:false,
     phone:"01 2923 272", email:"cvrcak.grupa@gmail.com"
@@ -1489,79 +1287,19 @@ const activities = [
     phone:"01 7779 412", email:"pcz@pcz.hr"
   },
   {
-    name:"Plesni tečajevi za djecu — Bailando (Ravnice)",
+    name:"Plesni tečajevi za djecu — Bailando plesni studio",
     cat:"6+",
     type:"ples",
-    addr:"Ul. Mije Krešića 5, Zagreb",
-    lat:45.8165188, lng:16.0197537,
-    desc:"Jazz dance, jazz funk, hip hop i contemporary fusion za djecu — Kids grupa (do 4. razreda OŠ) i Junior grupe, na lokaciji u Ravnicama.",
-    url:"https://bailando.hr/grupe/", approx:false,
-    phone:"091 989 4344", email:"plesnistudiobailando@gmail.com"
-  },
-  {
-    name:"Plesni tečajevi za djecu — Bailando (Dubrava, OŠ Marije Jurić Zagorke)",
-    cat:"6+",
-    type:"ples",
-    addr:"Štefanovečka cesta 67, Zagreb",
-    lat:45.8220605, lng:16.0459513,
-    desc:"Isti Bailando program (jazz dance, hip hop, contemporary fusion), na lokaciji u Dubravi.",
-    url:"https://bailando.hr/grupe/", approx:false,
-    phone:"091 989 4344", email:"plesnistudiobailando@gmail.com"
-  },
-  {
-    name:"Plesni tečajevi za djecu — Bailando (Dubrava, Kapelska)",
-    cat:"6+",
-    type:"ples",
-    addr:"Kapelska ul. 4A, Zagreb",
-    lat:45.8247601, lng:16.0426591,
-    desc:"Isti Bailando program (jazz dance, hip hop, contemporary fusion), druga lokacija u Dubravi.",
-    url:"https://bailando.hr/grupe/", approx:false,
-    phone:"091 989 4344", email:"plesnistudiobailando@gmail.com"
-  },
-  {
-    name:"Plesni tečajevi za djecu — Bailando (Utrine, Feel Good Centar)",
-    cat:"6+",
-    type:"ples",
-    addr:"Avenija Dubrovnik 36, Zagreb",
-    lat:45.7774276, lng:15.9921892,
-    desc:"Isti Bailando program (jazz dance, hip hop, contemporary fusion), na lokaciji u Utrinama.",
-    url:"https://bailando.hr/grupe/", approx:false,
-    phone:"091 989 4344", email:"plesnistudiobailando@gmail.com"
-  },
-  {
-    name:"Plesni tečajevi za djecu — Bailando (Travno)",
-    cat:"6+",
-    type:"ples",
-    addr:"Ul. Božidara Magovca 79, Zagreb",
-    lat:45.7699352, lng:15.9953816,
-    desc:"Isti Bailando program (jazz dance, hip hop, contemporary fusion), na lokaciji u Travnom.",
-    url:"https://bailando.hr/grupe/", approx:false,
-    phone:"091 989 4344", email:"plesnistudiobailando@gmail.com"
-  },
-  {
-    name:"Plesni tečajevi za djecu — Bailando (Velesajam)",
-    cat:"6+",
-    type:"ples",
-    addr:"Zagrebački velesajam, paviljon 2, Avenija Dubrovnik, Zagreb",
-    lat:45.7778053, lng:15.9752288,
-    desc:"Isti Bailando program (jazz dance, hip hop, contemporary fusion), na lokaciji Velesajam, zapadni ulaz.",
-    url:"https://bailando.hr/grupe/", approx:false,
-    phone:"091 989 4344", email:"plesnistudiobailando@gmail.com"
-  },
-  {
-    name:"Plesni tečajevi za djecu — Bailando (Malešnica)",
-    cat:"6+",
-    type:"ples",
-    addr:"Ul. Ante Topića Mimare 36, Zagreb",
-    lat:45.8079687, lng:15.9012934,
-    desc:"Isti Bailando program (jazz dance, hip hop, contemporary fusion), na lokaciji u Malešnici (OŠ Malešnica).",
-    url:"https://bailando.hr/grupe/", approx:false,
-    phone:"091 989 4344", email:"plesnistudiobailando@gmail.com"
+    addr:"Zagreb (Utrine, Cibona, Ravnice i dr.) *",
+    lat:45.8, lng:15.98,
+    desc:"Plesni studio za djecu i mlade — jazz dance, commercial i fusion stilovi, na 6 lokacija diljem Zagreba, uz besplatan probni sat.",
+    url:"https://bailando.hr/", approx:true,
+    phone:"098 9391 168", email:"plesnistudiobailando@gmail.com"
   },
   {
     name:"Gimnastička početnica — ZTD Hrvatski Sokol",
     cat:"2-6",
-    type:"gimnastika",
+    type:"sport",
     addr:"Trg Republike Hrvatske 6 (Sokolski dom), Zagreb",
     lat:45.808639, lng:15.970099,
     desc:"Program sportske gimnastike za djecu predškolskog uzrasta i rane školske dobi, subotom, u obnovljenim dvoranama u srcu grada; upisi mogući cijele godine.",
@@ -1571,7 +1309,7 @@ const activities = [
   {
     name:"Škola gimnastike, parkoura i akrobatike — ZTD Hrvatski Sokol",
     cat:"6+",
-    type:"gimnastika",
+    type:"sport",
     addr:"Trg Republike Hrvatske 6 (Sokolski dom), Zagreb",
     lat:45.808639, lng:15.970099,
     desc:"Škola gimnastike za uzrast od 5 do 18 godina, uz školu FIG parkoura i školu velikog trampolina i akrobatike — najnovije sprave i visokoobrazovani treneri; postoji i podružnica na Borongaju.",
@@ -1579,53 +1317,13 @@ const activities = [
     phone:"01 4826 206", email:"ztdhs.tajnistvo@gmail.com"
   },
   {
-    name:"Univerzalni sportski program — Mali sportaši (Akademija Šalata)",
+    name:"Univerzalni sportski program 3,5–7 god. — Mali sportaši",
     cat:"2-6",
     type:"sport",
-    addr:"Voćarska 106, Zagreb",
-    lat:45.8158, lng:15.9975,
-    desc:"Sportska akademija koja djecu od 3,5 do 7 godina uvodi u nogomet, košarku, atletiku, gimnastiku i druge discipline, dva puta tjedno.",
-    url:"https://www.malisportasi.hr/programi/35-7-godina", approx:false,
-    phone:"091 513 2426", email:"goran@malisportasi.hr"
-  },
-  {
-    name:"Univerzalni sportski program — Mali sportaši (Akademija Sloboština)",
-    cat:"2-6",
-    type:"sport",
-    addr:"Ul. Nikole Andrića 3, Zagreb",
-    lat:45.7669829, lng:15.9831973,
-    desc:"Isti univerzalni sportski program (3,5-7 god.), na lokaciji u Sloboštini.",
-    url:"https://www.malisportasi.hr/programi/35-7-godina", approx:false,
-    phone:"091 513 2426", email:"goran@malisportasi.hr"
-  },
-  {
-    name:"Univerzalni sportski program — Mali sportaši (Akademija Špansko)",
-    cat:"2-6",
-    type:"sport",
-    addr:"Dječji trg 2, Špansko, Zagreb",
-    lat:45.8000081, lng:15.8975401,
-    desc:"Isti univerzalni sportski program (3,5-7 god.), na lokaciji u Špansku.",
-    url:"https://www.malisportasi.hr/programi/35-7-godina", approx:false,
-    phone:"091 513 2426", email:"goran@malisportasi.hr"
-  },
-  {
-    name:"Univerzalni sportski program — Mali sportaši (Akademija Trnjanska)",
-    cat:"2-6",
-    type:"sport",
-    addr:"Trnjanska cesta 99, Zagreb",
-    lat:45.7930344, lng:15.9805943,
-    desc:"Isti univerzalni sportski program (3,5-7 god.), na lokaciji na Trnjanskoj — nastavlja se i program za osnovnoškolce (1.-4. razred).",
-    url:"https://www.malisportasi.hr/programi/35-7-godina", approx:false,
-    phone:"091 513 2426", email:"goran@malisportasi.hr"
-  },
-  {
-    name:"Univerzalni sportski program — Mali sportaši (Akademija Varšavska)",
-    cat:"2-6",
-    type:"sport",
-    addr:"Varšavska ul. 19, Zagreb",
-    lat:45.8116932, lng:15.9712628,
-    desc:"Prva Mali sportaši akademija (od 2008.) — isti univerzalni sportski program, nastavlja se i program za osnovnoškolce (1.-4. razred).",
-    url:"https://www.malisportasi.hr/programi/35-7-godina", approx:false,
+    addr:"Zagreb (Šalata, Sloboština, Špansko, Trnjanska, Varšavska)",
+    lat:45.806, lng:15.975,
+    desc:"Sportska akademija koja djecu od 3,5 do 7 godina uvodi u nogomet, košarku, atletiku, gimnastiku i druge discipline, dva puta tjedno na pet lokacija diljem Zagreba.",
+    url:"https://www.malisportasi.hr/programi/35-7-godina", approx:true,
     phone:"091 513 2426", email:"goran@malisportasi.hr"
   },
   {
@@ -1689,32 +1387,12 @@ const activities = [
     phone:"097 748 6442", email:"judoklub.lotus@gmail.com"
   },
   {
-    name:"Karate vrtić i karate škola — Karate klub Hercegovina-Zagreb (Trešnjevka)",
+    name:"Karate vrtić i karate škola — Karate klub Hercegovina-Zagreb",
     cat:"2-6",
     type:"sport",
     addr:"Andrije Žaje 61, Trešnjevka, Zagreb",
     lat:45.8069779, lng:15.9532784,
-    desc:"Karate vrtić (3–5 god.) i karate škola (od 6 god.), uz natjecateljski program za starije.",
-    url:"https://www.hercegovina-zagreb.hr/upisi-u-klub.html", approx:false,
-    phone:"091 194 3695"
-  },
-  {
-    name:"Karate škola za djecu — Karate klub Hercegovina-Zagreb (Gračani)",
-    cat:"6+",
-    type:"sport",
-    addr:"Gračanska cesta 208 (Meridijan 16), Zagreb",
-    lat:45.8620721, lng:15.9858150,
-    desc:"Isti karate program (natjecateljski karate), na lokaciji u Gračanima.",
-    url:"https://www.hercegovina-zagreb.hr/upisi-u-klub.html", approx:false,
-    phone:"091 194 3695"
-  },
-  {
-    name:"Karate škola za djecu — Karate klub Hercegovina-Zagreb (Sopnica)",
-    cat:"6+",
-    type:"sport",
-    addr:"Ul. Ante Starčevića 2, Sesvete",
-    lat:45.8229031, lng:16.0927722,
-    desc:"Isti karate program (natjecateljski karate), na lokaciji u Sopnici, Sesvete.",
+    desc:"Karate vrtić (3–5 god.) i karate škola (od 6 god.) na tri lokacije u gradu (Trešnjevka, Gračani, Sopnica), uz natjecateljski program za starije.",
     url:"https://www.hercegovina-zagreb.hr/upisi-u-klub.html", approx:false,
     phone:"091 194 3695"
   },
@@ -1768,44 +1446,14 @@ const activities = [
     phone:"099 331 0010", email:"sahklub.caissa@gmail.com"
   },
   {
-    name:"Programiranje, robotika i 3D print za djecu — Kliker IT centar (Dubrava)",
+    name:"Programiranje, robotika i 3D print za djecu — Kliker IT centar",
     cat:"6+",
     type:"kreativno",
-    addr:"Aleja javora 2, Zagreb",
-    lat:45.8264194, lng:16.0683709,
-    desc:"Radionice programiranja, robotike, elektronike i 3D printanja za djecu od 5 do 18 godina, u grupama do 8 polaznika.",
-    url:"https://klikercentar.hr/kontakt/", approx:false,
-    phone:"091 533 5519", email:"dubrava@klikercentar.hr"
-  },
-  {
-    name:"Programiranje, robotika i 3D print za djecu — Kliker IT centar (Trešnjevka)",
-    cat:"6+",
-    type:"kreativno",
-    addr:"Tratinska 78, Zagreb",
-    lat:45.800635, lng:15.9562665,
-    desc:"Isti Kliker program (programiranje, robotika, 3D print) za djecu od 5 do 18 godina, na lokaciji na Trešnjevci.",
-    url:"https://klikercentar.hr/kontakt/", approx:false,
-    phone:"099 749 4174", email:"tresnjevka@klikercentar.hr"
-  },
-  {
-    name:"Programiranje, robotika i 3D print za djecu — Kliker IT centar (Špansko)",
-    cat:"6+",
-    type:"kreativno",
-    addr:"Ul. Drage Gervaisa 24, Zagreb",
-    lat:45.8010299, lng:15.8930166,
-    desc:"Isti Kliker program (programiranje, robotika, 3D print) za djecu od 5 do 18 godina, na lokaciji u Špansku.",
-    url:"https://klikercentar.hr/kontakt/", approx:false,
-    phone:"099 749 4174", email:"spansko@klikercentar.hr"
-  },
-  {
-    name:"Programiranje, robotika i 3D print za djecu — Kliker IT centar (Sesvete)",
-    cat:"6+",
-    type:"kreativno",
-    addr:"Trakošćanska ul. 26, Sesvete",
-    lat:45.8328578, lng:16.1112989,
-    desc:"Isti Kliker program (programiranje, robotika, 3D print) za djecu od 5 do 18 godina, na lokaciji u Sesvetama.",
-    url:"https://klikercentar.hr/kontakt/", approx:false,
-    phone:"091 533 5519", email:"sesvete@klikercentar.hr"
+    addr:"Zagreb (Dubrava, Trešnjevka, Špansko, Sesvete)",
+    lat:45.81, lng:16,
+    desc:"Radionice programiranja, robotike, elektronike i 3D printanja za djecu od 5 do 18 godina, na četiri lokacije diljem Zagreba, u grupama do 8 polaznika.",
+    url:"https://klikercentar.hr/", approx:true,
+    phone:"091 533 5519"
   },
   {
     name:"Ritmika 1, 2, 3, 4 — Zagrebački plesni centar",
@@ -1822,7 +1470,7 @@ const activities = [
     cat:"6+",
     type:"ples",
     addr:"Donje Vrapče 20b, Malešnica, Zagreb",
-    lat:45.8102933, lng:15.9037964,
+    lat:45.792, lng:15.93,
     desc:"Edukativno-kreativni i umjetnički plesni programi za djecu i mlade već 22 godine, s nastupima ansambla FreeForce, na više lokacija/osnovnih škola diljem Zagreba.",
     url:"https://www.plesnicentarosmijeh.com/osmijeh.html", approx:false,
     phone:"098 584 333", email:"plesnicentarosmijeh@gmail.com"
@@ -1838,34 +1486,14 @@ const activities = [
     phone:"099 233 4817", email:"info@fever.hr"
   },
   {
-    name:"Ritmika za djevojčice — Zagrebački anđeli (Trešnjevka)",
+    name:"Ritmika za djevojčice — Zagrebački anđeli",
     cat:"2-6",
     type:"ples",
-    addr:"Opatijski trg 10, Zagreb",
-    lat:45.7997084, lng:15.9373798,
-    desc:"Grupe ritmike za djevojčice predškolske dobi (4–7 god.) u sklopu poznatog dječjeg zbora — ples, pjesma, koreografije prilagođene dobi te razvoj tima i koordinacije, s nastupima 2-4 puta godišnje.",
-    url:"https://www.zagrebacki-andjeli.com/programi/ritmika", approx:false,
-    phone:"091 3636 777", email:"zagrebacki.andjeli@gmail.com"
-  },
-  {
-    name:"Ritmika za djevojčice — Zagrebački anđeli (Maksimir)",
-    cat:"2-6",
-    type:"ples",
-    addr:"Ul. Augusta Harambašića 18, Zagreb",
-    lat:45.8161245, lng:16.007425,
-    desc:"Isti ritmika program za djevojčice (4–7 god.), na lokaciji OŠ A. Harambašića u Maksimiru.",
-    url:"https://www.zagrebacki-andjeli.com/programi/ritmika", approx:false,
-    phone:"091 3636 777", email:"zagrebacki.andjeli@gmail.com"
-  },
-  {
-    name:"Ritmika za djevojčice — Zagrebački anđeli (Jarun)",
-    cat:"2-6",
-    type:"ples",
-    addr:"Hrgovići ul. 57/A, Zagreb",
-    lat:45.786587, lng:15.9294156,
-    desc:"Isti ritmika program za djevojčice (4–7 god.), na lokaciji u Jarunu.",
-    url:"https://www.zagrebacki-andjeli.com/programi/ritmika", approx:false,
-    phone:"091 3636 777", email:"zagrebacki.andjeli@gmail.com"
+    addr:"Zagreb (Trešnjevka, Jarun, Maksimir)",
+    lat:45.805, lng:15.942,
+    desc:"Grupe ritmike za djevojčice predškolske dobi (4–7 god.) u sklopu poznatog dječjeg zbora — ples, pjesma, koreografije prilagođene dobi te razvoj tima i koordinacije.",
+    url:"https://www.zagrebacki-andjeli.com/programi/ritmika", approx:true,
+    phone:"099 3636 777"
   },
   {
     name:"Ritmika i ples — Sportski centar Mali dom",
@@ -2036,21 +1664,12 @@ const activities = [
     url:"https://www.moja-djelatnost.hr/rukometni-klub-skola-rukometa-sesvete/rk-sesvete/MMxdNwqN", approx:false
   },
   {
-    name:"Ritmička gimnastika za djevojčice — Gimnastički klub Aura (Arena Zagreb)",
+    name:"Ritmička gimnastika za djevojčice — Gimnastički klub Aura",
     cat:"2-6",
-    type:"gimnastika",
-    addr:"Ul. Vice Vukova 8 (Arena Zagreb), Zagreb",
+    type:"sport",
+    addr:"Arena Zagreb i OŠ Ivana Gundulića, Zagreb",
     lat:45.771235, lng:15.9436328,
     desc:"Klub ritmičke gimnastike koji vodi trenerica Nika Crevatini — rekreativni i natjecateljski program za djevojčice, uz mogućnost besplatnog probnog treninga prije upisa.",
-    url:"https://gkaura.hr/", approx:false
-  },
-  {
-    name:"Ritmička gimnastika za djevojčice — Gimnastički klub Aura (OŠ Ivana Gundulića)",
-    cat:"2-6",
-    type:"gimnastika",
-    addr:"Gundulićeva ul. 23A, Zagreb",
-    lat:45.8099746, lng:15.972949,
-    desc:"Isti program ritmičke gimnastike, na lokaciji OŠ Ivana Gundulića u centru grada.",
     url:"https://gkaura.hr/", approx:false
   },
   {
@@ -2064,33 +1683,13 @@ const activities = [
     phone:"091 511 2638"
   },
   {
-    name:"Dječji zbor Bajka (Špansko)",
+    name:"Dječji zbor Bajka",
     cat:"2-6",
     type:"glazba",
-    addr:"Trg Ivana Kukuljevića 1, Zagreb",
-    lat:45.8035972, lng:15.8952182,
-    desc:"Zbor za djecu od 3 do 13 godina koji spaja pjevanje, ples i glumu — priprema mjuzikle i nastupa na Adventu u Zagrebu i drugim gradskim događanjima, na lokaciji u Špansku.",
-    url:"https://zborbajka.com/lokacije/", approx:false,
-    phone:"091 515 6284", email:"bajka@bajka.hr"
-  },
-  {
-    name:"Dječji zbor Bajka (Voltino)",
-    cat:"2-6",
-    type:"glazba",
-    addr:"Ul. Dragutina Golika 116, Zagreb",
-    lat:45.7990705, lng:15.9300998,
-    desc:"Isti dječji zbor (3-13 god.), na lokaciji u Voltinu — uz zbor i ritmika/ples grupe podijeljene po dobi.",
-    url:"https://zborbajka.com/lokacije/", approx:false,
-    phone:"091 515 6284", email:"bajka@bajka.hr"
-  },
-  {
-    name:"Dječji zbor Bajka (Gajnice)",
-    cat:"2-6",
-    type:"glazba",
-    addr:"Medpotoki ul. 1a, Zagreb",
-    lat:45.8200224, lng:15.8805109,
-    desc:"Isti dječji zbor (3-13 god.), na lokaciji u Gajnicama — uz zbor i ritmika/ples grupe podijeljene po dobi.",
-    url:"https://zborbajka.com/lokacije/", approx:false,
+    addr:"Zagreb (5 lokacija) *",
+    lat:45.805, lng:15.97,
+    desc:"Zbor za djecu od 3 do 18 godina koji spaja pjevanje, ples i glumu — priprema mjuzikle i nastupa na Adventu u Zagrebu i drugim gradskim događanjima, na pet lokacija u gradu.",
+    url:"https://zborbajka.com/", approx:true,
     phone:"091 515 6284", email:"bajka@bajka.hr"
   },
   {
@@ -2230,22 +1829,12 @@ const activities = [
     phone:"095 8826 704", email:"radionice@blankzg.hr"
   },
   {
-    name:"Škola odbojke — HAOK Zagreb (OŠ Borovje)",
+    name:"Škola odbojke — HAOK Zagreb",
     cat:"6+",
     type:"sport",
-    addr:"Ul. Davora Zbiljskog, Zagreb",
-    lat:45.787191, lng:16.009037,
-    desc:"Škola odbojke za djevojčice od 6 godina naviše, u sklopu jednog od najuspješnijih hrvatskih odbojkaških klubova.",
-    url:"https://www.haokzagreb.hr/en/news/upisi-u-skolu-odbojke-haok-zagreb", approx:false,
-    phone:"091 655 2874"
-  },
-  {
-    name:"Škola odbojke — HAOK Zagreb (OŠ Pongračevo)",
-    cat:"6+",
-    type:"sport",
-    addr:"Ul. Višnje Stahuljak 2, Zagreb",
-    lat:45.802558, lng:15.940085,
-    desc:"Ista škola odbojke za djevojčice od 6 godina naviše, na lokaciji OŠ Pongračevo, Trešnjevka.",
+    addr:"OŠ Borovje i OŠ Pongračevo, Zagreb",
+    lat:45.795, lng:16.01,
+    desc:"Škola odbojke za djevojčice od 6 godina naviše na dvije lokacije u gradu, u sklopu jednog od najuspješnijih hrvatskih odbojkaških klubova.",
     url:"https://www.haokzagreb.hr/en/news/upisi-u-skolu-odbojke-haok-zagreb", approx:false,
     phone:"091 655 2874"
   },
@@ -2569,6 +2158,16 @@ const activities = [
     phone:"091 198 7007", email:"info@4sobe.hr"
   },
   {
+    name:"Ples za djecu — Plesni klub Lolita",
+    cat:"2-6",
+    type:"ples",
+    addr:"Zagreb *",
+    lat:45.81, lng:15.98,
+    desc:"Plesni vrtić i ples za djecu — sportski ples, latinsko-američki i standardni plesovi, show dance, uz mogućnost prelaska u natjecateljsku skupinu.",
+    url:"https://lolita.hr/ples-za-djecu/", approx:true,
+    phone:"098 265 320"
+  },
+  {
     name:"Jazz dance za djecu — Aerobic centar Super Body",
     cat:"6+",
     type:"ples",
@@ -2583,9 +2182,9 @@ const activities = [
     cat:"2-6",
     type:"ples",
     addr:"Utrina, Novi Zagreb",
-    lat:45.7765314, lng:15.9959558,
+    lat:45.785, lng:15.995,
     desc:"Plesne grupe za predškolsku i školsku dob (suvremeni ples, jazz, ritmika) na punktu Utrina — jedna od 12 lokacija Plesnih punktova Zagreb.",
-    url:"https://www.plesnipunktovi.hr/utrina.html", approx:true,
+    url:"https://www.plesnipunktovi.hr/utrina.html", approx:false,
     phone:"098 229 361", email:"info@plesnipunktovi.hr"
   },
   {
@@ -2593,9 +2192,9 @@ const activities = [
     cat:"2-6",
     type:"ples",
     addr:"Kozjak, Zagreb",
-    lat:45.8317306, lng:16.0012837,
+    lat:45.79, lng:15.975,
     desc:"Plesne grupe za predškolsku i školsku dob (suvremeni ples, jazz, ritmika) na punktu Kozjak — jedna od 12 lokacija Plesnih punktova Zagreb.",
-    url:"https://www.plesnipunktovi.hr/kozjak.html", approx:true,
+    url:"https://www.plesnipunktovi.hr/kozjak.html", approx:false,
     phone:"098 229 361", email:"info@plesnipunktovi.hr"
   },
   {
@@ -2613,9 +2212,9 @@ const activities = [
     cat:"2-6",
     type:"ples",
     addr:"Trnjanska Savica, Zagreb",
-    lat:45.7908784, lng:15.9891168,
+    lat:45.77, lng:15.94,
     desc:"Plesne grupe za predškolsku i školsku dob (suvremeni ples, jazz, ritmika) na punktu Savica — jedna od 12 lokacija Plesnih punktova Zagreb.",
-    url:"https://www.plesnipunktovi.hr/savica.html", approx:true,
+    url:"https://www.plesnipunktovi.hr/savica.html", approx:false,
     phone:"098 229 361", email:"info@plesnipunktovi.hr"
   },
   {
@@ -2623,9 +2222,9 @@ const activities = [
     cat:"2-6",
     type:"ples",
     addr:"Gračani, Zagreb",
-    lat:45.8586329, lng:15.9721681,
+    lat:45.765, lng:15.92,
     desc:"Plesne grupe za predškolsku i školsku dob (suvremeni ples, jazz, ritmika) na punktu Gračani — jedna od 12 lokacija Plesnih punktova Zagreb.",
-    url:"https://www.plesnipunktovi.hr/gracani.html", approx:true,
+    url:"https://www.plesnipunktovi.hr/gracani.html", approx:false,
     phone:"098 229 361", email:"info@plesnipunktovi.hr"
   },
   {
@@ -2633,9 +2232,9 @@ const activities = [
     cat:"2-6",
     type:"ples",
     addr:"Črnomerec, Zagreb",
-    lat:45.8134387, lng:15.9421066,
+    lat:45.818, lng:15.925,
     desc:"Plesne grupe za predškolsku i školsku dob (suvremeni ples, jazz, ritmika) na punktu Črnomerec — jedna od 12 lokacija Plesnih punktova Zagreb.",
-    url:"https://www.plesnipunktovi.hr/crnomerec.html", approx:true,
+    url:"https://www.plesnipunktovi.hr/crnomerec.html", approx:false,
     phone:"098 229 361", email:"info@plesnipunktovi.hr"
   },
   {
@@ -2643,9 +2242,9 @@ const activities = [
     cat:"2-6",
     type:"ples",
     addr:"Dubrava, Zagreb",
-    lat:45.8306017, lng:16.0573476,
+    lat:45.835, lng:16.045,
     desc:"Plesne grupe za predškolsku i školsku dob (suvremeni ples, jazz, ritmika) na punktu Dubrava — jedna od 12 lokacija Plesnih punktova Zagreb.",
-    url:"https://www.plesnipunktovi.hr/dubrava.html", approx:true,
+    url:"https://www.plesnipunktovi.hr/dubrava.html", approx:false,
     phone:"098 229 361", email:"info@plesnipunktovi.hr"
   },
   {
@@ -2653,9 +2252,9 @@ const activities = [
     cat:"2-6",
     type:"ples",
     addr:"Trnsko, Novi Zagreb",
-    lat:45.7731064, lng:15.9647123,
+    lat:45.775, lng:16.01,
     desc:"Plesne grupe za predškolsku i školsku dob (suvremeni ples, jazz, ritmika) na punktu Trnsko — jedna od 12 lokacija Plesnih punktova Zagreb.",
-    url:"https://www.plesnipunktovi.hr/trnsko.html", approx:true,
+    url:"https://www.plesnipunktovi.hr/trnsko.html", approx:false,
     phone:"098 229 361", email:"info@plesnipunktovi.hr"
   },
   {
@@ -2663,9 +2262,9 @@ const activities = [
     cat:"2-6",
     type:"ples",
     addr:"Ravnice, Zagreb",
-    lat:45.8209366, lng:16.0285687,
+    lat:45.785, lng:16.0,
     desc:"Plesne grupe za predškolsku i školsku dob (suvremeni ples, jazz, ritmika) na punktu Ravnice — jedna od 12 lokacija Plesnih punktova Zagreb.",
-    url:"https://www.plesnipunktovi.hr/ravnice.html", approx:true,
+    url:"https://www.plesnipunktovi.hr/ravnice.html", approx:false,
     phone:"098 229 361", email:"info@plesnipunktovi.hr"
   },
   {
@@ -2673,9 +2272,9 @@ const activities = [
     cat:"2-6",
     type:"ples",
     addr:"Sveta Klara, Novi Zagreb",
-    lat:45.7612064, lng:15.9587387,
+    lat:45.78, lng:15.97,
     desc:"Plesne grupe za predškolsku i školsku dob (suvremeni ples, jazz, ritmika) na punktu Sveta Klara — jedna od 12 lokacija Plesnih punktova Zagreb.",
-    url:"https://www.plesnipunktovi.hr/klara_.html", approx:true,
+    url:"https://www.plesnipunktovi.hr/klara_.html", approx:false,
     phone:"098 229 361", email:"info@plesnipunktovi.hr"
   },
   {
@@ -2683,9 +2282,9 @@ const activities = [
     cat:"2-6",
     type:"ples",
     addr:"Vrbani III, Zagreb",
-    lat:45.7889726, lng:15.9159692,
+    lat:45.775, lng:15.97,
     desc:"Plesne grupe za predškolsku i školsku dob (suvremeni ples, jazz, ritmika) na punktu Vrbani III — jedna od 12 lokacija Plesnih punktova Zagreb.",
-    url:"https://www.plesnipunktovi.hr/vrbani-iii.html", approx:true,
+    url:"https://www.plesnipunktovi.hr/vrbani-iii.html", approx:false,
     phone:"098 229 361", email:"info@plesnipunktovi.hr"
   },
   {
@@ -2693,9 +2292,9 @@ const activities = [
     cat:"2-6",
     type:"ples",
     addr:"Kruge, Zagreb",
-    lat:45.798378, lng:15.9907054,
+    lat:45.765, lng:15.965,
     desc:"Plesne grupe za predškolsku i školsku dob (suvremeni ples, jazz, ritmika) na punktu Kruge — jedna od 12 lokacija Plesnih punktova Zagreb.",
-    url:"https://www.plesnipunktovi.hr/kruge.html", approx:true,
+    url:"https://www.plesnipunktovi.hr/kruge.html", approx:false,
     phone:"098 229 361", email:"info@plesnipunktovi.hr"
   },
   {
@@ -2732,18 +2331,14 @@ const activities = [
     name:"Tečaj engleskog jezika za djecu — Pingu's English Vrbani",
     cat:"2-6",
     type:"jezici",
-    priority:1,
-    highlight:true,
     addr:"Kuzminečka ul. 1, Zagreb",
-    lat:45.7911769, lng:15.9126907,
-    desc:"Međunarodni program ranog učenja engleskog jezika za djecu, po metodologiji Pingu's English koja kroz igru i lika pingvina Pingua uči djecu jezičnim vještinama od najranije dobi. Nacionalna Facebook stranica: facebook.com/people/Pingus-English-Hrvatska/61561769228678/",
+    lat:45.775, lng:15.97,
+    desc:"Međunarodni program ranog učenja engleskog jezika za djecu, po metodologiji Pingu's English koja kroz igru i lika pingvina Pingua uči djecu jezičnim vještinama od najranije dobi.",
     url:"https://www.instagram.com/pingusenglish.vrbani/", approx:false,
-    phone:"091 601 3894"
-  },
   {
     name:"Rekreativna ritmička gimnastika za djevojčice — Klub ritmičke gimnastike Zagreb (KRGZ)",
     cat:"2-6",
-    type:"gimnastika",
+    type:"sport",
     addr:"X. Podbrežje 14, Zagreb",
     lat:45.7818301, lng:15.9622591,
     desc:"Rekreativni program ritmičke gimnastike za djevojčice, s treninzima u osnovnoškolskim dvoranama (Zagrebački velesajam, OŠ Rudeš i dr.) — oko 200 djevojčica godišnje, uz mogućnost prelaska u natjecateljski tim.",
@@ -2753,7 +2348,7 @@ const activities = [
   {
     name:"Škola ritmičke gimnastike — Klub ritmičke gimnastike LEDA",
     cat:"2-6",
-    type:"gimnastika",
+    type:"sport",
     addr:"Savska cesta 137, Zagreb",
     lat:45.7921638, lng:15.9576334,
     desc:"Najveći klub ritmičke gimnastike u Hrvatskoj (320 članica) — djevojčice od 3,5 godine treniraju na 5 lokacija diljem grada (Kineziološki fakultet, OŠ Dobriše Cesarića, OŠ Cvjetno naselje i dr.), od rekreativnog do natjecateljskog programa.",
@@ -2763,7 +2358,7 @@ const activities = [
   {
     name:"Škola ritmičke gimnastike — Gimnastički klub Maksimir",
     cat:"2-6",
-    type:"gimnastika",
+    type:"sport",
     addr:"Trg Krešimira Ćosića 11, Zagreb",
     lat:45.8077562, lng:15.9520326,
     desc:"Klub s najdužom tradicijom ritmičke gimnastike u Hrvatskoj (50+ godina) — oko 150 djevojčica trenira u programima od mini do seniorki, uz dodatnu lokaciju u Dugom Selu.",
@@ -2805,10 +2400,9 @@ const activities = [
     cat:"2-6",
     type:"ples",
     addr:"Medarska ul. 69, Zagreb",
-    lat:45.8059484, lng:15.9125885,
+    lat:45.81, lng:15.96,
     desc:"Elitni sportski plesni klub s nacionalnim i međunarodnim titulama — otvara vrata djeci koja sanjaju o trofejima, gradeći karakter, disciplinu i samopouzdanje kroz ples.",
-    url:"https://www.plesniklubacademia.com/", approx:false
-  },
+    url:"https://www.plesniklubacademia.com/", approx:false,
   {
     name:"Atletski vrtić i atletska škola — HAAK Mladost",
     cat:"2-6",
@@ -2928,23 +2522,13 @@ const activities = [
     phone:"098 913 8193", email:"kkleda@kkleda.hr"
   },
   {
-    name:"Škola klizanja za djecu (od 4 god.) — Superkid (Supernova Buzin)",
+    name:"Škola klizanja za djecu (od 4 god.) — Superkid",
     cat:"2-6",
     type:"sport",
-    addr:"Av. Većeslava Holjevca 62, Buzin, Zagreb",
-    lat:45.7552778, lng:15.9875,
-    desc:"Škola klizanja koju provode kineziolozi — minimalna dob djeteta je 4 godine, program traje 4 dana s puno igre i vođenja kroz osnove klizanja, uz školu rolanja ljeti.",
-    url:"https://www.superkid.hr/skola-klizanja/", approx:false
-  },
-  {
-    name:"Škola klizanja za djecu (od 4 god.) — Superkid (Garden Mall, Dubrava)",
-    cat:"2-6",
-    type:"sport",
-    addr:"Ul. Rudolfa Kolaka 14, Zagreb",
-    lat:45.8360328, lng:16.0462708,
-    desc:"Isti Superkid program škole klizanja (4 dana, od 4. godine), na lokaciji Garden Mall u Dubravi.",
-    url:"https://www.superkid.hr/skola-klizanja/", approx:false
-  },
+    addr:"Ledeni Park, Tomislavac, Zagreb",
+    lat:45.81, lng:15.95,
+    desc:"Škola klizanja koju provode kineziolozi na tri klizališta diljem Zagreba — minimalna dob djeteta je 4 godine, program traje 4 dana s puno igre i vođenja kroz osnove klizanja.",
+    url:"https://www.superkid.hr/skola-klizanja/", approx:false,
   {
     name:"Škola klizanja za djecu (4-13 god.) — Medosport",
     cat:"2-6",
@@ -2983,421 +2567,122 @@ const activities = [
     url:"https://www.instagram.com/rapir_fc/", approx:false
   },
   {
-    name:"Plivanje za bebe i djecu — Aquaeduca",
+    name:"Intellidance® — Lemur",
     cat:"0-2",
-    type:"sport",
-    addr:"Savska cesta 120, Zagreb",
-    lat:45.7939684, lng:15.9577664,
-    desc:"Centar za plivanje beba, djece i djece s posebnim potrebama — FSA vježbice u vodi za djecu od 4. mjeseca do 4. godine, škola plivanja i Hallwick koncept za djecu s posebnim potrebama.",
-    url:"https://aquaeduca.hr/", approx:false,
-    phone:"099 2240 540", email:"info@aquaeduca.hr"
+    type:"ples",
+    addr:"Cankareva 17, Zagreb",
+    lat:45.8070, lng:15.9770,
+    desc:"Glazbeno-pokretna aktivnost za bebe od 3-36 mjeseci kombinacijom suvremene glazbe i plesa.",
+    url:"https://www.lemur.hr/tecajevi-intellidance-r", approx:false,
+    phone:"01 4851 133", email:"info@lemur.hr"
   },
   {
-    name:"Gimnastika za djecu — Inner Movement",
-    cat:"2-6",
-    type:"gimnastika",
-    addr:"Zagreb *",
-    lat:45.81, lng:15.98,
-    desc:"Gimnastika za djecu kroz koju stječu razne vještine i motoričke sposobnosti.",
-    url:"https://www.facebook.com/p/Inner-Movement-61582716747320/", approx:true
-  },
-  {
-    name:"Baby handling, Bobath i razvojne vježbe — Little Steps by Goga",
-    cat:"0-2",
-    type:"ostalo",
-    addr:"Lukoranska ulica 6G, Zagreb",
-    lat:45.7606934, lng:15.9490266,
-    desc:"Centar za baby handling, Bobath terapiju i razvoj djece do 7 godina — razvojne vježbe (0-2 i 3-7 god.), družionica uz razvojne igre, senzorna integracija i individualne konzultacije za roditelje.",
-    url:"https://littlestepsbygoga.hr/", approx:false,
-    phone:"091 514 8066", email:"littlestepsbygoga@gmail.com"
-  },
-  {
-    name:"Senzoričke radionice za djecu 1-3 god. — Cezar Centar",
-    cat:"0-2",
-    type:"ostalo",
-    addr:"Šetalište 150. brigade Hrvatske vojske 2, Zagreb",
-    lat:45.7970181, lng:15.9090215,
-    desc:"Senzoričke radionice 'Prve tri u igri' za djecu od 1 do 3 godine i njihove roditelje — igra s vodom, spužvicama i prirodnim materijalima, subotom ujutro, uz kreativno-edukativne radionice za stariju djecu (4-10 god.).",
-    url:"https://centarcezar.com/radionica-za-dob-1-3/", approx:false
-  },
-  {
-    name:"Babysteps senzo-motoričke radionice za bebe — Senzogym (Zagreb Zapad)",
-    cat:"0-2",
-    type:"ostalo",
-    addr:"Županići 2K, Zagreb",
-    lat:45.7820505, lng:15.9323775,
-    desc:"Autorski Babysteps program poticanja ranog razvoja za bebe (0-12 mj.) i djecu (1-3 god.) — preko 33.000 beba i djece prošlo kroz program, roditelj je aktivni sudionik.",
-    url:"https://senzogym.hr/", approx:false,
-    phone:"091 6105 984", email:"info@senzogym.hr"
-  },
-  {
-    name:"Babysteps senzo-motoričke radionice za bebe — Senzogym (Zagreb Istok)",
-    cat:"0-2",
-    type:"ostalo",
-    addr:"Lovinčićeva 3D, Zagreb",
-    lat:45.7999436, lng:16.0198948,
-    desc:"Ista Babysteps radionica ranog razvoja, na lokaciji u istočnom dijelu grada.",
-    url:"https://senzogym.hr/", approx:false,
-    phone:"091 6105 984", email:"info@senzogym.hr"
-  },
-  {
-    name:"Bebe vidre — plivanje uz roditelja (SP Mladost)",
-    cat:"2-6",
-    type:"sport",
-    addr:"Sportski park Mladost, Jarunska cesta 5, Zagreb",
-    lat:45.7965, lng:15.9575,
-    desc:"Program privikavanja na vodu za djecu od 3 do 5 godina zajedno s roditeljem, u malom bazenu, uz diplomiranog kineziologa.",
-    url:"https://www.sportskiobjekti.hr/bebe-vidre-1451/1451", approx:false,
-    phone:"01 3658 553"
-  },
-  {
-    name:"Music Together by Ana — glazbeno-razvojne radionice za djecu 0-5 god.",
-    cat:"0-2",
-    type:"glazba",
-    addr:"Foxy Fit Studio, Bjelovarska 23a, Sesvete",
-    lat:45.8255156, lng:16.1158494,
-    desc:"Međunarodni glazbeno-razvojni program Music Together® za djecu od rođenja do 5 godina i njihove roditelje — pjesma, pokret, ritamske igre i zajedničko muziciranje razvijaju ritam, sluh, koordinaciju i samopouzdanje.",
-    url:"https://www.musictogetherbyana.com/", approx:false,
-    email:"musictogetherbyana@gmail.com"
-  },
-  {
-    name:"Vježbanje za mame i bebe — Olimpići (Point centar Vrbani)",
-    cat:"0-2",
-    type:"ostalo",
-    addr:"Rudeška cesta 169a, Zagreb",
-    lat:45.7908729, lng:15.9130531,
-    desc:"Vježbanje za mame i bebe pod stručnim vodstvom trenerice kineziologinje — pilates, korektivna gimnastika i vježbe za posturu, uz jačanje emotivne i fizičke veze između mame i bebe, dva puta tjedno. Besplatan probni trening.",
-    url:"https://www.olimpici.net/vjezbanje-za-mame-i-bebe-zagreb-vrbani/", approx:false,
-    phone:"091 616 4040"
-  },
-  {
-    name:"Vježbanje mama i beba, baby fitness i masaža beba — Mama Soon",
-    cat:"0-2",
-    type:"ostalo",
-    addr:"Radoslava Cimermana 48, Zagreb",
-    lat:45.7855218, lng:15.9627768,
-    desc:"Centar za trudnice i mlade mame na Kajzerici — vježbanje mama i beba, baby fitness/gym u malim grupama uz pedijatrijsku radnu terapeutkinju, radionice masaže beba, trudničko vježbanje i savjetovanje.",
-    url:"https://mamasoon.hr/", approx:false,
-    phone:"098 980 6059", email:"info@mamasoon.hr"
-  },
-  {
-    name:"Prenatal i postnatal treninzi za mame — FitNest Centar",
-    cat:"0-2",
-    type:"ostalo",
-    addr:"Rudeška cesta 162, Zagreb",
-    lat:45.7926759, lng:15.9146597,
-    desc:"Specijalizirani centar za podršku ženama tijekom trudnoće i nakon poroda — grupni postnatal treninzi (mame vježbaju uz bebe u blizini) fokusirani na posturalnu korekciju i jačanje mišića nakon poroda, uz online programe.",
-    url:"https://www.fitnest.hr/", approx:false,
-    email:"info@fitnest.hr"
-  },
-  {
-    name:"Baby fitness — vježbe za mame i bebe (3 mj.-1 god.) — Herceg-Đonlić",
-    cat:"0-2",
-    type:"ostalo",
-    addr:"Karlovačka 44, Sesvete",
-    lat:45.8246066, lng:16.1144936,
-    desc:"Interaktivni susreti majki i beba (3 mjeseca do 1 godine) pod stručnim vodstvom fizioterapeuta u privatnoj praksi fizikalne terapije — program koji promovira i UNICEF, uz individualne satove.",
-    url:"https://fizikalna-terapija-herceg-djonlic.hr/novosti/baby-fitness-vjezbe-za-mame-i-bebe", approx:false,
-    phone:"01 2006 572", email:"fizikalnaherceg@gmail.com"
-  },
-  {
-    name:"Baby Spa — masaža i hidroterapija za bebe (od 2 tjedna)",
-    cat:"0-2",
-    type:"ostalo",
-    addr:"Jaruščica 5, Zagreb",
-    lat:45.7690835, lng:15.9417615,
-    desc:"Prvi baby spa centar u Hrvatskoj — masaža za bebe i hidroterapija (baby floating) za bebe od 2 tjedna starosti, jača vezu roditelj-beba i potiče motorički razvoj kroz dodir i opuštanje u vodi.",
-    url:"https://babyspa.hr/", approx:false,
-    phone:"095 3801 314"
-  },
-  {
-    name:"Škola plivanja — Mali sportaši (Bazen Svetice)",
-    cat:"2-6",
-    type:"sport",
-    addr:"Bazenski kompleks Svetice, Ul. Divka Budaka 21, Zagreb",
-    lat:45.8172466, lng:16.0159431,
-    desc:"Škola plivanja u sklopu sportske akademije Mali sportaši, na lokaciji bazenskog kompleksa Svetice.",
-    url:"https://www.malisportasi.hr/programi/skola-plivanja", approx:false,
-    phone:"091 513 2426"
-  },
-  {
-    name:"Škola plivanja — Mali sportaši (Bazen Utrina)",
-    cat:"2-6",
-    type:"sport",
-    addr:"Kombolova ul. 4a, Zagreb",
-    lat:45.7739075, lng:15.991851,
-    desc:"Škola plivanja u sklopu sportske akademije Mali sportaši, na lokaciji bazena Utrina — treneri s programima za manju djecu.",
-    url:"https://www.malisportasi.hr/programi/skola-plivanja", approx:false,
-    phone:"091 513 2426"
-  },
-  {
-    name:"Glazbeni zagrljaj — glazbene radionice za bebe i roditelje — Smijalice",
-    cat:"0-2",
-    type:"glazba",
-    addr:"Jazbinski odvojak VII. 5, Zagreb",
-    lat:45.848046, lng:16.0140285,
-    desc:"Glazba, pjesma, ritam i pokret za bebe koje sudjeluju uz jednog roditelja — istraživanje zvukova i jednostavnih instrumenata, poticanje sluha, govora, motorike i pažnje, uz povezivanje roditelja i bebe kroz glazbenu igru.",
-    url:"https://www.smijalice.hr/", approx:false,
-    phone:"098 623 931", email:"smijalice.dc@gmail.com"
-  },
-  {
-    name:"Glazbena radionica — Dječji zbor Smijalice",
-    cat:"2-6",
-    type:"glazba",
-    priority:1,
-    highlight:true,
-    addr:"Jazbinski odvojak VII. 5, Zagreb",
-    lat:45.848046, lng:16.0140285,
-    desc:"Dječji zbor s 38 termina kroz godinu — pjevanje, ples, sviranje i komponiranje, kroz igru djeca razvijaju glazbeni sluh, ritam i timski rad.",
-    url:"https://www.smijalice.hr/", approx:false,
-    phone:"098 623 931", email:"smijalice.dc@gmail.com"
-  },
-  {
-    name:"Ciao, Bambini! — talijanski jezik kroz igru — Smijalice",
-    cat:"2-6",
-    type:"jezici",
-    priority:2,
-    addr:"Jazbinski odvojak VII. 5, Zagreb",
-    lat:45.848046, lng:16.0140285,
-    desc:"Učenje talijanskog jezika kroz igru za djecu, 1x tjedno blok sat — pjesmice, igre i talijanska kultura na zabavan način.",
-    url:"https://www.smijalice.hr/", approx:false,
-    phone:"098 623 931", email:"smijalice.dc@gmail.com"
-  },
-  {
-    name:"English Explorers — engleski jezik za djecu — Smijalice",
-    cat:"2-6",
-    type:"jezici",
-    priority:3,
-    addr:"Jazbinski odvojak VII. 5, Zagreb",
-    lat:45.848046, lng:16.0140285,
-    desc:"Učenje engleskog kroz igru (Learn & Play) — 1x tjedno blok sat, rad u malim skupinama.",
-    url:"https://www.smijalice.hr/", approx:false,
-    phone:"098 623 931", email:"smijalice.dc@gmail.com"
-  },
-  {
-    name:"Zrnca vjere — igraonica kroz biblijske priče (2-8 god.) — Smijalice",
-    cat:"2-6",
-    type:"ostalo",
-    addr:"Jazbinski odvojak VII. 5, Zagreb",
-    lat:45.848046, lng:16.0140285,
-    desc:"Igraonica za djecu od 2 do 8 godina kroz koju djeca upoznaju biblijske priče kroz igru, 1x tjedno blok sat.",
-    url:"https://www.smijalice.hr/", approx:false,
-    phone:"098 623 931", email:"smijalice.dc@gmail.com"
-  },
-  {
-    name:"Škola engleskog jezika za djecu — Helen Doron (Sigečica)",
-    cat:"2-6",
-    type:"jezici",
-    addr:"Rapska ulica 59, Zagreb",
-    lat:45.7995954, lng:16.0050866,
-    desc:"Isti Helen Doron program ranog učenja engleskog (od 3 mjeseca do 19 godina), na lokaciji u Sigečici.",
-    url:"https://helendoron.hr/helen-doron-skole/", approx:false
-  },
-  {
-    name:"Škola engleskog jezika za djecu — Helen Doron (Gajnice)",
-    cat:"2-6",
-    type:"jezici",
-    addr:"Medpotoki ul. 2, Zagreb",
-    lat:45.8163937, lng:15.8792741,
-    desc:"Isti Helen Doron program ranog učenja engleskog, na lokaciji u Gajnicama.",
-    url:"https://helendoron.hr/helen-doron-skole/", approx:false
-  },
-  {
-    name:"Škola engleskog jezika za djecu — Helen Doron (Dubrava)",
-    cat:"2-6",
-    type:"jezici",
-    addr:"Prijepoljska ul. 20a, Zagreb",
-    lat:45.8314443, lng:16.0526773,
-    desc:"Isti Helen Doron program ranog učenja engleskog, na lokaciji u Dubravi.",
-    url:"https://helendoron.hr/helen-doron-skole/", approx:false
-  },
-  {
-    name:"Škola engleskog jezika za djecu — Helen Doron (Buzin)",
-    cat:"2-6",
-    type:"jezici",
-    addr:"Avenija Većeslava Holjevca 62, Zagreb",
-    lat:45.7552778, lng:15.9875,
-    desc:"Isti Helen Doron program ranog učenja engleskog, na lokaciji u Buzinu.",
-    url:"https://helendoron.hr/helen-doron-skole/", approx:false
-  },
-  {
-    name:"Škola engleskog jezika za djecu — Helen Doron (Centar, kneza Borne)",
-    cat:"2-6",
-    type:"jezici",
-    addr:"Ul. kneza Borne 16, Zagreb",
-    lat:45.8076872, lng:15.9860657,
-    desc:"Isti Helen Doron program ranog učenja engleskog, na lokaciji u centru grada.",
-    url:"https://helendoron.hr/helen-doron-skole/", approx:false
-  },
-  {
-    name:"Škola engleskog jezika za djecu — Helen Doron (Zapruđe)",
-    cat:"2-6",
-    type:"jezici",
-    addr:"Ježdovečka ul. 17, Zagreb",
-    lat:45.7680708, lng:15.8576147,
-    desc:"Isti Helen Doron program ranog učenja engleskog, na lokaciji u Zapruđu, Novi Zagreb.",
-    url:"https://helendoron.hr/helen-doron-skole/", approx:false
-  },
-  {
-    name:"Škola engleskog jezika za djecu — Helen Doron (Gradišćanska)",
-    cat:"2-6",
-    type:"jezici",
-    addr:"Gradišćanska ul. 24, Zagreb",
-    lat:45.8102572, lng:15.9411058,
-    desc:"Isti Helen Doron program ranog učenja engleskog, na lokaciji na Gradišćanskoj.",
-    url:"https://helendoron.hr/helen-doron-skole/", approx:false
-  },
-  {
-    name:"Škola engleskog jezika za djecu — Helen Doron (Maksimir)",
-    cat:"2-6",
-    type:"jezici",
-    addr:"Ul. kralja Zvonimira 32, Zagreb",
-    lat:45.8103582, lng:15.9944238,
-    desc:"Isti Helen Doron program ranog učenja engleskog, na lokaciji kod Maksimira.",
-    url:"https://helendoron.hr/helen-doron-skole/", approx:false
-  },
-  {
-    name:"Škola engleskog jezika za djecu — Helen Doron (Jurišićeva)",
-    cat:"2-6",
-    type:"jezici",
-    addr:"Jurišićeva ul. 30, Zagreb",
-    lat:45.8121146, lng:15.9831735,
-    desc:"Isti Helen Doron program ranog učenja engleskog, na lokaciji u centru grada.",
-    url:"https://helendoron.hr/helen-doron-skole/", approx:false
-  },
-  {
-    name:"Škola engleskog jezika za djecu — Helen Doron (Dankovečka)",
-    cat:"2-6",
-    type:"jezici",
-    addr:"Dankovečka ul. 1A, Zagreb",
-    lat:45.8300281, lng:16.0555968,
-    desc:"Isti Helen Doron program ranog učenja engleskog, na lokaciji u istočnom dijelu grada.",
-    url:"https://helendoron.hr/helen-doron-skole/", approx:false
-  },
-  {
-    name:"Škola engleskog jezika za djecu — Helen Doron (Črnomerec)",
-    cat:"2-6",
-    type:"jezici",
-    addr:"Bračunova ul., Zagreb",
-    lat:45.8155799, lng:15.9350623,
-    desc:"Isti Helen Doron program ranog učenja engleskog, na lokaciji u Črnomercu, kod okretišta.",
-    url:"https://helendoron.hr/helen-doron-skole/", approx:false
-  },
-  {
-    name:"Škola engleskog jezika za djecu — Helen Doron (Grižanska)",
-    cat:"2-6",
-    type:"jezici",
-    addr:"Grižanska ul. 33, Zagreb",
-    lat:45.8349391, lng:16.0489823,
-    desc:"Isti Helen Doron program ranog učenja engleskog, na lokaciji u Dubravi (Grižanska).",
-    url:"https://helendoron.hr/helen-doron-skole/", approx:false
-  },
-  {
-    name:"Tečajevi jezika za djecu — DICTA Centar za jezike (Nova cesta)",
-    cat:"2-6",
-    type:"jezici",
-    addr:"Nova cesta 130, Zagreb",
-    lat:45.7978718, lng:15.9550741,
-    desc:"Isti DICTA program tečajeva jezika za djecu, na lokaciji na Novoj cesti.",
-    url:"https://www.dicta-centar.hr/", approx:false,
-    phone:"091 532 6617", email:"dicta@dicta-centar.hr"
-  },
-  {
-    name:"Tečajevi jezika za djecu — DICTA (OŠ August Šenoa)",
-    cat:"2-6",
-    type:"jezici",
-    addr:"Selska cesta 95, Zagreb",
-    lat:45.8024261, lng:15.9436859,
-    desc:"DICTA tečajevi jezika za osnovnoškolce, u učionici OŠ Augusta Šenoe.",
-    url:"https://www.dicta-centar.hr/", approx:false,
-    phone:"091 532 6617", email:"dicta@dicta-centar.hr"
-  },
-  {
-    name:"Tečajevi jezika za djecu — DICTA (OŠ Pongračevo)",
-    cat:"2-6",
-    type:"jezici",
-    addr:"Ul. Višnje Stahuljak 2, Zagreb",
-    lat:45.802558, lng:15.940085,
-    desc:"DICTA tečajevi jezika za osnovnoškolce, u učionici OŠ Pongračevo.",
-    url:"https://www.dicta-centar.hr/", approx:false,
-    phone:"091 532 6617", email:"dicta@dicta-centar.hr"
-  },
-  {
-    name:"Tečajevi jezika za djecu — DICTA (OŠ Ljubljanica)",
-    cat:"2-6",
-    type:"jezici",
-    addr:"Svetoivanska ul. 33, Zagreb",
-    lat:45.794431, lng:15.9342923,
-    desc:"DICTA tečajevi jezika za osnovnoškolce, u učionici OŠ Ljubljanica.",
-    url:"https://www.dicta-centar.hr/", approx:false,
-    phone:"091 532 6617", email:"dicta@dicta-centar.hr"
-  },
-  {
-    name:"Tečajevi jezika za djecu — DICTA (OŠ Julija Klovića)",
-    cat:"2-6",
-    type:"jezici",
-    addr:"Trešnjevka - sjever, Zagreb",
-    lat:45.7970964, lng:15.9562718,
-    desc:"DICTA tečajevi jezika za osnovnoškolce, u učionici OŠ Julija Klovića.",
-    url:"https://www.dicta-centar.hr/", approx:false,
-    phone:"091 532 6617", email:"dicta@dicta-centar.hr"
-  },
-  {
-    name:"Jezična igraonica za predškolce — DICTA (Vrtić Bajka, Zorkovačka)",
-    cat:"0-2",
-    type:"jezici",
-    addr:"Zorkovačka ul., Zagreb",
-    lat:45.8020721, lng:15.9470177,
-    desc:"DICTA jezična igraonica za vrtićku dob (2-7 god.), u vrtiću Bajka na Zorkovačkoj.",
-    url:"https://www.dicta-centar.hr/", approx:false,
-    phone:"091 532 6617", email:"dicta@dicta-centar.hr"
-  },
-  {
-    name:"Jezična igraonica za predškolce — DICTA (Vrtić Trešnjevka)",
-    cat:"0-2",
-    type:"jezici",
-    addr:"Trešnjevka, Zagreb *",
-    lat:45.8, lng:15.94,
-    desc:"DICTA jezična igraonica za vrtićku dob (2-7 god.), u vrtiću na Trešnjevci.",
-    url:"https://www.dicta-centar.hr/", approx:true,
-    phone:"091 532 6617", email:"dicta@dicta-centar.hr"
-  },
-  {
-    name:"Jezična igraonica za predškolce — DICTA (Vrtić Bajka, Vrbani)",
-    cat:"0-2",
-    type:"jezici",
-    addr:"Vrbani, Zagreb *",
-    lat:45.7911769, lng:15.9126907,
-    desc:"DICTA jezična igraonica za vrtićku dob (2-7 god.), u vrtiću Bajka na Vrbanima.",
-    url:"https://www.dicta-centar.hr/", approx:true,
-    phone:"091 532 6617", email:"dicta@dicta-centar.hr"
-  },
-  {
-    name:"Plesna abeceda za djecu (4-5 god.) — Studio Arabesque",
+    name:"Ritmika i ples — Lemur",
     cat:"2-6",
     type:"ples",
-    addr:"Ul. Pavla Šubića 20, Zagreb",
-    lat:45.8099728, lng:15.9933778,
-    desc:"Prvi koraci u ples za najmlađe — plesna abeceda kroz igru, razvoj koordinacije, ritma i ljubavi prema pokretu.",
-    url:"https://www.instagram.com/arabesqueples_/", approx:false,
-    phone:"095 588 0628"
+    addr:"Cankareva 17, Zagreb",
+    lat:45.8070, lng:15.9770,
+    desc:"Ritmika i ples za djecu predškolske dobi kroz igru, glazbu i koreografiju.",
+    url:"https://www.lemur.hr/copy-of-te%C4%8Dajevi-za-odrasle", approx:false,
+    phone:"01 4851 133", email:"info@lemur.hr"
   },
   {
-    name:"Klasični balet i suvremeni ples za djecu (6-10 god.) — Studio Arabesque",
+    name:"Kreativni balet — Lemur",
     cat:"6+",
     type:"ples",
-    addr:"Ul. Pavla Šubića 20, Zagreb",
-    lat:45.8099728, lng:15.9933778,
-    desc:"Klasični balet i suvremeni ples za djecu, podijeljeno u dobne skupine 6-7 i 8-10 godina.",
-    url:"https://www.instagram.com/arabesqueples_/", approx:false,
-    phone:"095 588 0628"
+    addr:"Cankareva 17, Zagreb",
+    lat:45.8070, lng:15.9770,
+    desc:"Uvod u osnove baletne tehnike za djecu školske dobi s kreativnom primjenom.",
+    url:"https://www.lemur.hr/kreativni-ples-za-djecu", approx:false,
+    phone:"01 4851 133", email:"info@lemur.hr"
+  },
+  {
+    name:"Škola plivanja — VK Medveščak (Svetice)",
+    cat:"6+",
+    type:"sport",
+    addr:"Ul. D. Budaka 21, Zagreb",
+    lat:45.8212, lng:15.9689,
+    desc:"Škola plivanja i vaterpola za djecu od 6-10 godina na bazenu Svetice sa stručnim instruktorima.",
+    url:"https://www.vk-medvescak.hr/", approx:false,
+    phone:"+385 1 4555 405", email:"info@vk-medvescak.hr"
+  },
+  {
+    name:"Škola plivanja — VK Medveščak (Šalata)",
+    cat:"6+",
+    type:"sport",
+    addr:"Schlosserove stube 2, Zagreb",
+    lat:45.8087, lng:15.9757,
+    desc:"Škola plivanja i vaterpola za djecu od 6-10 godina na bazenu Šalata sa stručnim instruktorima.",
+    url:"https://www.vk-medvescak.hr/", approx:false,
+    phone:"+385 1 4555 405", email:"info@vk-medvescak.hr"
+  },
+  {
+    name:"Glazbeni zagrijaj — SMIJALICE",
+    cat:"0-2",
+    type:"glazba",
+    featured:true,
+    addr:"Jazbinski odvojak VII 5, Zagreb",
+    lat:45.8095, lng:15.9755,
+    desc:"Glazba za bebe — glazba, pjesma, ritam i pokret. Beba sudjeljuje uz jednog roditelja, istraživanje zvukova i instrumenata.",
+    url:"https://www.smijalice.hr/", approx:false,
+    phone:"098 623 931", email:"smijalice.dc@gmail.com"
+  },
+  {
+    name:"Music Together — Suzin (Međimurska)",
+    cat:"0-2",
+    type:"glazba",
+    addr:"Međimurska 11, Zagreb",
+    lat:45.8120, lng:15.9650,
+    desc:"Music Together program — glazbeni razvoj za bebe i malu djecu kroz igru i glazbu.",
+    url:"https://suzinmusictogether.hr/", approx:false,
+    phone:"091 627 9684", email:"info@suzinmusictogether.hr"
+  },
+  {
+    name:"Music Together — Suzin (Crnčićeva)",
+    cat:"0-2",
+    type:"glazba",
+    addr:"Crnčićeva 18, Zagreb",
+    lat:45.8190, lng:16.0098,
+    desc:"Music Together program — glazbeni razvoj za bebe i malu djecu kroz igru i glazbu.",
+    url:"https://suzinmusictogether.hr/", approx:false,
+    phone:"091 627 9684", email:"info@suzinmusictogether.hr"
+  },
+  {
+    name:"Dječji zbor — Zagrebački anđeli (Opatijski trg)",
+    cat:"2-6",
+    type:"glazba",
+    addr:"Opatijski trg 10, Zagreb",
+    lat:45.8070, lng:15.9420,
+    desc:"Dječji zbor koji pjeva uživo — tradicionalne i autorske skladbe s koreografijom. ~30 koncerata godišnje.",
+    url:"https://www.zagrebacki-andjeli.com/programi/zbor", approx:false,
+    phone:"091 363 6777", email:"zagrebacki.andjeli@gmail.com"
+  },
+  {
+    name:"Dječji zbor — Zagrebački anđeli (Harambašićeva)",
+    cat:"2-6",
+    type:"glazba",
+    addr:"Harambašićeva 18, Zagreb",
+    lat:45.8220, lng:15.9890,
+    desc:"Dječji zbor koji pjeva uživo — tradicionalne i autorske skladbe s koreografijom. ~30 koncerata godišnje.",
+    url:"https://www.zagrebacki-andjeli.com/programi/zbor", approx:false,
+    phone:"091 363 6777", email:"zagrebacki.andjeli@gmail.com"
+  },
+  {
+    name:"Dječji zbor — Zagrebački anđeli (Hrgovići)",
+    cat:"2-6",
+    type:"glazba",
+    addr:"Hrgovići 57a, Zagreb",
+    lat:45.8100, lng:16.0150,
+    desc:"Dječji zbor koji pjeva uživo — tradicionalne i autorske skladbe s koreografijom. ~30 koncerata godišnje.",
+    url:"https://www.zagrebacki-andjeli.com/programi/zbor", approx:false,
+    phone:"091 363 6777", email:"zagrebacki.andjeli@gmail.com"
   },
 ];
 
 // ---------- SCHEMA.ORG STRUCTURED DATA (SEO) ----------
 function injectSchemaOrg(){
   const catLabel = {"0-2":"0-2 godine","2-6":"2-6 godina","6+":"6+ godina"};
-  const typeLabel = {sport:"Sport",gimnastika:"Gimnastika",ples:"Ples",glazba:"Glazba",jezici:"Strani jezici",kreativno:"Kreativno i STEM",ostalo:"Ostalo"};
+  const typeLabel = {sport:"Sport",ples:"Ples",glazba:"Glazba",jezici:"Strani jezici",kreativno:"Kreativno i STEM",ostalo:"Ostalo"};
 
   const itemListElements = activities.map((a, i) => {
     const item = {
@@ -3514,7 +2799,7 @@ function getFiltered(){
   } else {
     list.sort((a,b) => a.name.localeCompare(b.name, 'hr'));
   }
-  list.sort((a,b) => (a.priority||999) - (b.priority||999));
+  list.sort((a,b) => (b.featured?1:0) - (a.featured?1:0));
   return list;
 }
 
@@ -3553,7 +2838,7 @@ function render(){
     return;
   }
   cardsEl.innerHTML = list.map((a,i) => `
-    <div class="card${a.highlight ? ' featured' : ''}" data-idx="${i}">
+    <div class="card${a.featured ? ' featured' : ''}" data-idx="${i}">
       <div class="card-top">
         <div class="card-top-left">
           <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
