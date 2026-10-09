@@ -206,7 +206,7 @@
     max-height:0;overflow:hidden;
     display:flex;flex-direction:column;gap:10px;
   }
-  .card.open .card-details{max-height:400px;padding-top:6px;border-top:1px dashed var(--line);margin-top:2px;}
+  .card.open .card-details{max-height:700px;padding-top:6px;border-top:1px dashed var(--line);margin-top:2px;}
   .card .addr{font-size:13.5px;color:var(--ink-soft);font-weight:700;}
   .card .desc{font-size:14.5px;color:var(--ink-soft);line-height:1.5;}
   .contact-row{display:flex;flex-wrap:wrap;gap:8px;}
@@ -229,6 +229,18 @@
   .card .link.disabled{background:var(--line);color:var(--ink-soft);cursor:default;pointer-events:none;}
   .approx{font-size:11px;color:#a99;font-style:italic;}
 
+  .card .short{font-size:14px;color:var(--ink-soft);line-height:1.45;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+  .card.open .short{display:none;}
+  .card .addr-line{font-size:13px;color:var(--ink-soft);font-weight:700;}
+  .actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:2px;}
+  .actions .link{padding:9px 14px;font-size:13.5px;}
+  .actions .link.map{background:var(--sky-dark);}
+  .actions .link.map:hover{background:#4a7399;}
+  .searchbox{width:100%;border:1.5px solid var(--line);background:var(--cream);padding:12px 14px;border-radius:12px;font-family:inherit;font-weight:700;font-size:15px;color:var(--ink);}
+  .searchbox:focus{outline:3px solid var(--peach);outline-offset:1px;}
+  .tab .cnt{font-size:11.5px;font-weight:800;opacity:.7;}
+  .more{display:block;margin:6px auto 0;border:2px solid var(--rose);background:var(--white);color:var(--rose-dark);font-family:inherit;font-weight:800;font-size:15px;padding:12px 26px;border-radius:99px;cursor:pointer;}
+  .more:hover{background:var(--rose);color:#fff;}
   .empty{
     background:var(--white);border:1px dashed var(--line);border-radius:16px;
     padding:40px 20px;text-align:center;color:var(--ink-soft);font-weight:700;
@@ -297,6 +309,10 @@
       <label for="kvart">Vaš kvart</label>
       <select id="kvart"></select>
     </div>
+    <div class="field" style="flex:1.2;min-width:200px;">
+      <label for="q">Traži aktivnost</label>
+      <input id="q" class="searchbox" type="search" placeholder="npr. plivanje, ples, engleski…" autocomplete="off">
+    </div>
     <div class="field" style="flex:0.6;min-width:160px;">
       <label for="sort">Sortiraj po</label>
       <select id="sort">
@@ -329,8 +345,7 @@
   <div id="map"></div>
   <div class="list">
     <div class="list-head">
-      <h2>Aktivnosti za Djecu po Dobi — Od Bebe do Školarca</h2>
-      <h2 style="font-size:15px;color:var(--ink-soft);font-weight:600;margin-top:2px;">Aktivnosti</h2>
+      <h2>Aktivnosti za djecu u Zagrebu</h2>
       <span id="count"></span>
     </div>
     <div id="cards"></div>
@@ -347,6 +362,30 @@
     <a href="/jezici.html" style="padding:8px 18px;border-radius:20px;background:var(--peach);color:#fff;text-decoration:none;font-weight:700;font-size:14px;">🗣️ Strani jezici</a>
     <a href="/kreativno.html" style="padding:8px 18px;border-radius:20px;background:var(--ink);color:#fff;text-decoration:none;font-weight:700;font-size:14px;">🎨 Kreativno i STEM</a>
     <a href="/ostalo.html" style="padding:8px 18px;border-radius:20px;background:var(--ink-soft);color:#fff;text-decoration:none;font-weight:700;font-size:14px;">✨ Ostalo</a>
+  </div>
+</section>
+
+
+<section id="po-kvartu" style="max-width:900px;margin:0 auto;padding:10px 20px 30px;">
+  <h2 style="font-size:18px;color:var(--ink-soft);text-align:center;margin-bottom:16px;">Aktivnosti za djecu po kvartu</h2>
+  <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;">
+    <a href="/kvartovi/brezovica.html" style="padding:8px 16px;border-radius:20px;background:var(--white);border:1px solid var(--line);color:var(--ink);text-decoration:none;font-weight:700;font-size:14px;">Brezovica (8)</a>
+    <a href="/kvartovi/crnomerec.html" style="padding:8px 16px;border-radius:20px;background:var(--white);border:1px solid var(--line);color:var(--ink);text-decoration:none;font-weight:700;font-size:14px;">Črnomerec (7)</a>
+    <a href="/kvartovi/donja-dubrava.html" style="padding:8px 16px;border-radius:20px;background:var(--white);border:1px solid var(--line);color:var(--ink);text-decoration:none;font-weight:700;font-size:14px;">Donja Dubrava (15)</a>
+    <a href="/kvartovi/donji-grad.html" style="padding:8px 16px;border-radius:20px;background:var(--white);border:1px solid var(--line);color:var(--ink);text-decoration:none;font-weight:700;font-size:14px;">Donji grad (32)</a>
+    <a href="/kvartovi/gornja-dubrava.html" style="padding:8px 16px;border-radius:20px;background:var(--white);border:1px solid var(--line);color:var(--ink);text-decoration:none;font-weight:700;font-size:14px;">Gornja Dubrava (27)</a>
+    <a href="/kvartovi/gornji-grad.html" style="padding:8px 16px;border-radius:20px;background:var(--white);border:1px solid var(--line);color:var(--ink);text-decoration:none;font-weight:700;font-size:14px;">Gornji grad – Medveščak (12)</a>
+    <a href="/kvartovi/maksimir.html" style="padding:8px 16px;border-radius:20px;background:var(--white);border:1px solid var(--line);color:var(--ink);text-decoration:none;font-weight:700;font-size:14px;">Maksimir (11)</a>
+    <a href="/kvartovi/nz-istok.html" style="padding:8px 16px;border-radius:20px;background:var(--white);border:1px solid var(--line);color:var(--ink);text-decoration:none;font-weight:700;font-size:14px;">Novi Zagreb – istok (21)</a>
+    <a href="/kvartovi/nz-zapad.html" style="padding:8px 16px;border-radius:20px;background:var(--white);border:1px solid var(--line);color:var(--ink);text-decoration:none;font-weight:700;font-size:14px;">Novi Zagreb – zapad (41)</a>
+    <a href="/kvartovi/pescenica.html" style="padding:8px 16px;border-radius:20px;background:var(--white);border:1px solid var(--line);color:var(--ink);text-decoration:none;font-weight:700;font-size:14px;">Peščenica – Žitnjak (5)</a>
+    <a href="/kvartovi/podsljeme.html" style="padding:8px 16px;border-radius:20px;background:var(--white);border:1px solid var(--line);color:var(--ink);text-decoration:none;font-weight:700;font-size:14px;">Podsljeme (7)</a>
+    <a href="/kvartovi/podsused.html" style="padding:8px 16px;border-radius:20px;background:var(--white);border:1px solid var(--line);color:var(--ink);text-decoration:none;font-weight:700;font-size:14px;">Podsused – Vrapče (5)</a>
+    <a href="/kvartovi/sesvete.html" style="padding:8px 16px;border-radius:20px;background:var(--white);border:1px solid var(--line);color:var(--ink);text-decoration:none;font-weight:700;font-size:14px;">Sesvete (17)</a>
+    <a href="/kvartovi/stenjevec.html" style="padding:8px 16px;border-radius:20px;background:var(--white);border:1px solid var(--line);color:var(--ink);text-decoration:none;font-weight:700;font-size:14px;">Stenjevec (25)</a>
+    <a href="/kvartovi/tresnjevka-jug.html" style="padding:8px 16px;border-radius:20px;background:var(--white);border:1px solid var(--line);color:var(--ink);text-decoration:none;font-weight:700;font-size:14px;">Trešnjevka – jug (29)</a>
+    <a href="/kvartovi/tresnjevka-sjever.html" style="padding:8px 16px;border-radius:20px;background:var(--white);border:1px solid var(--line);color:var(--ink);text-decoration:none;font-weight:700;font-size:14px;">Trešnjevka – sjever (44)</a>
+    <a href="/kvartovi/trnje.html" style="padding:8px 16px;border-radius:20px;background:var(--white);border:1px solid var(--line);color:var(--ink);text-decoration:none;font-weight:700;font-size:14px;">Trnje (14)</a>
   </div>
 </section>
 
@@ -3643,6 +3682,10 @@ injectSchemaOrg();
 let activeCat = "sve";
 let activeType = "sve";
 let sortMode = "dist";
+let query = "";
+let shown = 30;
+const PAGE = 30;
+function norm(t){return (t||"").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/đ/g,"d");}
 let map, homeMarker, markers = [];
 
 // ---------- HELPERS ----------
@@ -3697,7 +3740,8 @@ function getFiltered(){
   const kv = currentKvart();
   let list = activities.filter(a =>
     (activeCat === "sve" || a.cat === activeCat) &&
-    (activeType === "sve" || a.type === activeType)
+    (activeType === "sve" || a.type === activeType) &&
+    (!query || norm(a.name+" "+a.desc+" "+a.addr).includes(norm(query)))
   );
   list = list.map(a => ({...a, dist: haversine(kv.lat, kv.lng, a.lat, a.lng)}));
   if(sortMode === "dist"){
@@ -3709,9 +3753,25 @@ function getFiltered(){
   return list;
 }
 
+function updateCounts(){
+  const q = norm(query);
+  const ok = a => !q || norm(a.name+" "+a.desc+" "+a.addr).includes(q);
+  document.querySelectorAll('#tabs .tab').forEach(t=>{
+    const c = t.dataset.cat;
+    const n = activities.filter(a=>ok(a)&&(c==="sve"||a.cat===c)&&(activeType==="sve"||a.type===activeType)).length;
+    let sp=t.querySelector('.cnt'); if(!sp){sp=document.createElement('span');sp.className='cnt';t.appendChild(sp);} sp.textContent='('+n+')';
+  });
+  document.querySelectorAll('#typeTabs .tab').forEach(t=>{
+    const c = t.dataset.type;
+    const n = activities.filter(a=>ok(a)&&(c==="sve"||a.type===c)&&(activeCat==="sve"||a.cat===activeCat)).length;
+    let sp=t.querySelector('.cnt'); if(!sp){sp=document.createElement('span');sp.className='cnt';t.appendChild(sp);} sp.textContent='('+n+')';
+  });
+}
+
 function render(){
   const kv = currentKvart();
   const list = getFiltered();
+  updateCounts();
 
   // map
   markers.forEach(m => map.removeLayer(m));
@@ -3738,12 +3798,13 @@ function render(){
 
   // cards
   const cardsEl = document.getElementById('cards');
-  document.getElementById('count').textContent = `${list.length} rezultata u blizini: ${kv.name}`;
+  document.getElementById('count').textContent = `${list.length} rezultata · najbliže: ${kv.name}`;
   if(list.length === 0){
     cardsEl.innerHTML = `<div class="empty">Nema aktivnosti za odabrane filtere. Pokušajte odabrati "Sve dobi" ili "Sve vrste".</div>`;
     return;
   }
-  cardsEl.innerHTML = list.map((a,i) => `
+  const visible = list.slice(0, shown);
+  cardsEl.innerHTML = visible.map((a,i) => `
     <div class="card${a.highlight ? ' featured' : ''}" data-idx="${i}">
       <div class="card-top">
         <div class="card-top-left">
@@ -3753,21 +3814,26 @@ function render(){
         <span class="badge ${catBadgeClass(a.cat)}">${catLabel(a.cat)}</span>
       </div>
       <span class="dist-line">📍 ${a.dist.toFixed(1)} km od vas</span>
+      <div class="addr-line">${a.addr}</div>
+      <div class="short">${a.desc}</div>
       <div class="card-details">
-        <div class="addr">${a.addr}${a.approx ? ' <span class="approx">(okvirna lokacija — provjerite kod pružatelja)</span>' : ''}</div>
         <div class="desc">${a.desc}</div>
+        ${a.approx ? '<div class="approx">Okvirna lokacija — provjerite kod pružatelja.</div>' : ''}
         ${a.email ? `<div class="contact-row"><a class="contact-pill" href="mailto:${a.email}">✉️ ${a.email}</a></div>` : ''}
-        <div class="meta">
-          ${a.phone ? `<a class="link phone" href="tel:${a.phone.replace(/\s+/g,'')}">📞 ${a.phone}</a>` : ''}
-          ${a.url !== "#" ? `<a class="link" href="${a.url}" target="_blank" rel="noopener">🌐 Posjeti web / Instagram →</a>` : (!a.phone ? `<span class="link disabled">Kontaktirajte za detalje</span>` : '')}
-        </div>
+      </div>
+      <div class="actions">
+        ${a.phone ? `<a class="link phone" href="tel:${a.phone.replace(/\s+/g,'')}">📞 Nazovi</a>` : ''}
+        ${a.url !== "#" ? `<a class="link" href="${a.url}" target="_blank" rel="noopener">🌐 Web →</a>` : (!a.phone ? `<span class="link disabled">Kontaktirajte za detalje</span>` : '')}
+        <a class="link map" href="https://www.google.com/maps/dir/?api=1&destination=${a.lat},${a.lng}" target="_blank" rel="noopener">🧭 Upute</a>
       </div>
     </div>
-  `).join('');
+  `).join('') + (list.length > shown ? `<button class="more" id="moreBtn">Prikaži još (${list.length - shown})</button>` : '');
+  const mb = document.getElementById('moreBtn');
+  if(mb) mb.addEventListener('click', () => { shown += PAGE; render(); });
 
   document.querySelectorAll('.card').forEach(card => {
     card.addEventListener('click', (e) => {
-      if(e.target.tagName === 'A') return;
+      if(e.target.closest('a')) return;
       const idx = +card.dataset.idx;
       const isOpen = card.classList.contains('open');
       document.querySelectorAll('.card').forEach(c => c.classList.remove('open'));
@@ -3822,17 +3888,17 @@ function setup(){
     kvartSel.appendChild(opt);
   });
   kvartSel.value = "donji-grad";
-  kvartSel.addEventListener('change', render);
+  kvartSel.addEventListener('change', () => { shown = PAGE; render(); });
 
   document.getElementById('sort').addEventListener('change', (e) => {
-    sortMode = e.target.value; render();
+    sortMode = e.target.value; shown = PAGE; render();
   });
 
   document.querySelectorAll('#tabs .tab').forEach(tab => {
     tab.addEventListener('click', () => {
       document.querySelectorAll('#tabs .tab').forEach(t => t.classList.remove('active'));
       tab.classList.add('active');
-      activeCat = tab.dataset.cat;
+      activeCat = tab.dataset.cat; shown = PAGE;
       render();
     });
   });
@@ -3841,14 +3907,14 @@ function setup(){
     tab.addEventListener('click', () => {
       document.querySelectorAll('#typeTabs .tab').forEach(t => t.classList.remove('active'));
       tab.classList.add('active');
-      activeType = tab.dataset.type;
+      activeType = tab.dataset.type; shown = PAGE;
       render();
     });
   });
 
+  document.getElementById('q').addEventListener('input', (e) => { query = e.target.value.trim(); shown = PAGE; render(); });
   initMap();
   render();
-  injectStructuredData();
 }
 setup();
 </script>
