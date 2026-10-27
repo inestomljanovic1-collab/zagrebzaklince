@@ -1,0 +1,1810 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skijanje s djecom — škole skijanja i ski vrtići na hrvatskom jeziku 2026./2027. | Zagreb za Klince</title>
+<meta name="description" content="Karta skijališta Hrvatske, Slovenije, Austrije, Italije i Francuske: 99 programa škola skijanja i ski vrtića na hrvatskom jeziku za sezonu 2026./2027. — dob, termini, cijene i kontakti.">
+<link rel="canonical" href="https://zagrebzaklince.com/skijanje.html">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Skijanje s djecom — škole skijanja i ski vrtići na hrvatskom jeziku 2026./2027. | Zagreb za Klince">
+<meta property="og:description" content="Karta skijališta Hrvatske, Slovenije, Austrije, Italije i Francuske: 99 programa škola skijanja i ski vrtića na hrvatskom jeziku za sezonu 2026./2027. — dob, termini, cijene i kontakti.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zagrebzaklince.com/skijanje.html">
+<meta property="og:locale" content="hr_HR">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,700;1,500&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#3B2A2E; --ink-soft:#6B5459;
+    --rose:#D8768C; --rose-dark:#BD5C74;
+    --peach:#F3B88B; --peach-dark:#E39A5F;
+    --sage:#8FB89D; --sage-dark:#6E9E82;
+    --sky:#7FA8C9; --sky-dark:#5D8AB0;
+    --cream:#FFF9F2; --cream-2:#FBF1E6; --white:#fff; --line:#EADFD6;
+    --shadow:0 6px 24px rgba(59,42,46,.08);
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--cream);color:var(--ink);font-family:'Nunito Sans',sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;margin:0;color:var(--ink);}
+  a{color:inherit;}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 20px;}
+  header.top{padding:26px 20px 10px;text-align:center;}
+  header.top a.back{color:var(--rose-dark);font-weight:800;text-decoration:none;font-size:14px;}
+  .eyebrow{display:inline-block;background:var(--white);border:1px solid var(--line);padding:5px 14px;border-radius:99px;font-weight:800;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--rose-dark);margin:14px 0 14px;}
+  h1{font-size:clamp(28px,4.6vw,46px);line-height:1.12;max-width:860px;margin:0 auto 12px;}
+  .sub{max-width:660px;margin:0 auto;color:var(--ink-soft);font-size:16.5px;}
+  .notice{max-width:760px;margin:18px auto 0;background:#F8E3BE;border-left:4px solid var(--peach-dark);border-radius:10px;padding:10px 16px;font-size:13.5px;color:var(--ink);text-align:left;}
+  .filters{max-width:1100px;margin:22px auto 0;padding:0 20px;}
+  .panel{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:16px 18px;box-shadow:var(--shadow);display:flex;flex-wrap:wrap;gap:14px;align-items:flex-end;}
+  .field{display:flex;flex-direction:column;gap:5px;flex:1;min-width:150px;}
+  .field label{font-size:11.5px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);}
+  .field select,.field input{border:1.5px solid var(--line);background:var(--cream);border-radius:12px;padding:11px 12px;font-family:inherit;font-weight:700;font-size:15px;color:var(--ink);}
+  .field select:focus,.field input:focus{outline:3px solid var(--peach);outline-offset:1px;}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:12px;}
+  .chip{border:2px solid var(--line);background:var(--white);padding:8px 16px;border-radius:99px;font-family:inherit;font-weight:800;font-size:14px;cursor:pointer;color:var(--ink);}
+  .chip:hover{transform:translateY(-1px);}
+  .chip.active{background:var(--ink);border-color:var(--ink);color:#fff;}
+  .chip.t-v.active{background:var(--peach-dark);border-color:var(--peach-dark);}
+  .chip.t-s.active{background:var(--sky-dark);border-color:var(--sky-dark);}
+  .mapwrap{max-width:1100px;margin:18px auto 0;padding:0 20px;}
+  #map{height:520px;border-radius:20px;border:1px solid var(--line);box-shadow:var(--shadow);background:#cfe3ee;}
+  .count{max-width:1100px;margin:18px auto 8px;padding:0 20px;font-weight:800;color:var(--ink-soft);font-size:14px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;}
+  .count button{border:0;background:none;color:var(--rose-dark);font-weight:800;font-family:inherit;cursor:pointer;font-size:14px;text-decoration:underline;}
+  .list{max-width:1100px;margin:0 auto;padding:0 20px 40px;display:flex;flex-direction:column;gap:12px;}
+  .resort{background:var(--white);border:1px solid var(--line);border-radius:16px;overflow:hidden;}
+  .resort[open]{box-shadow:var(--shadow);}
+  .resort summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:14px;padding:14px 18px;}
+  .resort summary::-webkit-details-marker{display:none;}
+  .flag{font-size:28px;line-height:1;}
+  .rt{flex:1;min-width:0;}
+  .rt h2{font-size:19px;line-height:1.25;}
+  .rs{font-size:13px;color:var(--ink-soft);font-weight:700;}
+  .chev{color:var(--ink-soft);transition:transform .2s;font-size:20px;}
+  .resort[open] .chev{transform:rotate(180deg);}
+  .rbody{padding:0 18px 18px;border-top:1px dashed var(--line);}
+  .rnote{color:var(--ink-soft);font-size:14.5px;margin:12px 0 10px;}
+  .rlinks{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;}
+  .rlinks button,.rlinks a{border:0;font-family:inherit;font-weight:800;font-size:13.5px;padding:9px 15px;border-radius:99px;text-decoration:none;cursor:pointer;color:#fff;}
+  .rlinks .onmap{background:var(--rose);} .rlinks .route{background:var(--sky-dark);}
+  .progs{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:12px;}
+  .prog{background:var(--cream);border:1px solid var(--line);border-radius:14px;padding:14px 15px;display:flex;flex-direction:column;gap:6px;}
+  .prog.promo{border:2px solid var(--peach-dark);background:linear-gradient(180deg,#FFF9F0,var(--cream));}
+  .promotag{font-size:11.5px;font-weight:800;color:var(--peach-dark);text-transform:uppercase;letter-spacing:.05em;}
+  .ph{display:flex;justify-content:space-between;gap:8px;align-items:flex-start;}
+  .prog h3{font-size:15.5px;line-height:1.3;}
+  .badge{font-size:11px;font-weight:800;padding:3px 9px;border-radius:99px;color:#fff;white-space:nowrap;flex-shrink:0;}
+  .badge.v{background:var(--peach-dark);} .badge.s{background:var(--sky-dark);}
+  .row{display:flex;gap:10px;font-size:13.5px;border-top:1px dotted var(--line);padding-top:5px;}
+  .row .k{flex:0 0 82px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-soft);padding-top:2px;}
+  .row .v{flex:1;color:var(--ink);}
+  .row .v.price{font-weight:800;color:#1f4452;}
+  .pills{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px;}
+  .pill{font-size:12.5px;font-weight:700;padding:6px 11px;border-radius:99px;text-decoration:none;border:1px solid var(--line);background:var(--white);word-break:break-all;}
+  .pill.call{background:#E7F0EA;} .pill.web{background:#E4EEF6;} .pill.mail{background:#F8E7E1;}
+  .pill:hover{border-color:var(--rose);}
+  .empty{max-width:1100px;margin:0 auto 40px;padding:0 20px;}
+  .empty div{background:var(--white);border:1px dashed var(--line);border-radius:16px;padding:34px 20px;text-align:center;color:var(--ink-soft);font-weight:700;}
+  footer{text-align:center;padding:28px 20px 46px;color:var(--ink-soft);font-size:13.5px;border-top:1px solid var(--line);}
+  footer p{max-width:640px;margin:0 auto 8px;}
+  .mk{width:30px;height:30px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);border:3px solid #fff;box-shadow:0 2px 7px rgba(0,0,0,.35);display:flex;align-items:center;justify-content:center;}
+  .mk span{transform:rotate(45deg);color:#fff;font-weight:800;font-size:12px;font-family:'Nunito Sans',sans-serif;}
+  .leaflet-popup-content{font-family:'Nunito Sans',sans-serif;}
+  .leaflet-popup-content button{margin-top:6px;border:0;background:#D8768C;color:#fff;font-weight:800;border-radius:99px;padding:7px 13px;cursor:pointer;font-family:inherit;}
+  @media (max-width:640px){
+    #map{height:380px;}
+    .progs{grid-template-columns:1fr;}
+    .row .k{flex-basis:70px;}
+    .rt h2{font-size:17px;}
+  }
+</style>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Početna","item":"https://zagrebzaklince.com/"},{"@type":"ListItem","position":2,"name":"Skijanje s djecom","item":"https://zagrebzaklince.com/skijanje.html"}]},{"@context":"https://schema.org","@type":"ItemList","name":"Skijališta sa školama skijanja i ski vrtićima na hrvatskom jeziku","numberOfItems":25,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"SkiResort","name":"Sljeme","geo":{"@type":"GeoCoordinates","latitude":45.9025445,"longitude":15.9460169},"address":{"@type":"PostalAddress","addressCountry":"HR"},"url":"https://zagrebzaklince.com/skijanje.html#sljeme"}},{"@type":"ListItem","position":2,"item":{"@type":"SkiResort","name":"Platak","geo":{"@type":"GeoCoordinates","latitude":45.4254581,"longitude":14.564929},"address":{"@type":"PostalAddress","addressCountry":"HR"},"url":"https://zagrebzaklince.com/skijanje.html#platak"}},{"@type":"ListItem","position":3,"item":{"@type":"SkiResort","name":"Krvavec","geo":{"@type":"GeoCoordinates","latitude":46.2967391,"longitude":14.520736},"address":{"@type":"PostalAddress","addressCountry":"SI"},"url":"https://zagrebzaklince.com/skijanje.html#krvavec"}},{"@type":"ListItem","position":4,"item":{"@type":"SkiResort","name":"Kranjska Gora","geo":{"@type":"GeoCoordinates","latitude":46.4849534,"longitude":13.7794784},"address":{"@type":"PostalAddress","addressCountry":"SI"},"url":"https://zagrebzaklince.com/skijanje.html#kranjska-gora"}},{"@type":"ListItem","position":5,"item":{"@type":"SkiResort","name":"Mariborsko Pohorje","geo":{"@type":"GeoCoordinates","latitude":46.5331695,"longitude":15.5995804},"address":{"@type":"PostalAddress","addressCountry":"SI"},"url":"https://zagrebzaklince.com/skijanje.html#mariborsko-pohorje"}},{"@type":"ListItem","position":6,"item":{"@type":"SkiResort","name":"Rogla","geo":{"@type":"GeoCoordinates","latitude":46.4532945,"longitude":15.332441},"address":{"@type":"PostalAddress","addressCountry":"SI"},"url":"https://zagrebzaklince.com/skijanje.html#rogla"}},{"@type":"ListItem","position":7,"item":{"@type":"SkiResort","name":"Tarvisio (Monte Lussari)","geo":{"@type":"GeoCoordinates","latitude":46.5067645,"longitude":13.5343192},"address":{"@type":"PostalAddress","addressCountry":"IT"},"url":"https://zagrebzaklince.com/skijanje.html#tarvisio"}},{"@type":"ListItem","position":8,"item":{"@type":"SkiResort","name":"Weinebene","geo":{"@type":"GeoCoordinates","latitude":46.8401243,"longitude":15.0161181},"address":{"@type":"PostalAddress","addressCountry":"AT"},"url":"https://zagrebzaklince.com/skijanje.html#weinebene"}},{"@type":"ListItem","position":9,"item":{"@type":"SkiResort","name":"Nassfeld","geo":{"@type":"GeoCoordinates","latitude":46.5636806,"longitude":13.2741857},"address":{"@type":"PostalAddress","addressCountry":"AT"},"url":"https://zagrebzaklince.com/skijanje.html#nassfeld"}},{"@type":"ListItem","position":10,"item":{"@type":"SkiResort","name":"Bad Kleinkirchheim","geo":{"@type":"GeoCoordinates","latitude":46.8140976,"longitude":13.7969771},"address":{"@type":"PostalAddress","addressCountry":"AT"},"url":"https://zagrebzaklince.com/skijanje.html#bad-kleinkirchheim"}},{"@type":"ListItem","position":11,"item":{"@type":"SkiResort","name":"Obertauern","geo":{"@type":"GeoCoordinates","latitude":47.2485894,"longitude":13.5594678},"address":{"@type":"PostalAddress","addressCountry":"AT"},"url":"https://zagrebzaklince.com/skijanje.html#obertauern"}},{"@type":"ListItem","position":12,"item":{"@type":"SkiResort","name":"Gerlitzen Alpe","geo":{"@type":"GeoCoordinates","latitude":46.6953299,"longitude":13.9140064},"address":{"@type":"PostalAddress","addressCountry":"AT"},"url":"https://zagrebzaklince.com/skijanje.html#gerlitzen"}},{"@type":"ListItem","position":13,"item":{"@type":"SkiResort","name":"Katschberg","geo":{"@type":"GeoCoordinates","latitude":47.0591777,"longitude":13.6155855},"address":{"@type":"PostalAddress","addressCountry":"AT"},"url":"https://zagrebzaklince.com/skijanje.html#katschberg"}},{"@type":"ListItem","position":14,"item":{"@type":"SkiResort","name":"Kreischberg","geo":{"@type":"GeoCoordinates","latitude":47.0990966,"longitude":14.0856984},"address":{"@type":"PostalAddress","addressCountry":"AT"},"url":"https://zagrebzaklince.com/skijanje.html#kreischberg"}},{"@type":"ListItem","position":15,"item":{"@type":"SkiResort","name":"Altenmarkt-Zauchensee","geo":{"@type":"GeoCoordinates","latitude":47.2906831,"longitude":13.4571807},"address":{"@type":"PostalAddress","addressCountry":"AT"},"url":"https://zagrebzaklince.com/skijanje.html#zauchensee"}},{"@type":"ListItem","position":16,"item":{"@type":"SkiResort","name":"Sillian","geo":{"@type":"GeoCoordinates","latitude":46.7505562,"longitude":12.4333082},"address":{"@type":"PostalAddress","addressCountry":"AT"},"url":"https://zagrebzaklince.com/skijanje.html#sillian"}},{"@type":"ListItem","position":17,"item":{"@type":"SkiResort","name":"Matrei in Osttirol","geo":{"@type":"GeoCoordinates","latitude":46.9905145,"longitude":12.5433835},"address":{"@type":"PostalAddress","addressCountry":"AT"},"url":"https://zagrebzaklince.com/skijanje.html#matrei"}},{"@type":"ListItem","position":18,"item":{"@type":"SkiResort","name":"Folgaria","geo":{"@type":"GeoCoordinates","latitude":45.916297,"longitude":11.1712463},"address":{"@type":"PostalAddress","addressCountry":"IT"},"url":"https://zagrebzaklince.com/skijanje.html#folgaria"}},{"@type":"ListItem","position":19,"item":{"@type":"SkiResort","name":"Andalo (Paganella)","geo":{"@type":"GeoCoordinates","latitude":46.1636792,"longitude":11.0034759},"address":{"@type":"PostalAddress","addressCountry":"IT"},"url":"https://zagrebzaklince.com/skijanje.html#andalo"}},{"@type":"ListItem","position":20,"item":{"@type":"SkiResort","name":"Pinzolo","geo":{"@type":"GeoCoordinates","latitude":46.1635334,"longitude":10.7658005},"address":{"@type":"PostalAddress","addressCountry":"IT"},"url":"https://zagrebzaklince.com/skijanje.html#pinzolo"}},{"@type":"ListItem","position":21,"item":{"@type":"SkiResort","name":"Passo Tonale","geo":{"@type":"GeoCoordinates","latitude":46.2564381,"longitude":10.5808235},"address":{"@type":"PostalAddress","addressCountry":"IT"},"url":"https://zagrebzaklince.com/skijanje.html#passo-tonale"}},{"@type":"ListItem","position":22,"item":{"@type":"SkiResort","name":"Alta Badia (La Villa)","geo":{"@type":"GeoCoordinates","latitude":46.583426,"longitude":11.9047637},"address":{"@type":"PostalAddress","addressCountry":"IT"},"url":"https://zagrebzaklince.com/skijanje.html#alta-badia"}},{"@type":"ListItem","position":23,"item":{"@type":"SkiResort","name":"3 Zinnen Dolomites (Sexten)","geo":{"@type":"GeoCoordinates","latitude":46.6971736,"longitude":12.3580661},"address":{"@type":"PostalAddress","addressCountry":"IT"},"url":"https://zagrebzaklince.com/skijanje.html#sexten"}},{"@type":"ListItem","position":24,"item":{"@type":"SkiResort","name":"Kronplatz (Plan de Corones)","geo":{"@type":"GeoCoordinates","latitude":46.7386315,"longitude":11.9576188},"address":{"@type":"PostalAddress","addressCountry":"IT"},"url":"https://zagrebzaklince.com/skijanje.html#kronplatz"}},{"@type":"ListItem","position":25,"item":{"@type":"SkiResort","name":"Val Cenis","geo":{"@type":"GeoCoordinates","latitude":45.2884966,"longitude":6.903738},"address":{"@type":"PostalAddress","addressCountry":"FR"},"url":"https://zagrebzaklince.com/skijanje.html#val-cenis"}}]}]</script>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:image" content="https://zagrebzaklince.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://zagrebzaklince.com/og-image.png">
+</head>
+<body>
+<header class="top">
+  <a class="back" href="/">← Natrag na sve aktivnosti</a><br>
+  <span class="eyebrow">⛷️ sezona 2026./2027.</span>
+  <h1>Skijanje s djecom — škole skijanja i ski vrtići na hrvatskom jeziku</h1>
+  <p class="sub">Karta 25 skijališta u Hrvatskoj, Sloveniji, Austriji, Italiji i Francuskoj s 99 programa za djecu — dob, termini, cijene i kontakti.</p>
+  <div class="notice"><strong>Važna napomena.</strong> Podaci (cijene, termini, dobne granice i uvjeti) preuzeti su iz javno objavljenih informacija škola skijanja i agencija i mogu se promijeniti. Stranica je informativnog karaktera i ne predstavlja ponudu. Za točne i aktualne podatke te sve detalje o prijavi, plaćanju i otkazivanju obratite se izravno organizatoru.</div>
+</header>
+
+<section class="filters" aria-label="Filteri">
+  <div class="panel">
+    <div class="field"><label for="age">Dob djeteta</label>
+      <select id="age"><option value="">Sve dobi</option><option value="2">2 god.</option><option value="3">3 god.</option><option value="4">4 god.</option><option value="5">5 god.</option><option value="6">6 god.</option><option value="7">7 god.</option><option value="8">8 god.</option><option value="9">9 god.</option><option value="10">10 god.</option><option value="11">11 god.</option><option value="12">12 god.</option><option value="13">13 god.</option><option value="14">14 god.</option><option value="15">15 god.</option><option value="16">16 god.</option></select></div>
+    <div class="field"><label for="drive">Vožnja od Zagreba</label>
+      <select id="drive"><option value="">Svejedno</option><option>do 3 h</option><option>3 – 5 h</option><option>5 – 7 h</option><option>preko 10 h</option></select></div>
+    <div class="field" style="flex:1.4"><label for="q">Traži skijalište ili školu</label>
+      <input id="q" type="search" placeholder="npr. Kronplatz, Žuti Mačak, Diver…" autocomplete="off"></div>
+  </div>
+  <div class="chips" id="cChips">
+    <button class="chip active" data-v="">Sve države</button>
+    <button class="chip" data-v="Hrvatska">🇭🇷 Hrvatska (2)</button>
+    <button class="chip" data-v="Slovenija">🇸🇮 Slovenija (4)</button>
+    <button class="chip" data-v="Austrija">🇦🇹 Austrija (10)</button>
+    <button class="chip" data-v="Italija">🇮🇹 Italija (8)</button>
+    <button class="chip" data-v="Francuska">🇫🇷 Francuska (1)</button>
+  </div>
+  <div class="chips" id="tChips">
+    <button class="chip active" data-v="">Sve vrste</button>
+    <button class="chip t-v" data-v="v">Ski vrtić</button>
+    <button class="chip t-s" data-v="s">Škola skijanja</button>
+  </div>
+</section>
+
+<div class="mapwrap"><div id="map" role="application" aria-label="Karta skijališta u Europi"></div></div>
+
+<div class="count"><span id="count"></span><button type="button" id="reset">Poništi filtere</button></div>
+
+<div class="list" id="list">
+
+  <details class="resort" id="sljeme" data-country="Hrvatska" data-drive="do 3 h">
+    <summary>
+      <span class="flag">🇭🇷</span>
+      <span class="rt"><h2>Sljeme</h2><span class="rs">Hrvatska · vožnja od Zagreba do 3 h (okvirno) · <span class="rcount" data-total="20">20</span> programa</span></span>
+      <span class="chev" aria-hidden="true">▾</span>
+    </summary>
+    <div class="rbody">
+      <p class="rnote">Zagreb · najbliže obiteljsko skijalište glavnom gradu — desetak minuta od centra, s najvećom koncentracijom škola skijanja za djecu u Hrvatskoj.</p>
+      <div class="rlinks"><button type="button" class="onmap" data-id="sljeme">📍 Prikaži na karti</button><a class="route" href="https://www.google.com/maps/dir/?api=1&destination=45.9025445,15.9460169" target="_blank" rel="noopener">🧭 Upute do skijališta</a></div>
+      <div class="progs">
+      <article class="prog" data-t="v" data-amin="4" data-amax="7">
+        <div class="ph">
+          <h3>Žuti Mačak — Ski vrtić</h3>
+          <span class="badge v">Ski vrtić</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">4 – 7 godina</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">objava pred sezonu 2026./2027. — provjerite kod organizatora</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">5 dana (pon–pet), organiziran prijevoz iz Zagreba</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">cijena ovisi o terminu i broju dana — na upit</span></div>
+        <div class="pills"><a class="pill call" href="tel:+38514880610">📞 +385 1 4880 610</a><a class="pill web" href="https://zutimacak.hr" target="_blank" rel="noopener">🌐 zutimacak.hr</a><a class="pill mail" href="mailto:agencija@zutimacak.hr">✉️ agencija@zutimacak.hr</a></div>
+      </article>
+      <article class="prog" data-t="v" data-amin="4" data-amax="7">
+        <div class="ph">
+          <h3>PLUG (IN) — Ski vrtić</h3>
+          <span class="badge v">Ski vrtić</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">4 – 7 godina</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">objava pred sezonu 2026./2027. — provjerite kod organizatora</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">5 dana, pon–pet, 8:00–16:00, prijevoz od kuće/vrtića</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">300 €</span></div>
+        <div class="pills"><a class="pill call" href="tel:+385995057785">📞 +385 99 505 77 85</a><a class="pill web" href="https://plugin.hr" target="_blank" rel="noopener">🌐 plugin.hr</a><a class="pill mail" href="mailto:info@plugin.hr">✉️ info@plugin.hr</a></div>
+      </article>
+      <article class="prog" data-t="s" data-amin="7" data-amax="18">
+        <div class="ph">
+          <h3>PLUG (IN) — Školarci</h3>
+          <span class="badge s">Škola skijanja</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">7 – 18 godina</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">objava pred sezonu 2026./2027. — provjerite kod organizatora</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">vikend, subota–nedjelja, siječanj–ožujak</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">140 €</span></div>
+        <div class="pills"><a class="pill call" href="tel:+385995057785">📞 +385 99 505 77 85</a><a class="pill web" href="https://plugin.hr" target="_blank" rel="noopener">🌐 plugin.hr</a><a class="pill mail" href="mailto:info@plugin.hr">✉️ info@plugin.hr</a></div>
+      </article>
+      <article class="prog" data-t="v" data-amin="4" data-amax="7">
+        <div class="ph">
+          <h3>Sport4you — Ski vrtić</h3>
+          <span class="badge v">Ski vrtić</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">4 – 7 godina</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">tjedni termini (pon–pet): 11.–15.1., 18.–22.1., 25.–29.1., 1.–5.2., 8.–12.2., 15.–19.2. i 1.–5.3.2027.</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">5 dana, vlastiti ograđeni poligon uz Tomislavov dom</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">350 € (škola, ograđeni poligon, obroci i prijevoz uključeni)</span></div>
+          <div class="row"><span class="k">Najam opreme</span><span class="v">50 €</span></div>
+        <div class="pills"><a class="pill call" href="tel:+38513770150">📞 +385 1 377 0150</a><a class="pill web" href="https://sport4you.hr" target="_blank" rel="noopener">🌐 sport4you.hr</a><a class="pill mail" href="mailto:info@sport4you.hr">✉️ info@sport4you.hr</a></div>
+      </article>
+      <article class="prog" data-t="s" data-amin="7" data-amax="14">
+        <div class="ph">
+          <h3>Sport4you — Škola za školarce</h3>
+          <span class="badge s">Škola skijanja</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">7 – 14 godina</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">objava pred sezonu 2026./2027. — provjerite kod organizatora</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">5 dana + završno natjecanje, program verificiran od MZO</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">na upit</span></div>
+        <div class="pills"><a class="pill call" href="tel:+38513770150">📞 +385 1 377 0150</a><a class="pill web" href="https://sport4you.hr" target="_blank" rel="noopener">🌐 sport4you.hr</a><a class="pill mail" href="mailto:info@sport4you.hr">✉️ info@sport4you.hr</a></div>
+      </article>
+      <article class="prog" data-t="s" data-amin="7" data-amax="99">
+        <div class="ph">
+          <h3>Sport4you — Vikend škola</h3>
+          <span class="badge s">Škola skijanja</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">7 – 15 godina, i odrasli</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">17.1.–8.3.2027.</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">2 dana (subota + nedjelja, 3h dnevno)</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">putem akcije Ponuda dana — cijena varira</span></div>
+        <div class="pills"><a class="pill call" href="tel:+38513770150">📞 +385 1 377 0150</a><a class="pill web" href="https://sport4you.hr" target="_blank" rel="noopener">🌐 sport4you.hr</a><a class="pill mail" href="mailto:info@sport4you.hr">✉️ info@sport4you.hr</a></div>
+      </article>
+      <article class="prog" data-t="s" data-amin="4" data-amax="12">
+        <div class="ph">
+          <h3>Olimpići — Škola skijanja</h3>
+          <span class="badge s">Škola skijanja</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">4 – 12 godina</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">objava pred sezonu 2026./2027. — provjerite kod organizatora</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">5 dana, siječanj–ožujak</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">od 252 € (prijašnja sezona; provjeriti aktualnu cijenu)</span></div>
+        <div class="pills"></div>
+      </article>
+      <article class="prog" data-t="s" data-amin="" data-amax="">
+        <div class="ph">
+          <h3>Sportska zvijezda — Škola skijanja</h3>
+          <span class="badge s">Škola skijanja</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">djeca, predškolska i školska dob</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">tjedni termini siječanj–ožujak (5 dana) ili vikendom; točni datumi za 2027. — provjerite kod organizatora</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">tjedna (5 dana) ili vikendom</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">80 € (1 dan) do 290 € (5 dana); VIP paket (s kartom i opremom) na upit</span></div>
+        <div class="pills"><a class="pill call" href="tel:+385981768145">📞 +385 98 176 8145</a><a class="pill web" href="https://sportskazvijezda.club" target="_blank" rel="noopener">🌐 sportskazvijezda.club</a></div>
+      </article>
+      <article class="prog" data-t="v" data-amin="" data-amax="">
+        <div class="ph">
+          <h3>Ski klub Zagreb — Predškolarci</h3>
+          <span class="badge v">Ski vrtić</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">predškolska dob</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">svaki tjedan u siječnju i veljači (pon–pet)</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">tjedna škola, pon–pet, 08:30–15:30</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">340 € (gotovina) / 360 € (redovna cijena)</span></div>
+          <div class="row"><span class="k">Najam opreme</span><span class="v">65 €</span></div>
+        <div class="pills"><a class="pill call" href="tel:+385993668332">📞 +385 99 366 8332</a><a class="pill web" href="https://ski-klub-zagreb.hr" target="_blank" rel="noopener">🌐 ski-klub-zagreb.hr</a><a class="pill mail" href="mailto:akademija@ski-klub-zagreb.hr">✉️ akademija@ski-klub-zagreb.hr</a></div>
+      </article>
+      <article class="prog" data-t="s" data-amin="" data-amax="">
+        <div class="ph">
+          <h3>Ski klub Zagreb — Školarci</h3>
+          <span class="badge s">Škola skijanja</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">školska dob</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">22.–26.2. (zimski praznici); vikendi tijekom sezone</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">vikend, sub–ned, 08:30–13:30 (i tjedan za zimske praznike)</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">140 € (gotovina) / 160 € (redovna cijena)</span></div>
+          <div class="row"><span class="k">Najam opreme</span><span class="v">35 €</span></div>
+        <div class="pills"><a class="pill call" href="tel:+385993668332">📞 +385 99 366 8332</a><a class="pill web" href="https://ski-klub-zagreb.hr" target="_blank" rel="noopener">🌐 ski-klub-zagreb.hr</a><a class="pill mail" href="mailto:akademija@ski-klub-zagreb.hr">✉️ akademija@ski-klub-zagreb.hr</a></div>
+      </article>
+      <article class="prog" data-t="v" data-amin="4" data-amax="7">
+        <div class="ph">
+          <h3>Pingvin Sport &amp; Ski — Vrtić</h3>
+          <span class="badge v">Ski vrtić</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">4 – 7 godina</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">objava pred sezonu 2026./2027. — provjerite kod organizatora</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">tjedna škola, pon–pet</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">330 €</span></div>
+        <div class="pills"><a class="pill web" href="https://pingvinsport.com" target="_blank" rel="noopener">🌐 pingvinsport.com</a><a class="pill mail" href="mailto:info@pingvinsport.com">✉️ info@pingvinsport.com</a></div>
+      </article>
+      <article class="prog" data-t="s" data-amin="4" data-amax="99">
+        <div class="ph">
+          <h3>Pingvin Sport &amp; Ski — Vikend škola</h3>
+          <span class="badge s">Škola skijanja</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">4 – 14 godina (i odrasli)</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">objava pred sezonu 2026./2027. — provjerite kod organizatora</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">2 dana (150 €) ili 4 dana (300 €), vikendima</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">150 – 300 €</span></div>
+        <div class="pills"><a class="pill web" href="https://pingvinsport.com" target="_blank" rel="noopener">🌐 pingvinsport.com</a><a class="pill mail" href="mailto:info@pingvinsport.com">✉️ info@pingvinsport.com</a></div>
+      </article>
+      <article class="prog" data-t="v" data-amin="5" data-amax="7">
+        <div class="ph">
+          <h3>Medosport — Predškolarci (Sljeme)</h3>
+          <span class="badge v">Ski vrtić</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">od 5 godina (i mlađe uz stariju djecu)</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">objava pred sezonu 2026./2027. — provjerite kod organizatora</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">5 dana, 10:00–13:00, siječanj–veljača</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">305 €</span></div>
+        <div class="pills"><a class="pill call" href="tel:0959020077">📞 095 902 0077</a><a class="pill web" href="https://medosport.com" target="_blank" rel="noopener">🌐 medosport.com</a><a class="pill mail" href="mailto:info@medosport.com">✉️ info@medosport.com</a></div>
+      </article>
+      <article class="prog" data-t="s" data-amin="" data-amax="">
+        <div class="ph">
+          <h3>Škola Sljeme — Škola skijanja</h3>
+          <span class="badge s">Škola skijanja</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">djeca i odrasli</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">objava pred sezonu 2026./2027. — provjerite kod organizatora</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">5 dana, grupe do 6 polaznika</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">na upit (u cijeni oprema i dnevna ski karta)</span></div>
+        <div class="pills"><a class="pill call" href="tel:+385913147377">📞 +385 91 314 7377</a><a class="pill web" href="https://skolasljeme.com" target="_blank" rel="noopener">🌐 skolasljeme.com</a><a class="pill mail" href="mailto:info@skolasljeme.com">✉️ info@skolasljeme.com</a></div>
+      </article>
+      <article class="prog" data-t="s" data-amin="5" data-amax="7">
+        <div class="ph">
+          <h3>Klokan Sport — Škola skijanja 5–7 god.</h3>
+          <span class="badge s">Škola skijanja</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">5 – 7 godina (vrtićka dob)</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">2.–6.2. i 9.–13.2.</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">5-dnevna škola, uklj. napredni tečaj za djecu s predznanjem, grupe do 6 djece</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">330 €</span></div>
+        <div class="pills"><a class="pill call" href="tel:+385953172776">📞 +385 95 317 2776</a><a class="pill web" href="https://uzsr-klokansport.hr" target="_blank" rel="noopener">🌐 uzsr-klokansport.hr</a><a class="pill mail" href="mailto:klokansport@gmail.com">✉️ klokansport@gmail.com</a></div>
+      </article>
+      <article class="prog" data-t="v" data-amin="3.5" data-amax="7">
+        <div class="ph">
+          <h3>Ski2GO — Predškolska škola</h3>
+          <span class="badge v">Ski vrtić</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">od 3,5 godine (bez pelena, mogu bez roditelja)</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">objava pred sezonu 2026./2027. — provjerite kod organizatora</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">5 dana, pon–pet, 08:00–15:00, max. 4 djece po učitelju</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">na upit</span></div>
+        <div class="pills"><a class="pill call" href="tel:+38598562431">📞 +385 98 562 431</a><a class="pill web" href="https://ski2go.eu" target="_blank" rel="noopener">🌐 ski2go.eu</a><a class="pill mail" href="mailto:info@ski2go.eu">✉️ info@ski2go.eu</a></div>
+      </article>
+      <article class="prog" data-t="s" data-amin="" data-amax="">
+        <div class="ph">
+          <h3>Ski2GO — Škola skijanja</h3>
+          <span class="badge s">Škola skijanja</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">vrtićka i školska dob</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">17.1.–28.2.2027.</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">svaki vikend</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">na upit</span></div>
+        <div class="pills"><a class="pill call" href="tel:+38598562431">📞 +385 98 562 431</a><a class="pill web" href="https://ski2go.eu" target="_blank" rel="noopener">🌐 ski2go.eu</a><a class="pill mail" href="mailto:info@ski2go.eu">✉️ info@ski2go.eu</a></div>
+      </article>
+      <article class="prog" data-t="s" data-amin="" data-amax="">
+        <div class="ph">
+          <h3>SUPERKID — Škola skijanja</h3>
+          <span class="badge s">Škola skijanja</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">predškolska i školska dob</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">objava pred sezonu 2026./2027. — provjerite kod organizatora</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">predškolarci pon–pet (5 dana), školarci 3 vikenda</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">na upit</span></div>
+        <div class="pills"><a class="pill web" href="https://superkid.hr" target="_blank" rel="noopener">🌐 superkid.hr</a><a class="pill mail" href="mailto:skijanje@superkid.hr">✉️ skijanje@superkid.hr</a></div>
+      </article>
+      <article class="prog" data-t="s" data-amin="5" data-amax="99">
+        <div class="ph">
+          <h3>Hero Sport Academy — Sljeme</h3>
+          <span class="badge s">Škola skijanja</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">od 5 godina</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">početak u veljači 2027. — provjerite kod organizatora</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">pon–pet za vrtićance, vikendom za školarce</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">na upit</span></div>
+        <div class="pills"><a class="pill call" href="tel:+385996718707">📞 +385 99 671 8707</a><a class="pill web" href="https://hero.hr" target="_blank" rel="noopener">🌐 hero.hr</a><a class="pill mail" href="mailto:sljeme@hero.hr">✉️ sljeme@hero.hr</a></div>
+      </article>
+      <article class="prog" data-t="v" data-amin="4" data-amax="7">
+        <div class="ph">
+          <h3>Mali sportaši — Škola skijanja 4–7 godina</h3>
+          <span class="badge v">Ski vrtić</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">4 – 7 godina</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">objava pred sezonu 2026./2027. — provjerite kod organizatora</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">5 dana, uređeni poligon za početnike na Činovničkoj livadi (u suradnji sa Žutim Mačkom)</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">330 € (gotovinska cijena iz prethodne sezone; provjerite aktualnu)</span></div>
+        <div class="pills"><a class="pill call" href="tel:+385918876246">📞 +385 91 887 6246</a><a class="pill web" href="https://malisportasi.hr" target="_blank" rel="noopener">🌐 malisportasi.hr</a><a class="pill mail" href="mailto:trpimir@malisportasi.hr">✉️ trpimir@malisportasi.hr</a></div>
+      </article>
+      </div>
+    </div>
+  </details>
+
+  <details class="resort" id="platak" data-country="Hrvatska" data-drive="do 3 h">
+    <summary>
+      <span class="flag">🇭🇷</span>
+      <span class="rt"><h2>Platak</h2><span class="rs">Hrvatska · vožnja od Zagreba do 3 h (okvirno) · <span class="rcount" data-total="6">6</span> programa</span></span>
+      <span class="chev" aria-hidden="true">▾</span>
+    </summary>
+    <div class="rbody">
+      <p class="rnote">Rijeka · obiteljsko skijalište s pogledom na more; strmiji i raznolikiji teren od Sljemena.</p>
+      <div class="rlinks"><button type="button" class="onmap" data-id="platak">📍 Prikaži na karti</button><a class="route" href="https://www.google.com/maps/dir/?api=1&destination=45.4254581,14.564929" target="_blank" rel="noopener">🧭 Upute do skijališta</a></div>
+      <div class="progs">
+      <article class="prog" data-t="v" data-amin="5" data-amax="7">
+        <div class="ph">
+          <h3>SkiGuru — Vrtići na Platku</h3>
+          <span class="badge v">Ski vrtić</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">od 5 godina (predškolska dob)</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">objava pred sezonu 2026./2027. — provjerite kod organizatora</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">4 dana (pon–čet), više termina siječanj–veljača</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">280 €</span></div>
+        <div class="pills"><a class="pill call" href="tel:0959049487">📞 095 904 9487</a><a class="pill web" href="https://skiguru.info" target="_blank" rel="noopener">🌐 skiguru.info</a></div>
+      </article>
+      <article class="prog" data-t="s" data-amin="" data-amax="">
+        <div class="ph">
+          <h3>Mali Mrav — Škola skijanja</h3>
+          <span class="badge s">Škola skijanja</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">školska dob (rade se dvije grupe po znanju)</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">objava pred sezonu 2026./2027. — provjerite kod organizatora</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">6-dnevni tečaj ili vikend (2 dana)</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">6 dana okvirno 230–250 € · vikend okvirno 90–95 € (starije cijene; provjerite aktualne)</span></div>
+        <div class="pills"><a class="pill call" href="tel:0915007822">📞 091 500 7822</a><a class="pill web" href="https://mali-mrav.hr" target="_blank" rel="noopener">🌐 mali-mrav.hr</a></div>
+      </article>
+      <article class="prog" data-t="s" data-amin="5" data-amax="99">
+        <div class="ph">
+          <h3>Carving — Škola skijanja</h3>
+          <span class="badge s">Škola skijanja</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">od 5 godina</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">objava pred sezonu 2026./2027. — provjerite kod organizatora</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">6 dana, 3 sata dnevno, grupe do 9 polaznika</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">na upit</span></div>
+        <div class="pills"><a class="pill web" href="https://carving.hr" target="_blank" rel="noopener">🌐 carving.hr</a></div>
+      </article>
+      <article class="prog" data-t="v" data-amin="2" data-amax="5">
+        <div class="ph">
+          <h3>Carving — Vrtić na snijegu</h3>
+          <span class="badge v">Ski vrtić</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">od 2 godine (do 5 godina)</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">isti kao škola skijanja</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">uz redovnu školu skijanja</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">na upit</span></div>
+        <div class="pills"><a class="pill web" href="https://carving.hr" target="_blank" rel="noopener">🌐 carving.hr</a></div>
+      </article>
+      <article class="prog" data-t="s" data-amin="" data-amax="">
+        <div class="ph">
+          <h3>HULJS — Škola skijanja</h3>
+          <span class="badge s">Škola skijanja</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">djeca i odrasli, svi uzrasti</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">objava pred sezonu 2026./2027. — provjerite kod organizatora</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">vikend, 9:00–12:00</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">80 € (uključena ski karta za vikend)</span></div>
+        <div class="pills"><a class="pill web" href="https://huljs.hr" target="_blank" rel="noopener">🌐 huljs.hr</a><a class="pill mail" href="mailto:skihuljs@gmail.com">✉️ skihuljs@gmail.com</a></div>
+      </article>
+      <article class="prog" data-t="s" data-amin="4" data-amax="99">
+        <div class="ph">
+          <h3>Hero Sport Academy — Platak</h3>
+          <span class="badge s">Škola skijanja</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">od 4 godine</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">početak u siječnju 2027. — provjerite kod organizatora</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">po rasporedu, kombinirano sa Sljemenom</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">na upit</span></div>
+        <div class="pills"><a class="pill call" href="tel:+385994026264">📞 +385 99 402 6264</a><a class="pill web" href="https://hero.hr" target="_blank" rel="noopener">🌐 hero.hr</a><a class="pill mail" href="mailto:platak@hero.hr">✉️ platak@hero.hr</a></div>
+      </article>
+      </div>
+    </div>
+  </details>
+
+  <details class="resort" id="krvavec" data-country="Slovenija" data-drive="do 3 h">
+    <summary>
+      <span class="flag">🇸🇮</span>
+      <span class="rt"><h2>Krvavec</h2><span class="rs">Slovenija · vožnja od Zagreba do 3 h (okvirno) · <span class="rcount" data-total="3">3</span> programa</span></span>
+      <span class="chev" aria-hidden="true">▾</span>
+    </summary>
+    <div class="rbody">
+      <p class="rnote">Najbliže veliko slovensko skijalište Zagrebu — gondola iz doline i hrvatska škola koja ondje redovito organizira tečajeve.</p>
+      <div class="rlinks"><button type="button" class="onmap" data-id="krvavec">📍 Prikaži na karti</button><a class="route" href="https://www.google.com/maps/dir/?api=1&destination=46.2967391,14.520736" target="_blank" rel="noopener">🧭 Upute do skijališta</a></div>
+      <div class="progs">
+      <article class="prog" data-t="s" data-amin="" data-amax="">
+        <div class="ph">
+          <h3>Sportska zvijezda — „Gromovi“</h3>
+          <span class="badge s">Škola skijanja</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">djeca i mladi</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">26.–30.12.</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">5-dnevni tečaj, bez smještaja</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">300 €</span></div>
+        <div class="pills"><a class="pill web" href="https://sportskazvijezda.club" target="_blank" rel="noopener">🌐 sportskazvijezda.club</a></div>
+      </article>
+      <article class="prog" data-t="s" data-amin="" data-amax="14">
+        <div class="ph">
+          <h3>Sportska zvijezda — „Zvijezde“ (sa smještajem)</h3>
+          <span class="badge s">Škola skijanja</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">djeca i mladi do 14 godina</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">26.–30.12.</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">5-dnevna škola skijanja + smještaj s polupansionom u Termama Snovik</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">645 € (akcijska cijena)</span></div>
+        <div class="pills"><a class="pill web" href="https://sportskazvijezda.club" target="_blank" rel="noopener">🌐 sportskazvijezda.club</a></div>
+      </article>
+      <article class="prog" data-t="s" data-amin="6" data-amax="14">
+        <div class="ph">
+          <h3>Medosport — Vikend škola skijanja</h3>
+          <span class="badge s">Škola skijanja</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">školarci (od 2. stupnja znanja)</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">objava pred sezonu 2026./2027. — provjerite kod organizatora</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">vikend (2 dana), cjelodnevna škola 9:30–15:00, 1 noćenje; polazak iz Zagreba (Dom sportova)</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">179 € (cijena iz prethodne sezone; provjerite aktualnu)</span></div>
+          <div class="row"><span class="k">Najam opreme</span><span class="v">20 € (2 dana)</span></div>
+        <div class="pills"><a class="pill call" href="tel:+385959020077">📞 +385 95 902 0077</a><a class="pill web" href="https://medosport.com" target="_blank" rel="noopener">🌐 medosport.com</a><a class="pill mail" href="mailto:info@medosport.com">✉️ info@medosport.com</a></div>
+      </article>
+      </div>
+    </div>
+  </details>
+
+  <details class="resort" id="kranjska-gora" data-country="Slovenija" data-drive="do 3 h">
+    <summary>
+      <span class="flag">🇸🇮</span>
+      <span class="rt"><h2>Kranjska Gora</h2><span class="rs">Slovenija · vožnja od Zagreba do 3 h (okvirno) · <span class="rcount" data-total="4">4</span> programa</span></span>
+      <span class="chev" aria-hidden="true">▾</span>
+    </summary>
+    <div class="rbody">
+      <p class="rnote">Slovenija · uz granicu s Italijom; često se kombinira s talijanskim Tarvisiom u istom aranžmanu.</p>
+      <div class="rlinks"><button type="button" class="onmap" data-id="kranjska-gora">📍 Prikaži na karti</button><a class="route" href="https://www.google.com/maps/dir/?api=1&destination=46.4849534,13.7794784" target="_blank" rel="noopener">🧭 Upute do skijališta</a></div>
+      <div class="progs">
+      <article class="prog" data-t="s" data-amin="7" data-amax="15">
+        <div class="ph">
+          <h3>Vitae Travel — Škola skijanja</h3>
+          <span class="badge s">Škola skijanja</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">7 – 15 godina</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">objava pred sezonu 2026./2027. — provjerite kod organizatora</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">4 dana, puni pansion</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">645 €</span></div>
+        <div class="pills"><a class="pill call" href="tel:0918867164">📞 091 88 67 164</a><a class="pill web" href="https://vitaetravel.com" target="_blank" rel="noopener">🌐 vitaetravel.com</a><a class="pill mail" href="mailto:info@vitaetravel.com">✉️ info@vitaetravel.com</a></div>
+      </article>
+      <article class="prog" data-t="s" data-amin="3.5" data-amax="99">
+        <div class="ph">
+          <h3>SkiSchool.si — Škola skijanja</h3>
+          <span class="badge s">Škola skijanja</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">od 3,5 godine</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">fleksibilan broj dana, uklj. praznike</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">2h dnevno (11:00–12:50)</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">35 € (1 dan) do 120 € (7 dana)</span></div>
+          <div class="row"><span class="k">Najam opreme</span><span class="v">škola s opremom: 46–175 €</span></div>
+        <div class="pills"><a class="pill call" href="tel:+38640438366">📞 +386 40 438 366</a><a class="pill web" href="https://skischool.si" target="_blank" rel="noopener">🌐 skischool.si</a><a class="pill mail" href="mailto:info@skischool.si">✉️ info@skischool.si</a></div>
+      </article>
+      <article class="prog" data-t="s" data-amin="4" data-amax="99">
+        <div class="ph">
+          <h3>Orel škola skijanja — Škola skijanja</h3>
+          <span class="badge s">Škola skijanja</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">od 4 godine</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">objava pred sezonu 2026./2027. — provjerite kod organizatora</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">1 do 6 dana, 2h dnevno (10–12h ili 12–14h)</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">100 € (1 dan) do 280 € (tjedni tečaj 4–6 dana)</span></div>
+        <div class="pills"><a class="pill call" href="tel:+38670669915">📞 +386 70 669 915</a><a class="pill web" href="https://ski-orel.si" target="_blank" rel="noopener">🌐 ski-orel.si</a><a class="pill mail" href="mailto:krgora@ski-orel.si">✉️ krgora@ski-orel.si</a></div>
+      </article>
+      <article class="prog" data-t="s" data-amin="" data-amax="">
+        <div class="ph">
+          <h3>Ski2GO — Ski kamp</h3>
+          <span class="badge s">Škola skijanja</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">vrtićka i školska dob (grupe vrtića/škola)</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">26.–30.12.2026., 2.–6.1. i 22.–26.2.2027.</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">5 dana, puni pansion (Hotel Kompas / Ramada Suites), bus iz Zagreba, ski karta i škola</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">od 675 €</span></div>
+          <div class="row"><span class="k">Najam opreme</span><span class="v">55 € (dodatno)</span></div>
+        <div class="pills"><a class="pill call" href="tel:+38598562431">📞 +385 98 562 431</a><a class="pill web" href="https://ski2go.eu" target="_blank" rel="noopener">🌐 ski2go.eu</a><a class="pill mail" href="mailto:info@ski2go.eu">✉️ info@ski2go.eu</a></div>
+      </article>
+      </div>
+    </div>
+  </details>
+
+  <details class="resort" id="mariborsko-pohorje" data-country="Slovenija" data-drive="do 3 h">
+    <summary>
+      <span class="flag">🇸🇮</span>
+      <span class="rt"><h2>Mariborsko Pohorje</h2><span class="rs">Slovenija · vožnja od Zagreba do 3 h (okvirno) · <span class="rcount" data-total="6">6</span> programa</span></span>
+      <span class="chev" aria-hidden="true">▾</span>
+    </summary>
+    <div class="rbody">
+      <p class="rnote">Najbliže obiteljima iz istočne Hrvatske. U vodiču je navedeno zajedno s Roglom; točno skijalište pojedine škole potvrdite kod organizatora.</p>
+      <div class="rlinks"><button type="button" class="onmap" data-id="mariborsko-pohorje">📍 Prikaži na karti</button><a class="route" href="https://www.google.com/maps/dir/?api=1&destination=46.5331695,15.5995804" target="_blank" rel="noopener">🧭 Upute do skijališta</a></div>
+      <div class="progs">
+      <article class="prog" data-t="s" data-amin="7" data-amax="14">
+        <div class="ph">
+          <h3>Sport4you — Pohorje Express</h3>
+          <span class="badge s">Škola skijanja</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">7 – 14 godina (osnovnoškolci)</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">26.–30.12.2026.</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">5 dana, svakodnevni polazak i povratak iz Zagreba (Z centar)</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">na upit</span></div>
+        <div class="pills"><a class="pill call" href="tel:+38513770150">📞 +385 1 377 0150</a><a class="pill web" href="https://sport4you.hr" target="_blank" rel="noopener">🌐 sport4you.hr</a><a class="pill mail" href="mailto:info@sport4you.hr">✉️ info@sport4you.hr</a></div>
+      </article>
+      <article class="prog" data-t="s" data-amin="7" data-amax="14">
+        <div class="ph">
+          <h3>Sport4you — Zimovanje na Pohorju (sa smještajem)</h3>
+          <span class="badge s">Škola skijanja</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">7 – 14 godina (mogu putovati bez roditelja)</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">2.–6.1.2027. i 22.–26.2.2027.</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">5 dana, Grand Hotel Bellevue 4* (ski in / ski out), puni pansion, cjelodnevna škola, 5-dnevna ski karta, prijevoz autobusom, osiguranje</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">685 €</span></div>
+          <div class="row"><span class="k">Najam opreme</span><span class="v">80 € (dodatno)</span></div>
+        <div class="pills"><a class="pill call" href="tel:+38513770150">📞 +385 1 377 0150</a><a class="pill web" href="https://sport4you.hr" target="_blank" rel="noopener">🌐 sport4you.hr</a><a class="pill mail" href="mailto:info@sport4you.hr">✉️ info@sport4you.hr</a></div>
+      </article>
+      <article class="prog" data-t="s" data-amin="7" data-amax="14">
+        <div class="ph">
+          <h3>Sport4you — Pohorje, škola bez smještaja</h3>
+          <span class="badge s">Škola skijanja</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">7 – 14 godina</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">2.–6.1.2027. i 22.–26.2.2027.</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">5 dana, za djecu smještenu s obitelji</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">280 € (drugo dijete 250 €, treće 220 €)</span></div>
+        <div class="pills"><a class="pill call" href="tel:+38513770150">📞 +385 1 377 0150</a><a class="pill web" href="https://sport4you.hr" target="_blank" rel="noopener">🌐 sport4you.hr</a><a class="pill mail" href="mailto:info@sport4you.hr">✉️ info@sport4you.hr</a></div>
+      </article>
+      <article class="prog" data-t="s" data-amin="7" data-amax="16">
+        <div class="ph">
+          <h3>Žuti Mačak — Škola skijanja</h3>
+          <span class="badge s">Škola skijanja</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">7 – 16 godina</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">2.–6.1.2027. i 22.–26.2.2027.</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">5 dana; svakodnevni autobusni prijevoz Zagreb – Mariborsko Pohorje – Zagreb, ručak uključen</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">na upit</span></div>
+        <div class="pills"><a class="pill call" href="tel:+38514880610">📞 +385 1 4880 610</a><a class="pill web" href="https://zutimacak.hr" target="_blank" rel="noopener">🌐 zutimacak.hr</a><a class="pill mail" href="mailto:agencija@zutimacak.hr">✉️ agencija@zutimacak.hr</a></div>
+      </article>
+      <article class="prog" data-t="s" data-amin="7" data-amax="14">
+        <div class="ph">
+          <h3>Klokan Sport — Škola skijanja</h3>
+          <span class="badge s">Škola skijanja</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">7 – 14 godina</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">26.–30.12.</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">5 dana, polazak i povratak svaki dan iz Velike Gorice i Sesveta</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">440 €</span></div>
+        <div class="pills"><a class="pill call" href="tel:+385953172776">📞 +385 95 317 2776</a><a class="pill web" href="https://uzsr-klokansport.hr" target="_blank" rel="noopener">🌐 uzsr-klokansport.hr</a><a class="pill mail" href="mailto:klokansport@gmail.com">✉️ klokansport@gmail.com</a></div>
+      </article>
+      <article class="prog" data-t="s" data-amin="5" data-amax="15">
+        <div class="ph">
+          <h3>Pingvin Sport &amp; Ski — Zimski kamp Pingo</h3>
+          <span class="badge s">Škola skijanja</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">6 – 15 godina (obitelji: djeca od 5 god.)</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">objava pred sezonu 2026./2027. — provjerite kod organizatora</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">5 dana, puni pansion, autobusni prijevoz iz Zagreba, 5-dnevna ski karta, animacija i cjelodnevni nadzor</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">645 € (cijena iz prethodne sezone; provjerite aktualnu)</span></div>
+          <div class="row"><span class="k">Najam opreme</span><span class="v">50 € (dodatno)</span></div>
+        <div class="pills"><a class="pill web" href="https://pingvinsport.com" target="_blank" rel="noopener">🌐 pingvinsport.com</a><a class="pill mail" href="mailto:info@pingvinsport.com">✉️ info@pingvinsport.com</a></div>
+      </article>
+      </div>
+    </div>
+  </details>
+
+  <details class="resort" id="rogla" data-country="Slovenija" data-drive="do 3 h">
+    <summary>
+      <span class="flag">🇸🇮</span>
+      <span class="rt"><h2>Rogla</h2><span class="rs">Slovenija · vožnja od Zagreba do 3 h (okvirno) · <span class="rcount" data-total="1">1</span> programa</span></span>
+      <span class="chev" aria-hidden="true">▾</span>
+    </summary>
+    <div class="rbody">
+      <p class="rnote">Slovenija · Pohorje, obiteljsko skijalište s bungalovima uz stazu.</p>
+      <div class="rlinks"><button type="button" class="onmap" data-id="rogla">📍 Prikaži na karti</button><a class="route" href="https://www.google.com/maps/dir/?api=1&destination=46.4532945,15.332441" target="_blank" rel="noopener">🧭 Upute do skijališta</a></div>
+      <div class="progs">
+      <article class="prog" data-t="s" data-amin="6" data-amax="14">
+        <div class="ph">
+          <h3>Ski klub Zagreb — Kamp za školarce (Rogla)</h3>
+          <span class="badge s">Škola skijanja</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">osnovnoškolci</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">26.–30.12.2026. i 2.–6.1.2027.</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">5 dana; bungalovi Rogla, puni pansion, 5-dnevna ski karta, prijevoz iz Zagreba, škola s ISIA učiteljima</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">795 € (do 12,9 god.) / 895 € (od 13 god.); uz gotovinu 775 € / 875 €</span></div>
+          <div class="row"><span class="k">Najam opreme</span><span class="v">65 €</span></div>
+        <div class="pills"><a class="pill call" href="tel:+385993668332">📞 +385 99 366 8332</a><a class="pill web" href="https://ski-klub-zagreb.hr" target="_blank" rel="noopener">🌐 ski-klub-zagreb.hr</a><a class="pill mail" href="mailto:akademija@ski-klub-zagreb.hr">✉️ akademija@ski-klub-zagreb.hr</a></div>
+      </article>
+      </div>
+    </div>
+  </details>
+
+  <details class="resort" id="tarvisio" data-country="Italija" data-drive="">
+    <summary>
+      <span class="flag">🇮🇹</span>
+      <span class="rt"><h2>Tarvisio (Monte Lussari)</h2><span class="rs">Italija · <span class="rcount" data-total="1">1</span> programa</span></span>
+      <span class="chev" aria-hidden="true">▾</span>
+    </summary>
+    <div class="rbody">
+      <p class="rnote">Italija · dijeli granicu s Kranjskom Gorom; hrvatski tečaj OS LINE smještaj ima u Sloveniji, a skija se na Tarvisiju.</p>
+      <div class="rlinks"><button type="button" class="onmap" data-id="tarvisio">📍 Prikaži na karti</button><a class="route" href="https://www.google.com/maps/dir/?api=1&destination=46.5067645,13.5343192" target="_blank" rel="noopener">🧭 Upute do skijališta</a></div>
+      <div class="progs">
+      <article class="prog" data-t="s" data-amin="" data-amax="">
+        <div class="ph">
+          <h3>OS LINE (Osijek) — Škola skijanja</h3>
+          <span class="badge s">Škola skijanja</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">djeca i odrasli</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">2.–8.1.2027. i 22.–28.2.2027.</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">6 polupansiona (hotel 3*, Slovenija), skijanje na Tarvisiju (Italija)</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">747 € (plativo u ratama)</span></div>
+        <div class="pills"><a class="pill call" href="tel:+385989106864">📞 +385 98 910 6864</a><a class="pill web" href="https://osline.hr" target="_blank" rel="noopener">🌐 osline.hr</a><a class="pill mail" href="mailto:osline.velimir@gmail.com">✉️ osline.velimir@gmail.com</a></div>
+      </article>
+      </div>
+    </div>
+  </details>
+
+  <details class="resort" id="weinebene" data-country="Austrija" data-drive="do 3 h">
+    <summary>
+      <span class="flag">🇦🇹</span>
+      <span class="rt"><h2>Weinebene</h2><span class="rs">Austrija · vožnja od Zagreba do 3 h (okvirno) · <span class="rcount" data-total="1">1</span> programa</span></span>
+      <span class="chev" aria-hidden="true">▾</span>
+    </summary>
+    <div class="rbody">
+      <p class="rnote">Obiteljsko skijalište blizu Graza — manje, blago skijalište pogodno za početnike.</p>
+      <div class="rlinks"><button type="button" class="onmap" data-id="weinebene">📍 Prikaži na karti</button><a class="route" href="https://www.google.com/maps/dir/?api=1&destination=46.8401243,15.0161181" target="_blank" rel="noopener">🧭 Upute do skijališta</a></div>
+      <div class="progs">
+      <article class="prog" data-t="s" data-amin="7" data-amax="14">
+        <div class="ph">
+          <h3>Sport4you — Vikend škola</h3>
+          <span class="badge s">Škola skijanja</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">7 – 14 godina (mogu putovati bez roditelja)</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">26.–30.12.2026.</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">5 dana, cjelodnevna škola; smještaj JUFA Hotel Deutschlandsberg***, doručak i večera, ručak na stazi</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">705 €</span></div>
+          <div class="row"><span class="k">Najam opreme</span><span class="v">80 € (dodatno)</span></div>
+        <div class="pills"><a class="pill call" href="tel:+38513770150">📞 +385 1 377 0150</a><a class="pill web" href="https://sport4you.hr" target="_blank" rel="noopener">🌐 sport4you.hr</a><a class="pill mail" href="mailto:info@sport4you.hr">✉️ info@sport4you.hr</a></div>
+      </article>
+      </div>
+    </div>
+  </details>
+
+  <details class="resort" id="nassfeld" data-country="Austrija" data-drive="3 – 5 h">
+    <summary>
+      <span class="flag">🇦🇹</span>
+      <span class="rt"><h2>Nassfeld</h2><span class="rs">Austrija · vožnja od Zagreba 3 – 5 h (okvirno) · <span class="rcount" data-total="2">2</span> programa</span></span>
+      <span class="chev" aria-hidden="true">▾</span>
+    </summary>
+    <div class="rbody">
+      <p class="rnote">Veliko skijalište blizu slovenske i talijanske granice — cijela obitelj može biti u istoj grupi na hrvatskom jeziku.</p>
+      <div class="rlinks"><button type="button" class="onmap" data-id="nassfeld">📍 Prikaži na karti</button><a class="route" href="https://www.google.com/maps/dir/?api=1&destination=46.5636806,13.2741857" target="_blank" rel="noopener">🧭 Upute do skijališta</a></div>
+      <div class="progs">
+      <article class="prog" data-t="s" data-amin="6" data-amax="14">
+        <div class="ph">
+          <h3>Žuti Mačak — Škola za djecu</h3>
+          <span class="badge s">Škola skijanja</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">6 – 14 godina</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">27.–31.12.2026. (5 dana), 3.–8.1., 10.–15.1. i 21.–26.2.2027. (6 dana)</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">5 ili 6 dana, 10:00–13:00</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">390 € (6 dana) / 325 € (5 dana, 27.–31.12.); odrasli 420 € / 350 €</span></div>
+        <div class="pills"><a class="pill call" href="tel:+38514880610">📞 +385 1 4880 610</a><a class="pill web" href="https://zutimacak.hr" target="_blank" rel="noopener">🌐 zutimacak.hr</a><a class="pill mail" href="mailto:agencija@zutimacak.hr">✉️ agencija@zutimacak.hr</a></div>
+      </article>
+      <article class="prog" data-t="v" data-amin="4" data-amax="6">
+        <div class="ph">
+          <h3>Žuti Mačak — Vrtić</h3>
+          <span class="badge v">Ski vrtić</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">4 – 6 godina</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">27.–31.12.2026. (5 dana), 3.–8.1., 10.–15.1. i 21.–26.2.2027. (6 dana)</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">5 ili 6 dana, 10:00–13:00, max. 10 djece na 2 učitelja</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">540 € (6 dana) / 450 € (5 dana, 27.–31.12.)</span></div>
+        <div class="pills"><a class="pill call" href="tel:+38514880610">📞 +385 1 4880 610</a><a class="pill web" href="https://zutimacak.hr" target="_blank" rel="noopener">🌐 zutimacak.hr</a><a class="pill mail" href="mailto:agencija@zutimacak.hr">✉️ agencija@zutimacak.hr</a></div>
+      </article>
+      </div>
+    </div>
+  </details>
+
+  <details class="resort" id="bad-kleinkirchheim" data-country="Austrija" data-drive="3 – 5 h">
+    <summary>
+      <span class="flag">🇦🇹</span>
+      <span class="rt"><h2>Bad Kleinkirchheim</h2><span class="rs">Austrija · vožnja od Zagreba 3 – 5 h (okvirno) · <span class="rcount" data-total="1">1</span> programa</span></span>
+      <span class="chev" aria-hidden="true">▾</span>
+    </summary>
+    <div class="rbody">
+      <p class="rnote">Koruško lječilišno skijalište — mirno, pogodno za obiteljska zimovanja.</p>
+      <div class="rlinks"><button type="button" class="onmap" data-id="bad-kleinkirchheim">📍 Prikaži na karti</button><a class="route" href="https://www.google.com/maps/dir/?api=1&destination=46.8140976,13.7969771" target="_blank" rel="noopener">🧭 Upute do skijališta</a></div>
+      <div class="progs">
+      <article class="prog" data-t="s" data-amin="" data-amax="">
+        <div class="ph">
+          <h3>Skifun — Bijeli tjedan za obitelji</h3>
+          <span class="badge s">Škola skijanja</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">djeca, grupe prema znanju i dobi</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">objava pred sezonu 2026./2027. — provjerite kod organizatora</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">tjedni aranžman; škola za djecu svaki dan (4 sata uz pauzu), individualni sati poslijepodne, mini klub i animacija</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">na upit</span></div>
+        <div class="pills"><a class="pill call" href="tel:+385924472362">📞 +385 92 447 2362</a><a class="pill web" href="https://skifun.eu" target="_blank" rel="noopener">🌐 skifun.eu</a><a class="pill mail" href="mailto:prodaja@skifun.hr">✉️ prodaja@skifun.hr</a></div>
+      </article>
+      </div>
+    </div>
+  </details>
+
+  <details class="resort" id="obertauern" data-country="Austrija" data-drive="3 – 5 h">
+    <summary>
+      <span class="flag">🇦🇹</span>
+      <span class="rt"><h2>Obertauern</h2><span class="rs">Austrija · vožnja od Zagreba 3 – 5 h (okvirno) · <span class="rcount" data-total="4">4</span> programa</span></span>
+      <span class="chev" aria-hidden="true">▾</span>
+    </summary>
+    <div class="rbody">
+      <p class="rnote">Visinsko skijalište (više od 1.700 m), pouzdan snijeg od kraja studenog do svibnja — hrvatska škola Diver ovdje djeluje u suradnji s Valamarovim hotelima.</p>
+      <div class="rlinks"><button type="button" class="onmap" data-id="obertauern">📍 Prikaži na karti</button><a class="route" href="https://www.google.com/maps/dir/?api=1&destination=47.2485894,13.5594678" target="_blank" rel="noopener">🧭 Upute do skijališta</a></div>
+      <div class="progs">
+      <article class="prog" data-t="v" data-amin="4" data-amax="5">
+        <div class="ph">
+          <h3>Diver (SKIDIVER) — Ski vrtić</h3>
+          <span class="badge v">Ski vrtić</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">4 – 5 godina</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">3.–10.1. i 10.–17.1.2027.</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">prvi koraci kroz igru na snijegu, pon–sub 10:00–13:00</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">430 – 480 €</span></div>
+        <div class="pills"><a class="pill call" href="tel:+385911112098">📞 +385 91 111 2098</a><a class="pill web" href="https://skidiver.hr" target="_blank" rel="noopener">🌐 skidiver.hr</a><a class="pill mail" href="mailto:info@skidiver.hr">✉️ info@skidiver.hr</a></div>
+      </article>
+      <article class="prog" data-t="s" data-amin="5" data-amax="99">
+        <div class="ph">
+          <h3>Diver (SKIDIVER) — Poludnevna škola</h3>
+          <span class="badge s">Škola skijanja</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">od 5 godina</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">3.–10.1. i 10.–17.1.2027. (veljača upitna)</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">pon–sub, 10:00–13:00</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">340 – 380 €</span></div>
+        <div class="pills"><a class="pill call" href="tel:+385911112098">📞 +385 91 111 2098</a><a class="pill web" href="https://skidiver.hr" target="_blank" rel="noopener">🌐 skidiver.hr</a><a class="pill mail" href="mailto:info@skidiver.hr">✉️ info@skidiver.hr</a></div>
+      </article>
+      <article class="prog" data-t="s" data-amin="6" data-amax="99">
+        <div class="ph">
+          <h3>Diver (SKIDIVER) — Cjelodnevna škola</h3>
+          <span class="badge s">Škola skijanja</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">od 6 godina</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">3.–10.1. i 10.–17.1.2027. (veljača upitna)</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">pon–sub, 10:00–16:00</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">520 – 580 €</span></div>
+        <div class="pills"><a class="pill call" href="tel:+385911112098">📞 +385 91 111 2098</a><a class="pill web" href="https://skidiver.hr" target="_blank" rel="noopener">🌐 skidiver.hr</a><a class="pill mail" href="mailto:info@skidiver.hr">✉️ info@skidiver.hr</a></div>
+      </article>
+      <article class="prog" data-t="s" data-amin="" data-amax="">
+        <div class="ph">
+          <h3>Diver (SKIDIVER) — Individualna poduka</h3>
+          <span class="badge s">Škola skijanja</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">svi uzrasti i razine znanja</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">prema dogovoru, u sklopu redovnih termina škole</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">popodnevno, 08:30–09:30 i 14:00–16:00</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">70 €/h (1 osoba) · 90 € (2 osobe) · 110 € (3 osobe)</span></div>
+        <div class="pills"><a class="pill call" href="tel:+385911112098">📞 +385 91 111 2098</a><a class="pill web" href="https://skidiver.hr" target="_blank" rel="noopener">🌐 skidiver.hr</a><a class="pill mail" href="mailto:info@skidiver.hr">✉️ info@skidiver.hr</a></div>
+      </article>
+      </div>
+    </div>
+  </details>
+
+  <details class="resort" id="gerlitzen" data-country="Austrija" data-drive="3 – 5 h">
+    <summary>
+      <span class="flag">🇦🇹</span>
+      <span class="rt"><h2>Gerlitzen Alpe</h2><span class="rs">Austrija · vožnja od Zagreba 3 – 5 h (okvirno) · <span class="rcount" data-total="2">2</span> programa</span></span>
+      <span class="chev" aria-hidden="true">▾</span>
+    </summary>
+    <div class="rbody">
+      <p class="rnote">Obiteljsko skijalište iznad jezera Ossiacher, blizu Villacha („Baby Kronplatz“, 60+ km blagih staza).</p>
+      <div class="rlinks"><button type="button" class="onmap" data-id="gerlitzen">📍 Prikaži na karti</button><a class="route" href="https://www.google.com/maps/dir/?api=1&destination=46.6953299,13.9140064" target="_blank" rel="noopener">🧭 Upute do skijališta</a></div>
+      <div class="progs">
+      <article class="prog" data-t="s" data-amin="7" data-amax="14">
+        <div class="ph">
+          <h3>Sport4you — Zimovanje sa smještajem</h3>
+          <span class="badge s">Škola skijanja</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">7 – 14 godina (mogu putovati bez roditelja)</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">26.–30.12.2026., 2.–6.1. i 22.–26.2.2027. (5 ski dana)</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">cjelodnevna škola skijanja, puni pansion, smještaj Jugendgastehaus Villach</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">820 € (16+ godina doplata 70 €)</span></div>
+          <div class="row"><span class="k">Najam opreme</span><span class="v">80 € (dodatno)</span></div>
+        <div class="pills"><a class="pill call" href="tel:+38513770150">📞 +385 1 377 0150</a><a class="pill web" href="https://sport4you.hr" target="_blank" rel="noopener">🌐 sport4you.hr</a><a class="pill mail" href="mailto:info@sport4you.hr">✉️ info@sport4you.hr</a></div>
+      </article>
+      <article class="prog" data-t="s" data-amin="7" data-amax="14">
+        <div class="ph">
+          <h3>Sport4you — Škola bez smještaja</h3>
+          <span class="badge s">Škola skijanja</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">7 – 14 godina</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">prema terminima zimovanja: 26.–30.12.2026., 2.–6.1. i 22.–26.2.2027.</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">za djecu smještenu s obitelji u Gerlitzenu</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">280 € (drugo dijete 250 €, treće 220 €)</span></div>
+        <div class="pills"><a class="pill call" href="tel:+38513770150">📞 +385 1 377 0150</a><a class="pill web" href="https://sport4you.hr" target="_blank" rel="noopener">🌐 sport4you.hr</a><a class="pill mail" href="mailto:info@sport4you.hr">✉️ info@sport4you.hr</a></div>
+      </article>
+      </div>
+    </div>
+  </details>
+
+  <details class="resort" id="katschberg" data-country="Austrija" data-drive="3 – 5 h">
+    <summary>
+      <span class="flag">🇦🇹</span>
+      <span class="rt"><h2>Katschberg</h2><span class="rs">Austrija · vožnja od Zagreba 3 – 5 h (okvirno) · <span class="rcount" data-total="3">3</span> programa</span></span>
+      <span class="chev" aria-hidden="true">▾</span>
+    </summary>
+    <div class="rbody">
+      <p class="rnote">Kompaktno obiteljsko skijalište na granici Koruške i Salzburške (Lungau) s blagim stazama.</p>
+      <div class="rlinks"><button type="button" class="onmap" data-id="katschberg">📍 Prikaži na karti</button><a class="route" href="https://www.google.com/maps/dir/?api=1&destination=47.0591777,13.6155855" target="_blank" rel="noopener">🧭 Upute do skijališta</a></div>
+      <div class="progs">
+      <article class="prog" data-t="s" data-amin="4" data-amax="99">
+        <div class="ph">
+          <h3>Orel škola skijanja — Škola skijanja</h3>
+          <span class="badge s">Škola skijanja</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">od 4 godine</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">od početka siječnja do sredine/kraja veljače, ned–pet (točni datumi nisu objavljeni); individualni sati od prosinca</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">grupni tečaj 2 sata dnevno (10–12h ili 12–14h), grupe do 8 djece; 1, 2, 3 ili 4–6 dana</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">300 € (tjedni tečaj, 4–6 dana) · 240 € (3 dana) · 180 € (2 dana) · 110 € (probni dan); drugo dijete −30 € na tjedni tečaj. Individualni sat od 55 €</span></div>
+        <div class="pills"><a class="pill call" href="tel:+38640543330">📞 +386 40 543 330</a><a class="pill web" href="https://ski-orel.si" target="_blank" rel="noopener">🌐 ski-orel.si</a><a class="pill mail" href="mailto:katschberg@ski-orel.si">✉️ katschberg@ski-orel.si</a></div>
+      </article>
+      <article class="prog" data-t="v" data-amin="3.5" data-amax="5.5">
+        <div class="ph">
+          <h3>Sportska zvijezda — Vrtić na snijegu</h3>
+          <span class="badge v">Ski vrtić</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">3,5 – 5,5 godina</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">3.–15.1. i 20.–28.2.2027.</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">10:00–13:00</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">od 110 € (1 dan) do 400 € (6 dana, rođeni 2020. i mlađi)</span></div>
+        <div class="pills"><a class="pill call" href="tel:+385981768145">📞 +385 98 176 8145</a><a class="pill web" href="https://sportskazvijezda.club" target="_blank" rel="noopener">🌐 sportskazvijezda.club</a></div>
+      </article>
+      <article class="prog" data-t="s" data-amin="" data-amax="">
+        <div class="ph">
+          <h3>Sportska zvijezda — Škola skijanja</h3>
+          <span class="badge s">Škola skijanja</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">početnici (10–13h) i napredniji (10–15h)</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">3.–15.1. i 20.–28.2.2027.</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">3–4h aktivnog rada dnevno</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">od 110 € (1 dan) do 400 € (6 dana, rođeni 2020. i mlađi)</span></div>
+        <div class="pills"><a class="pill call" href="tel:+385981768145">📞 +385 98 176 8145</a><a class="pill web" href="https://sportskazvijezda.club" target="_blank" rel="noopener">🌐 sportskazvijezda.club</a></div>
+      </article>
+      </div>
+    </div>
+  </details>
+
+  <details class="resort" id="kreischberg" data-country="Austrija" data-drive="3 – 5 h">
+    <summary>
+      <span class="flag">🇦🇹</span>
+      <span class="rt"><h2>Kreischberg</h2><span class="rs">Austrija · vožnja od Zagreba 3 – 5 h (okvirno) · <span class="rcount" data-total="5">5</span> programa</span></span>
+      <span class="chev" aria-hidden="true">▾</span>
+    </summary>
+    <div class="rbody">
+      <p class="rnote">Suvremeno uređeno skijalište kod Muraua s Dinoparkom i Yabba-Dabba-Doo Landom za najmlađe.</p>
+      <div class="rlinks"><button type="button" class="onmap" data-id="kreischberg">📍 Prikaži na karti</button><a class="route" href="https://www.google.com/maps/dir/?api=1&destination=47.0990966,14.0856984" target="_blank" rel="noopener">🧭 Upute do skijališta</a></div>
+      <div class="progs">
+      <article class="prog" data-t="v" data-amin="4" data-amax="6">
+        <div class="ph">
+          <h3>Sport4you — Ski vrtić</h3>
+          <span class="badge v">Ski vrtić</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">4 – 6 godina</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">2.–9.1., 9.–16.1. i 20.–27.2.2027.</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">6 dana, ned–pet; vrtić 9:30–12:30</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">400 € (drugo dijete 360 €, treće 320 €); ski karta, ručak i oprema nisu uključeni</span></div>
+        <div class="pills"><a class="pill call" href="tel:+38513770150">📞 +385 1 377 0150</a><a class="pill web" href="https://sport4you.hr" target="_blank" rel="noopener">🌐 sport4you.hr</a><a class="pill mail" href="mailto:info@sport4you.hr">✉️ info@sport4you.hr</a></div>
+      </article>
+      <article class="prog" data-t="s" data-amin="6" data-amax="99">
+        <div class="ph">
+          <h3>Sport4you — Škola skijanja</h3>
+          <span class="badge s">Škola skijanja</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">od 6 godina</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">2.–9.1., 9.–16.1. i 20.–27.2.2027.</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">6 dana, ned–pet; škola 9:30–14:30</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">400 € (drugo dijete 360 €, treće 320 €); ski karta, ručak i oprema nisu uključeni</span></div>
+        <div class="pills"><a class="pill call" href="tel:+38513770150">📞 +385 1 377 0150</a><a class="pill web" href="https://sport4you.hr" target="_blank" rel="noopener">🌐 sport4you.hr</a><a class="pill mail" href="mailto:info@sport4you.hr">✉️ info@sport4you.hr</a></div>
+      </article>
+      <article class="prog" data-t="s" data-amin="6" data-amax="99">
+        <div class="ph">
+          <h3>Ski Team Cmrok — Škola skijanja</h3>
+          <span class="badge s">Škola skijanja</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">od 6 godina</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">27.12.2026.–1.1., 3.–8.1., 10.–15.1. i 21.–26.2.2027.</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">6 dana, 9:30–15:30 (pauza 12–13h), 30h rada s učiteljem</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">420 € (rezervacija 14 dana unaprijed) / 480 € (naknadne prijave)</span></div>
+        <div class="pills"><a class="pill call" href="tel:+385916677730">📞 +385 91 66 777 30</a><a class="pill web" href="https://skiteamcmrok.com" target="_blank" rel="noopener">🌐 skiteamcmrok.com</a><a class="pill mail" href="mailto:skiteamcmrok@orlic-sport.com">✉️ skiteamcmrok@orlic-sport.com</a></div>
+      </article>
+      <article class="prog" data-t="v" data-amin="4" data-amax="5">
+        <div class="ph">
+          <h3>Ski Team Cmrok — Skijaški vrtić</h3>
+          <span class="badge v">Ski vrtić</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">4 – 5 godina</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">27.12.2026.–1.1., 3.–8.1., 10.–15.1. i 21.–26.2.2027.</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">6 dana, 9:30–15:30 (pauza 12–13h)</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">480 € (rezervacija unaprijed) / 540 € (naknadno)</span></div>
+        <div class="pills"><a class="pill call" href="tel:+385916677730">📞 +385 91 66 777 30</a><a class="pill web" href="https://skiteamcmrok.com" target="_blank" rel="noopener">🌐 skiteamcmrok.com</a><a class="pill mail" href="mailto:skiteamcmrok@orlic-sport.com">✉️ skiteamcmrok@orlic-sport.com</a></div>
+      </article>
+      <article class="prog" data-t="v" data-amin="2" data-amax="3">
+        <div class="ph">
+          <h3>Ski Team Cmrok — Dječji vrtić (najmlađi)</h3>
+          <span class="badge v">Ski vrtić</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">2 – 3 godine</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">27.12.2026.–1.1., 3.–8.1., 10.–15.1. i 21.–26.2.2027.</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">6 dana, 9:30–15:30 (pauza 12–13h)</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">360 € (rezervacija unaprijed) / 420 € (naknadno)</span></div>
+        <div class="pills"><a class="pill call" href="tel:+385916677730">📞 +385 91 66 777 30</a><a class="pill web" href="https://skiteamcmrok.com" target="_blank" rel="noopener">🌐 skiteamcmrok.com</a><a class="pill mail" href="mailto:skiteamcmrok@orlic-sport.com">✉️ skiteamcmrok@orlic-sport.com</a></div>
+      </article>
+      </div>
+    </div>
+  </details>
+
+  <details class="resort" id="zauchensee" data-country="Austrija" data-drive="3 – 5 h">
+    <summary>
+      <span class="flag">🇦🇹</span>
+      <span class="rt"><h2>Altenmarkt-Zauchensee</h2><span class="rs">Austrija · vožnja od Zagreba 3 – 5 h (okvirno) · <span class="rcount" data-total="2">2</span> programa</span></span>
+      <span class="chev" aria-hidden="true">▾</span>
+    </summary>
+    <div class="rbody">
+      <p class="rnote">Visokoalpsko skijalište u krugu Snow Space Salzburg / Ski Amadé (200+ km staza); Ski klub Zagreb ovdje svake zime organizira obiteljsko zimovanje.</p>
+      <div class="rlinks"><button type="button" class="onmap" data-id="zauchensee">📍 Prikaži na karti</button><a class="route" href="https://www.google.com/maps/dir/?api=1&destination=47.2906831,13.4571807" target="_blank" rel="noopener">🧭 Upute do skijališta</a></div>
+      <div class="progs">
+      <article class="prog" data-t="s" data-amin="5" data-amax="99">
+        <div class="ph">
+          <h3>Ski klub Zagreb — Škola skijanja (školarci)</h3>
+          <span class="badge s">Škola skijanja</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">od 5 godina</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">5.–9.1.2027.</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">5 dana, svakodnevno 09:30–13:30</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">350 € (doplata na aranžman)</span></div>
+        <div class="pills"><a class="pill call" href="tel:+385993668332">📞 +385 99 366 8332</a><a class="pill web" href="https://ski-klub-zagreb.hr" target="_blank" rel="noopener">🌐 ski-klub-zagreb.hr</a><a class="pill mail" href="mailto:akademija@ski-klub-zagreb.hr">✉️ akademija@ski-klub-zagreb.hr</a></div>
+      </article>
+      <article class="prog" data-t="v" data-amin="3" data-amax="5">
+        <div class="ph">
+          <h3>Ski klub Zagreb — Ski vrtić</h3>
+          <span class="badge v">Ski vrtić</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">3 – 5 godina</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">5.–9.1.2027.</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">5 dana, svakodnevno 09:30–13:30</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">400 € (doplata na aranžman)</span></div>
+        <div class="pills"><a class="pill call" href="tel:+385993668332">📞 +385 99 366 8332</a><a class="pill web" href="https://ski-klub-zagreb.hr" target="_blank" rel="noopener">🌐 ski-klub-zagreb.hr</a><a class="pill mail" href="mailto:akademija@ski-klub-zagreb.hr">✉️ akademija@ski-klub-zagreb.hr</a></div>
+      </article>
+      </div>
+    </div>
+  </details>
+
+  <details class="resort" id="sillian" data-country="Austrija" data-drive="5 – 7 h">
+    <summary>
+      <span class="flag">🇦🇹</span>
+      <span class="rt"><h2>Sillian</h2><span class="rs">Austrija · vožnja od Zagreba 5 – 7 h (okvirno) · <span class="rcount" data-total="2">2</span> programa</span></span>
+      <span class="chev" aria-hidden="true">▾</span>
+    </summary>
+    <div class="rbody">
+      <p class="rnote">Manje, mirno skijalište u istočnom Tirolu uz granicu s Italijom — Ban Tours ovdje već godinama vodi hrvatsku školu i vrtić na snijegu.</p>
+      <div class="rlinks"><button type="button" class="onmap" data-id="sillian">📍 Prikaži na karti</button><a class="route" href="https://www.google.com/maps/dir/?api=1&destination=46.7505562,12.4333082" target="_blank" rel="noopener">🧭 Upute do skijališta</a></div>
+      <div class="progs">
+      <article class="prog" data-t="s" data-amin="5" data-amax="99">
+        <div class="ph">
+          <h3>Ban Tours — Škola skijanja</h3>
+          <span class="badge s">Škola skijanja</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">od 5 godina</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">nastava 3.–8.1., 10.–15.1. i 21.–26.2.2027. (dolazak dan ranije)</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">6 dana, 10:00–14:00 (30 min pauze), početak kod gornje stanice gondole u Sillianu</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">390 € (3.–8.1. i 21.–26.2.) / 330 € (10.–15.1.) za goste Ban Toursa; ostali 420 € / 360 €</span></div>
+        <div class="pills"><a class="pill call" href="tel:+38514881800">📞 +385 1 48 81 800</a><a class="pill web" href="https://skijanje.eu" target="_blank" rel="noopener">🌐 skijanje.eu</a><a class="pill mail" href="mailto:poslovnica@bantours.hr">✉️ poslovnica@bantours.hr</a></div>
+      </article>
+      <article class="prog" data-t="v" data-amin="4" data-amax="5">
+        <div class="ph">
+          <h3>Ban Tours — Vrtić na snijegu</h3>
+          <span class="badge v">Ski vrtić</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">4 – 5 godina</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">nastava 3.–8.1., 10.–15.1. i 21.–26.2.2027. (dolazak dan ranije)</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">6 dana, ned–pet, 10:00–14:00 (uklj. pauza)</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">410 € (3.–8.1. i 21.–26.2.) / 360 € (10.–15.1.) za goste Ban Toursa; ostali 450 € / 390 €</span></div>
+        <div class="pills"><a class="pill call" href="tel:+38514881800">📞 +385 1 48 81 800</a><a class="pill web" href="https://skijanje.eu" target="_blank" rel="noopener">🌐 skijanje.eu</a><a class="pill mail" href="mailto:poslovnica@bantours.hr">✉️ poslovnica@bantours.hr</a></div>
+      </article>
+      </div>
+    </div>
+  </details>
+
+  <details class="resort" id="matrei" data-country="Austrija" data-drive="5 – 7 h">
+    <summary>
+      <span class="flag">🇦🇹</span>
+      <span class="rt"><h2>Matrei in Osttirol</h2><span class="rs">Austrija · vožnja od Zagreba 5 – 7 h (okvirno) · <span class="rcount" data-total="4">4</span> programa</span></span>
+      <span class="chev" aria-hidden="true">▾</span>
+    </summary>
+    <div class="rbody">
+      <p class="rnote">Istočni Tirol — manje poznato, ali vrlo obiteljsko i mirnije od velikih tirolskih odredišta.</p>
+      <div class="rlinks"><button type="button" class="onmap" data-id="matrei">📍 Prikaži na karti</button><a class="route" href="https://www.google.com/maps/dir/?api=1&destination=46.9905145,12.5433835" target="_blank" rel="noopener">🧭 Upute do skijališta</a></div>
+      <div class="progs">
+      <article class="prog" data-t="s" data-amin="6" data-amax="99">
+        <div class="ph">
+          <h3>Azur Tours — Škola skijanja (Palma Travel)</h3>
+          <span class="badge s">Škola skijanja</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">od 6 godina</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">termini za sezonu 2026./2027. još nisu objavljeni — provjerite kod organizatora</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">6 dana, ned–pet, 10:00–13:00</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">350 €</span></div>
+        <div class="pills"><a class="pill call" href="tel:+38514811389">📞 +385 1 4811 389</a><a class="pill web" href="https://azurtours.hr" target="_blank" rel="noopener">🌐 azurtours.hr</a><a class="pill mail" href="mailto:azurtours@azurtours.hr">✉️ azurtours@azurtours.hr</a></div>
+      </article>
+      <article class="prog" data-t="v" data-amin="4" data-amax="6">
+        <div class="ph">
+          <h3>Azur Tours — Vrtić (Palma Travel)</h3>
+          <span class="badge v">Ski vrtić</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">4 – 6 godina</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">termini za sezonu 2026./2027. još nisu objavljeni — provjerite kod organizatora</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">6 dana, ned–pet, 10:00–13:00</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">400 €</span></div>
+        <div class="pills"><a class="pill call" href="tel:+38514811389">📞 +385 1 4811 389</a><a class="pill web" href="https://azurtours.hr" target="_blank" rel="noopener">🌐 azurtours.hr</a><a class="pill mail" href="mailto:azurtours@azurtours.hr">✉️ azurtours@azurtours.hr</a></div>
+      </article>
+      <article class="prog" data-t="s" data-amin="5" data-amax="99">
+        <div class="ph">
+          <h3>Ban Tours — Škola skijanja</h3>
+          <span class="badge s">Škola skijanja</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">od 5 godina</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">nastava 3.–8.1., 10.–15.1. i 21.–26.2.2027. (dolazak dan ranije)</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">6 dana, 10:00–14:00 (30 min pauze); početak kod gornje stanice gondole u Matreiju; min. 15 polaznika po terminu</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">290 € (3.–8.1. i 21.–26.2.) / 260 € (10.–15.1.) za goste Ban Toursa; ostali 350 € / 310 €</span></div>
+        <div class="pills"><a class="pill call" href="tel:+38514881800">📞 +385 1 48 81 800</a><a class="pill web" href="https://skijanje.eu" target="_blank" rel="noopener">🌐 skijanje.eu</a><a class="pill mail" href="mailto:poslovnica@bantours.hr">✉️ poslovnica@bantours.hr</a></div>
+      </article>
+      <article class="prog" data-t="v" data-amin="4" data-amax="5">
+        <div class="ph">
+          <h3>Ban Tours — Vrtić na snijegu</h3>
+          <span class="badge v">Ski vrtić</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">4 – 5 godina</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">nastava 3.–8.1., 10.–15.1. i 21.–26.2.2027. (dolazak dan ranije)</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">6 dana, 10:00–14:00 (oko 45 min pauze), min. 6 djece u grupi</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">340 € (3.–8.1. i 21.–26.2.) / 290 € (10.–15.1.) za goste Ban Toursa; ostali 380 € / 340 €</span></div>
+        <div class="pills"><a class="pill call" href="tel:+38514881800">📞 +385 1 48 81 800</a><a class="pill web" href="https://skijanje.eu" target="_blank" rel="noopener">🌐 skijanje.eu</a><a class="pill mail" href="mailto:poslovnica@bantours.hr">✉️ poslovnica@bantours.hr</a></div>
+      </article>
+      </div>
+    </div>
+  </details>
+
+  <details class="resort" id="folgaria" data-country="Italija" data-drive="3 – 5 h">
+    <summary>
+      <span class="flag">🇮🇹</span>
+      <span class="rt"><h2>Folgaria</h2><span class="rs">Italija · vožnja od Zagreba 3 – 5 h (okvirno) · <span class="rcount" data-total="2">2</span> programa</span></span>
+      <span class="chev" aria-hidden="true">▾</span>
+    </summary>
+    <div class="rbody">
+      <p class="rnote">Blago obiteljsko skijalište u Trentinu — dugogodišnja destinacija hrvatskih zimovanja.</p>
+      <div class="rlinks"><button type="button" class="onmap" data-id="folgaria">📍 Prikaži na karti</button><a class="route" href="https://www.google.com/maps/dir/?api=1&destination=45.916297,11.1712463" target="_blank" rel="noopener">🧭 Upute do skijališta</a></div>
+      <div class="progs">
+      <article class="prog" data-t="s" data-amin="5" data-amax="99">
+        <div class="ph">
+          <h3>Zea Tours — Škola skijanja</h3>
+          <span class="badge s">Škola skijanja</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">od 5 godina</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">objava pred sezonu 2026./2027. — provjerite kod organizatora</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">5 dana, 10:00–13:00 (4 školska sata dnevno)</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">170 € (gosti Zeatoursa) / 200 € (vanjski, do popune grupa)</span></div>
+        <div class="pills"><a class="pill call" href="tel:+38552215202">📞 +385 52 215 202</a><a class="pill web" href="https://zeatours.hr" target="_blank" rel="noopener">🌐 zeatours.hr</a><a class="pill mail" href="mailto:info@zeatours.hr">✉️ info@zeatours.hr</a></div>
+      </article>
+      <article class="prog" data-t="s" data-amin="" data-amax="">
+        <div class="ph">
+          <h3>Jump Tours — Škola skijanja (Serrada)</h3>
+          <span class="badge s">Škola skijanja</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">djeca i odrasli</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">27.12.2026.–2.1.2027. i 2.–9.1.2027.</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">5 dana po 3 sata dnevno (termin 27.12.) ili 6 dana (termin 2.1.); smještaj u Serradi u ponudi; ski karta se plaća posebno (junior 190 € / 160 €, baby besplatno)</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">250 € (5 dana, termin 27.12.) / 280 € (6 dana, termin 2.1.)</span></div>
+        <div class="pills"><a class="pill call" href="tel:+385912012393">📞 +385 91 201 23 93</a><a class="pill web" href="https://jumptours.hr" target="_blank" rel="noopener">🌐 jumptours.hr</a><a class="pill mail" href="mailto:danko.strbac@mail.inet.hr">✉️ danko.strbac@mail.inet.hr</a></div>
+      </article>
+      </div>
+    </div>
+  </details>
+
+  <details class="resort" id="andalo" data-country="Italija" data-drive="5 – 7 h">
+    <summary>
+      <span class="flag">🇮🇹</span>
+      <span class="rt"><h2>Andalo (Paganella)</h2><span class="rs">Italija · vožnja od Zagreba 5 – 7 h (okvirno) · <span class="rcount" data-total="3">3</span> programa</span></span>
+      <span class="chev" aria-hidden="true">▾</span>
+    </summary>
+    <div class="rbody">
+      <p class="rnote">Dolomiti di Brenta — popularno kod hrvatskih obitelji.</p>
+      <div class="rlinks"><button type="button" class="onmap" data-id="andalo">📍 Prikaži na karti</button><a class="route" href="https://www.google.com/maps/dir/?api=1&destination=46.1636792,11.0034759" target="_blank" rel="noopener">🧭 Upute do skijališta</a></div>
+      <div class="progs">
+      <article class="prog" data-t="s" data-amin="5" data-amax="99">
+        <div class="ph">
+          <h3>Carving — Škola skijanja</h3>
+          <span class="badge s">Škola skijanja</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">od 5 godina</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">2.–9.1.2027., 9.–16.1.2027. i 20.–27.2.2027.</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">6 dana, 10:00–13:00, grupe do 9 polaznika</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">250 € po polazniku; individualna škola 45 € (1 sat, 1 osoba)</span></div>
+        <div class="pills"><a class="pill call" href="tel:+38598328951">📞 +385 98 328 951</a><a class="pill web" href="https://carving.hr" target="_blank" rel="noopener">🌐 carving.hr</a><a class="pill mail" href="mailto:andalo@carving.hr">✉️ andalo@carving.hr</a></div>
+      </article>
+      <article class="prog" data-t="v" data-amin="2" data-amax="5">
+        <div class="ph">
+          <h3>Carving — Vrtić na snijegu</h3>
+          <span class="badge v">Ski vrtić</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">od 2 godine (do 5 godina)</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">isti kao škola skijanja (vidi karticu škole)</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">uz redovnu školu skijanja</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">na upit</span></div>
+        <div class="pills"><a class="pill call" href="tel:+38598328951">📞 +385 98 328 951</a><a class="pill web" href="https://carving.hr" target="_blank" rel="noopener">🌐 carving.hr</a><a class="pill mail" href="mailto:andalo@carving.hr">✉️ andalo@carving.hr</a></div>
+      </article>
+      <article class="prog" data-t="s" data-amin="" data-amax="">
+        <div class="ph">
+          <h3>Azur Tours — Škola skijanja</h3>
+          <span class="badge s">Škola skijanja</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">svi uzrasti</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">3.–8.1., 10.–15.1. i 21.–26.2.2027.</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">6 dana u tjednu, 10:00–13:00</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">od 230 €</span></div>
+        <div class="pills"><a class="pill call" href="tel:+38514811389">📞 +385 1 4811 389</a><a class="pill web" href="https://azurtours.hr" target="_blank" rel="noopener">🌐 azurtours.hr</a><a class="pill mail" href="mailto:azurtours@azurtours.hr">✉️ azurtours@azurtours.hr</a></div>
+      </article>
+      </div>
+    </div>
+  </details>
+
+  <details class="resort" id="pinzolo" data-country="Italija" data-drive="5 – 7 h">
+    <summary>
+      <span class="flag">🇮🇹</span>
+      <span class="rt"><h2>Pinzolo</h2><span class="rs">Italija · vožnja od Zagreba 5 – 7 h (okvirno) · <span class="rcount" data-total="2">2</span> programa</span></span>
+      <span class="chev" aria-hidden="true">▾</span>
+    </summary>
+    <div class="rbody">
+      <p class="rnote">Dio velikog kompleksa Madonna di Campiglio — Pinzolo; hrvatske škole organiziraju agencije s vlastitim hrvatskim učiteljima.</p>
+      <div class="rlinks"><button type="button" class="onmap" data-id="pinzolo">📍 Prikaži na karti</button><a class="route" href="https://www.google.com/maps/dir/?api=1&destination=46.1635334,10.7658005" target="_blank" rel="noopener">🧭 Upute do skijališta</a></div>
+      <div class="progs">
+      <article class="prog" data-t="v" data-amin="4" data-amax="6">
+        <div class="ph">
+          <h3>Azur Tours — Ski vrtić (Vivid Original)</h3>
+          <span class="badge v">Ski vrtić</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">4 – 6 godina</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">3.–8.1. i 10.–15.1.2027.</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">10:00–15:00 (3. dan do 13h)</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">450 €</span></div>
+        <div class="pills"><a class="pill call" href="tel:+38514811389">📞 +385 1 4811 389</a><a class="pill web" href="https://azurtours.hr" target="_blank" rel="noopener">🌐 azurtours.hr</a><a class="pill mail" href="mailto:azurtours@azurtours.hr">✉️ azurtours@azurtours.hr</a></div>
+      </article>
+      <article class="prog" data-t="s" data-amin="7" data-amax="16">
+        <div class="ph">
+          <h3>Azur Tours — Dječje grupe (Vivid Original)</h3>
+          <span class="badge s">Škola skijanja</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">7 – 16 godina</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">3.–8.1. i 10.–15.1.2027.</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">10:00–15:00 (3. dan do 13h)</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">390 €</span></div>
+        <div class="pills"><a class="pill call" href="tel:+38514811389">📞 +385 1 4811 389</a><a class="pill web" href="https://azurtours.hr" target="_blank" rel="noopener">🌐 azurtours.hr</a><a class="pill mail" href="mailto:azurtours@azurtours.hr">✉️ azurtours@azurtours.hr</a></div>
+      </article>
+      </div>
+    </div>
+  </details>
+
+  <details class="resort" id="passo-tonale" data-country="Italija" data-drive="5 – 7 h">
+    <summary>
+      <span class="flag">🇮🇹</span>
+      <span class="rt"><h2>Passo Tonale</h2><span class="rs">Italija · vožnja od Zagreba 5 – 7 h (okvirno) · <span class="rcount" data-total="4">4</span> programa</span></span>
+      <span class="chev" aria-hidden="true">▾</span>
+    </summary>
+    <div class="rbody">
+      <p class="rnote">Visinsko skijalište s ledenjakom (Skirama Dolomiti) — sav smještaj je „ski in ski out“; hrvatska škola Medosport ovdje djeluje već dugi niz godina.</p>
+      <div class="rlinks"><button type="button" class="onmap" data-id="passo-tonale">📍 Prikaži na karti</button><a class="route" href="https://www.google.com/maps/dir/?api=1&destination=46.2564381,10.5808235" target="_blank" rel="noopener">🧭 Upute do skijališta</a></div>
+      <div class="progs">
+      <article class="prog" data-t="s" data-amin="5" data-amax="99">
+        <div class="ph">
+          <h3>Medosport — Škola skijanja</h3>
+          <span class="badge s">Škola skijanja</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">od 5 godina</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">2.–9.1. i 9.–16.1.2027.</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">6 dana, 10:00–15:00 (ručak na stazi uključen)</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">355 € (prijava 10 dana prije polaska); na licu mjesta 370 €</span></div>
+        <div class="pills"><a class="pill call" href="tel:+385959020077">📞 +385 95 902 0077</a><a class="pill web" href="https://medosport.com" target="_blank" rel="noopener">🌐 medosport.com</a><a class="pill mail" href="mailto:info@medosport.com">✉️ info@medosport.com</a></div>
+      </article>
+      <article class="prog" data-t="v" data-amin="3.5" data-amax="5">
+        <div class="ph">
+          <h3>Medosport — Ski vrtić</h3>
+          <span class="badge v">Ski vrtić</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">3,5 – 5 godina</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">2.–9.1. i 9.–16.1.2027.</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">6 dana, 10:00–13:30</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">295 € (prijava 10 dana prije polaska); na licu mjesta 320 €</span></div>
+        <div class="pills"><a class="pill call" href="tel:+385959020077">📞 +385 95 902 0077</a><a class="pill web" href="https://medosport.com" target="_blank" rel="noopener">🌐 medosport.com</a><a class="pill mail" href="mailto:info@medosport.com">✉️ info@medosport.com</a></div>
+      </article>
+      <article class="prog" data-t="v" data-amin="3.5" data-amax="4.99">
+        <div class="ph">
+          <h3>Azur Tours — Vrtić (Medosport)</h3>
+          <span class="badge v">Ski vrtić</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">3,5 – 4,99 godina</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">3.–8.1. i 10.–15.1.2027.</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">6 dana</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">295 €</span></div>
+        <div class="pills"><a class="pill call" href="tel:+38514811389">📞 +385 1 4811 389</a><a class="pill web" href="https://azurtours.hr" target="_blank" rel="noopener">🌐 azurtours.hr</a><a class="pill mail" href="mailto:azurtours@azurtours.hr">✉️ azurtours@azurtours.hr</a></div>
+      </article>
+      <article class="prog" data-t="s" data-amin="5" data-amax="99">
+        <div class="ph">
+          <h3>Azur Tours — Škola (Medosport)</h3>
+          <span class="badge s">Škola skijanja</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">od 5 godina</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">3.–8.1. i 10.–15.1.2027.</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">6 dana</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">355 €</span></div>
+        <div class="pills"><a class="pill call" href="tel:+38514811389">📞 +385 1 4811 389</a><a class="pill web" href="https://azurtours.hr" target="_blank" rel="noopener">🌐 azurtours.hr</a><a class="pill mail" href="mailto:azurtours@azurtours.hr">✉️ azurtours@azurtours.hr</a></div>
+      </article>
+      </div>
+    </div>
+  </details>
+
+  <details class="resort" id="alta-badia" data-country="Italija" data-drive="5 – 7 h">
+    <summary>
+      <span class="flag">🇮🇹</span>
+      <span class="rt"><h2>Alta Badia (La Villa)</h2><span class="rs">Italija · vožnja od Zagreba 5 – 7 h (okvirno) · <span class="rcount" data-total="3">3</span> programa</span></span>
+      <span class="chev" aria-hidden="true">▾</span>
+    </summary>
+    <div class="rbody">
+      <p class="rnote">Dio slavnog kruga Sella Ronda; škola „Mobi &amp; Levi“ posebno je osmišljena za najmlađe skijaše.</p>
+      <div class="rlinks"><button type="button" class="onmap" data-id="alta-badia">📍 Prikaži na karti</button><a class="route" href="https://www.google.com/maps/dir/?api=1&destination=46.583426,11.9047637" target="_blank" rel="noopener">🧭 Upute do skijališta</a></div>
+      <div class="progs">
+      <article class="prog" data-t="v" data-amin="4" data-amax="6">
+        <div class="ph">
+          <h3>Azur Tours — Vrtić, početnici (Mobi &amp; Levi)</h3>
+          <span class="badge v">Ski vrtić</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">4 – 6 godina, apsolutni početnici</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">27.12.2026.–1.1., 3.–8.1., 10.–15.1. i 21.–26.2.2027.</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">09:30–12:30, grupa do 4 djece</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">500 €</span></div>
+        <div class="pills"><a class="pill call" href="tel:+38514811389">📞 +385 1 4811 389</a><a class="pill web" href="https://azurtours.hr" target="_blank" rel="noopener">🌐 azurtours.hr</a><a class="pill mail" href="mailto:azurtours@azurtours.hr">✉️ azurtours@azurtours.hr</a></div>
+      </article>
+      <article class="prog" data-t="v" data-amin="4" data-amax="7">
+        <div class="ph">
+          <h3>Azur Tours — Vrtić, mali skijaši (Mobi &amp; Levi)</h3>
+          <span class="badge v">Ski vrtić</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">4 – 7 godina, min. godinu dana iskustva</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">27.12.2026.–1.1., 3.–8.1., 10.–15.1. i 21.–26.2.2027.</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">09:30–15:00 (s pauzom za ručak)</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">470 €</span></div>
+        <div class="pills"><a class="pill call" href="tel:+38514811389">📞 +385 1 4811 389</a><a class="pill web" href="https://azurtours.hr" target="_blank" rel="noopener">🌐 azurtours.hr</a><a class="pill mail" href="mailto:azurtours@azurtours.hr">✉️ azurtours@azurtours.hr</a></div>
+      </article>
+      <article class="prog" data-t="s" data-amin="7" data-amax="16">
+        <div class="ph">
+          <h3>Azur Tours — Dječje grupe (Mobi &amp; Levi)</h3>
+          <span class="badge s">Škola skijanja</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">7 – 16 godina (zelena/plava/crvena grupa po dobi i znanju)</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">27.12.2026.–1.1., 3.–8.1., 10.–15.1. i 21.–26.2.2027.</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">09:30–15:00, 3. dan do 13h</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">420 €</span></div>
+        <div class="pills"><a class="pill call" href="tel:+38514811389">📞 +385 1 4811 389</a><a class="pill web" href="https://azurtours.hr" target="_blank" rel="noopener">🌐 azurtours.hr</a><a class="pill mail" href="mailto:azurtours@azurtours.hr">✉️ azurtours@azurtours.hr</a></div>
+      </article>
+      </div>
+    </div>
+  </details>
+
+  <details class="resort" id="sexten" data-country="Italija" data-drive="5 – 7 h">
+    <summary>
+      <span class="flag">🇮🇹</span>
+      <span class="rt"><h2>3 Zinnen Dolomites (Sexten)</h2><span class="rs">Italija · vožnja od Zagreba 5 – 7 h (okvirno) · <span class="rcount" data-total="2">2</span> programa</span></span>
+      <span class="chev" aria-hidden="true">▾</span>
+    </summary>
+    <div class="rbody">
+      <p class="rnote">Dolina pod Tri vrha (Tre Cime) — HULJS, najveća hrvatska skijaška organizacija, vodi tjednu školu i animacijski program.</p>
+      <div class="rlinks"><button type="button" class="onmap" data-id="sexten">📍 Prikaži na karti</button><a class="route" href="https://www.google.com/maps/dir/?api=1&destination=46.6971736,12.3580661" target="_blank" rel="noopener">🧭 Upute do skijališta</a></div>
+      <div class="progs">
+      <article class="prog" data-t="s" data-amin="" data-amax="">
+        <div class="ph">
+          <h3>HULJS — Škola skijanja</h3>
+          <span class="badge s">Škola skijanja</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">svi uzrasti (grupe po znanju i dobi, 4 – 8 polaznika)</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">3.–8.1., 10.–15.1. i 21.–26.2.2027.</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">6 dana, ned–pet, 10:00–13:00 (18h ukupno)</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">360 € (individualni sat 65 €)</span></div>
+        <div class="pills"><a class="pill web" href="https://huljs.hr" target="_blank" rel="noopener">🌐 huljs.hr</a><a class="pill mail" href="mailto:skihuljs@gmail.com">✉️ skihuljs@gmail.com</a></div>
+      </article>
+      <article class="prog" data-t="v" data-amin="2" data-amax="4">
+        <div class="ph">
+          <h3>HULJS — Animacijski program</h3>
+          <span class="badge v">Ski vrtić</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">2 – 4 godine</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">3.–8.1., 10.–15.1. i 21.–26.2.2027.</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">6 dana, ned–pet, 10:00–14:00, grupe do 5 djece</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">395 €</span></div>
+        <div class="pills"><a class="pill web" href="https://huljs.hr" target="_blank" rel="noopener">🌐 huljs.hr</a><a class="pill mail" href="mailto:skihuljs@gmail.com">✉️ skihuljs@gmail.com</a></div>
+      </article>
+      </div>
+    </div>
+  </details>
+
+  <details class="resort" id="kronplatz" data-country="Italija" data-drive="5 – 7 h">
+    <summary>
+      <span class="flag">🇮🇹</span>
+      <span class="rt"><h2>Kronplatz (Plan de Corones)</h2><span class="rs">Italija · vožnja od Zagreba 5 – 7 h (okvirno) · <span class="rcount" data-total="14">14</span> programa</span></span>
+      <span class="chev" aria-hidden="true">▾</span>
+    </summary>
+    <div class="rbody">
+      <p class="rnote">Jedno od najpopularnijih dolomitskih odredišta hrvatskih obitelji — ovdje djeluje čak sedam zasebnih hrvatskih škola skijanja, svaka sa svojim rasporedom i cjenikom.</p>
+      <div class="rlinks"><button type="button" class="onmap" data-id="kronplatz">📍 Prikaži na karti</button><a class="route" href="https://www.google.com/maps/dir/?api=1&destination=46.7386315,11.9576188" target="_blank" rel="noopener">🧭 Upute do skijališta</a></div>
+      <div class="progs">
+      <article class="prog promo" data-t="v" data-amin="4" data-amax="5">
+        <div class="ph">
+          <h3>Diver (SKIDIVER) — Ski vrtić</h3>
+          <span class="badge v">Ski vrtić</span>
+        </div>
+        <div class="promotag">★ Promovirano</div>
+          <div class="row"><span class="k">Dob</span><span class="v">4 – 5 godina</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">2.–9.1., 9.–16.1. i 20.–27.2.2027.</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">svaki dan 10:00–13:00, ned–pet (ned. od 11h); igra i animacija na snijegu (sanjkanje, prvi koraci na skijama, izrada snjegovića), uključen topli napitak dnevno</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">410 – 530 €</span></div>
+        <div class="pills"><a class="pill call" href="tel:+385911258480">📞 +385 91 125 8480</a><a class="pill web" href="https://skidiver.hr" target="_blank" rel="noopener">🌐 skidiver.hr</a><a class="pill mail" href="mailto:info@skidiver.hr">✉️ info@skidiver.hr</a></div>
+      </article>
+      <article class="prog promo" data-t="s" data-amin="5" data-amax="99">
+        <div class="ph">
+          <h3>Diver (SKIDIVER) — Poludnevna škola</h3>
+          <span class="badge s">Škola skijanja</span>
+        </div>
+        <div class="promotag">★ Promovirano</div>
+          <div class="row"><span class="k">Dob</span><span class="v">od 5 godina, i odrasli</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">2.–9.1., 9.–16.1. i 20.–27.2.2027.</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">ned–pet 10:00–13:00 (ned. od 11h); grupe po razini znanja (A, A+, B, C)</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">320 – 420 € · 30% akontacije pri prijavi, ostatak do 10.12.2026. Otkaz: 100% povrat 30+ dana prije, 75% 15+ dana, 50% 1.–2. dan, 0% nakon 3. dana</span></div>
+        <div class="pills"><a class="pill call" href="tel:+385911258480">📞 +385 91 125 8480</a><a class="pill web" href="https://skidiver.hr" target="_blank" rel="noopener">🌐 skidiver.hr</a><a class="pill mail" href="mailto:info@skidiver.hr">✉️ info@skidiver.hr</a></div>
+      </article>
+      <article class="prog promo" data-t="s" data-amin="6" data-amax="99">
+        <div class="ph">
+          <h3>Diver (SKIDIVER) — Cjelodnevna škola</h3>
+          <span class="badge s">Škola skijanja</span>
+        </div>
+        <div class="promotag">★ Promovirano</div>
+          <div class="row"><span class="k">Dob</span><span class="v">od 6 godina</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">2.–9.1., 9.–16.1. i 20.–27.2.2027.</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">ned–pet 10:00–16:00 (ned. od 11h); za naprednije (razina B/C), preduvjet je savladan plužni zavoj; u cijeni ručak i napitak</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">490 – 640 € · isti uvjeti akontacije i otkaza kao poludnevna škola</span></div>
+        <div class="pills"><a class="pill call" href="tel:+385911258480">📞 +385 91 125 8480</a><a class="pill web" href="https://skidiver.hr" target="_blank" rel="noopener">🌐 skidiver.hr</a><a class="pill mail" href="mailto:info@skidiver.hr">✉️ info@skidiver.hr</a></div>
+      </article>
+      <article class="prog promo" data-t="s" data-amin="" data-amax="">
+        <div class="ph">
+          <h3>Diver (SKIDIVER) — Individualna poduka</h3>
+          <span class="badge s">Škola skijanja</span>
+        </div>
+        <div class="promotag">★ Promovirano</div>
+          <div class="row"><span class="k">Dob</span><span class="v">svi uzrasti i razine znanja</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">prema dogovoru, u sklopu redovnih termina škole</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">popodnevno, 08:30–09:30 i 14:00–16:00; privatni učitelj, program prilagođen znanju i tempu</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">70 €/h (1 osoba) · 90 € (2 osobe) · 110 € (3 osobe); na individualnu poduku ne vrijede popusti</span></div>
+        <div class="pills"><a class="pill call" href="tel:+385911258480">📞 +385 91 125 8480</a><a class="pill web" href="https://skidiver.hr" target="_blank" rel="noopener">🌐 skidiver.hr</a><a class="pill mail" href="mailto:info@skidiver.hr">✉️ info@skidiver.hr</a></div>
+      </article>
+      <article class="prog" data-t="s" data-amin="" data-amax="">
+        <div class="ph">
+          <h3>Žuti Mačak — Škola za djecu i odrasle</h3>
+          <span class="badge s">Škola skijanja</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">svi uzrasti</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">27.12.2026.–1.1., 3.–8.1., 10.–15.1. i 21.–26.2.2027.</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">6 dana, 10:00–13:00</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">380 €</span></div>
+        <div class="pills"><a class="pill call" href="tel:+38514880610">📞 +385 1 4880 610</a><a class="pill web" href="https://zutimacak.hr" target="_blank" rel="noopener">🌐 zutimacak.hr</a><a class="pill mail" href="mailto:agencija@zutimacak.hr">✉️ agencija@zutimacak.hr</a></div>
+      </article>
+      <article class="prog" data-t="v" data-amin="4" data-amax="6">
+        <div class="ph">
+          <h3>Žuti Mačak — Vrtić</h3>
+          <span class="badge v">Ski vrtić</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">4 – 6 godina</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">27.12.2026.–1.1., 3.–8.1., 10.–15.1. i 21.–26.2.2027.</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">6 dana, 10:00–13:00</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">450 €</span></div>
+        <div class="pills"><a class="pill call" href="tel:+38514880610">📞 +385 1 4880 610</a><a class="pill web" href="https://zutimacak.hr" target="_blank" rel="noopener">🌐 zutimacak.hr</a><a class="pill mail" href="mailto:agencija@zutimacak.hr">✉️ agencija@zutimacak.hr</a></div>
+      </article>
+      <article class="prog" data-t="v" data-amin="4" data-amax="6">
+        <div class="ph">
+          <h3>Ban Tours — Vrtić na snijegu</h3>
+          <span class="badge v">Ski vrtić</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">4 – 6 godina (bez pelena)</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">nastava 3.–8.1., 10.–15.1. i 21.–26.2.2027. (dolazak dan ranije)</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">6 dana, 10:00–15:00, ručak uključen, topla prostorija za odmor; okupljanje kod zvona Concordia 2000</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">690 € (3.–8.1. i 21.–26.2.) / 680 € (10.–15.1.) za goste Ban Toursa; ostali 720 € / 690 €</span></div>
+        <div class="pills"><a class="pill call" href="tel:+38514881800">📞 +385 1 48 81 800</a><a class="pill web" href="https://skijanje.eu" target="_blank" rel="noopener">🌐 skijanje.eu</a><a class="pill mail" href="mailto:poslovnica@bantours.hr">✉️ poslovnica@bantours.hr</a></div>
+      </article>
+      <article class="prog" data-t="s" data-amin="6" data-amax="99">
+        <div class="ph">
+          <h3>Ban Tours — Škola skijanja</h3>
+          <span class="badge s">Škola skijanja</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">od 6 godina, i odrasli</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">nastava 3.–8.1., 10.–15.1. i 21.–26.2.2027. (dolazak dan ranije)</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">6 dana, 10:00–14:00 (30 min pauze), okupljanje kod zvona Concordia 2000; min. 8 polaznika u grupi</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">370 € (3.–8.1. i 21.–26.2.) / 330 € (10.–15.1.) za goste Ban Toursa; ostali 390 € / 360 €</span></div>
+        <div class="pills"><a class="pill call" href="tel:+38514881800">📞 +385 1 48 81 800</a><a class="pill web" href="https://skijanje.eu" target="_blank" rel="noopener">🌐 skijanje.eu</a><a class="pill mail" href="mailto:poslovnica@bantours.hr">✉️ poslovnica@bantours.hr</a></div>
+      </article>
+      <article class="prog" data-t="s" data-amin="" data-amax="">
+        <div class="ph">
+          <h3>Erik Ski — Grupni tečaj</h3>
+          <span class="badge s">Škola skijanja</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">svi uzrasti (bez dobne granice)</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">27.12.2026.–1.1., 3.–8.1., 10.–15.1. i 21.–26.2.2027.</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">6 dana, ned–pet, 10:00–13:00 (18h)</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">250 – 270 €</span></div>
+        <div class="pills"><a class="pill call" href="tel:+38598425426">📞 +385 98 425 426</a><a class="pill web" href="https://erikski.com" target="_blank" rel="noopener">🌐 erikski.com</a><a class="pill mail" href="mailto:info@erikski.com">✉️ info@erikski.com</a></div>
+      </article>
+      <article class="prog" data-t="v" data-amin="3" data-amax="7">
+        <div class="ph">
+          <h3>Erik Ski — Vrtićka djeca</h3>
+          <span class="badge v">Ski vrtić</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">3 – 7 godina, rođeni nakon 1.1.2022. bez ranijeg skijaškog iskustva</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">27.12.2026.–1.1., 3.–8.1., 10.–15.1. i 21.–26.2.2027.</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">6 dana, ned–pet, 10:00–13:00 (18h)</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">300 – 319 €</span></div>
+        <div class="pills"><a class="pill call" href="tel:+38598425426">📞 +385 98 425 426</a><a class="pill web" href="https://erikski.com" target="_blank" rel="noopener">🌐 erikski.com</a><a class="pill mail" href="mailto:info@erikski.com">✉️ info@erikski.com</a></div>
+      </article>
+      <article class="prog" data-t="s" data-amin="5" data-amax="99">
+        <div class="ph">
+          <h3>Carving — Škola skijanja</h3>
+          <span class="badge s">Škola skijanja</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">od 5 godina</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">2.–9.1., 9.–16.1. i 20.–27.2.2027.</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">6 dana, 10:00–13:00</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">320 € (škola) · individualno 50 € / sat</span></div>
+        <div class="pills"><a class="pill call" href="tel:+38598254419">📞 +385 98 254 419</a><a class="pill web" href="https://carving.hr" target="_blank" rel="noopener">🌐 carving.hr</a><a class="pill mail" href="mailto:kron@carving.hr">✉️ kron@carving.hr</a></div>
+      </article>
+      <article class="prog" data-t="v" data-amin="2" data-amax="5">
+        <div class="ph">
+          <h3>Carving — Vrtić na snijegu</h3>
+          <span class="badge v">Ski vrtić</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">od 2 godine (do 5 godina)</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">2.–9.1., 9.–16.1. i 20.–27.2.2027.</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">6 dana, 10:00–13:00</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">420 €</span></div>
+        <div class="pills"><a class="pill call" href="tel:+38598254419">📞 +385 98 254 419</a><a class="pill web" href="https://carving.hr" target="_blank" rel="noopener">🌐 carving.hr</a><a class="pill mail" href="mailto:kron@carving.hr">✉️ kron@carving.hr</a></div>
+      </article>
+      <article class="prog" data-t="s" data-amin="" data-amax="">
+        <div class="ph">
+          <h3>Azur Tours — Škola skijanja</h3>
+          <span class="badge s">Škola skijanja</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">svi uzrasti</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">3.–8.1., 10.–15.1. i 21.–26.2.2027.</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">6 dana, 10:00–13:00</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">od 320 €</span></div>
+        <div class="pills"><a class="pill call" href="tel:+38514811389">📞 +385 1 4811 389</a><a class="pill web" href="https://azurtours.hr" target="_blank" rel="noopener">🌐 azurtours.hr</a><a class="pill mail" href="mailto:azurtours@azurtours.hr">✉️ azurtours@azurtours.hr</a></div>
+      </article>
+      <article class="prog" data-t="s" data-amin="4" data-amax="99">
+        <div class="ph">
+          <h3>Orel škola skijanja — Škola skijanja</h3>
+          <span class="badge s">Škola skijanja</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">od 4 godine</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">objava pred sezonu 2026./2027. — provjerite kod organizatora</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">1 do 6 dana, 2h dnevno (10–12h ili 12–14h)</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">100 € (1 dan) do 280 € (tjedni tečaj 4–6 dana)</span></div>
+        <div class="pills"><a class="pill call" href="tel:+38640599335">📞 +386 40 599 335</a><a class="pill web" href="https://ski-orel.si" target="_blank" rel="noopener">🌐 ski-orel.si</a><a class="pill mail" href="mailto:kronplatz@ski-orel.si">✉️ kronplatz@ski-orel.si</a></div>
+      </article>
+      </div>
+    </div>
+  </details>
+
+  <details class="resort" id="val-cenis" data-country="Francuska" data-drive="preko 10 h">
+    <summary>
+      <span class="flag">🇫🇷</span>
+      <span class="rt"><h2>Val Cenis</h2><span class="rs">Francuska · vožnja od Zagreba preko 10 h (okvirno) · <span class="rcount" data-total="2">2</span> programa</span></span>
+      <span class="chev" aria-hidden="true">▾</span>
+    </summary>
+    <div class="rbody">
+      <p class="rnote">Manje poznato, obiteljski orijentirano skijalište u Savoji — mirnije i pristupačnije od velikih francuskih divova; smještaj uz same staze.</p>
+      <div class="rlinks"><button type="button" class="onmap" data-id="val-cenis">📍 Prikaži na karti</button><a class="route" href="https://www.google.com/maps/dir/?api=1&destination=45.2884966,6.903738" target="_blank" rel="noopener">🧭 Upute do skijališta</a></div>
+      <div class="progs">
+      <article class="prog" data-t="s" data-amin="6" data-amax="99">
+        <div class="ph">
+          <h3>Azur Tours — Škola skijanja</h3>
+          <span class="badge s">Škola skijanja</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">od 6 godina, i odrasli</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">3.–8.1.2027.</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">6 dana, ned–pet, 10:00–13:00</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">od 300 €</span></div>
+        <div class="pills"><a class="pill call" href="tel:+38514811389">📞 +385 1 4811 389</a><a class="pill web" href="https://azurtours.hr" target="_blank" rel="noopener">🌐 azurtours.hr</a><a class="pill mail" href="mailto:azurtours@azurtours.hr">✉️ azurtours@azurtours.hr</a></div>
+      </article>
+      <article class="prog" data-t="v" data-amin="4" data-amax="6">
+        <div class="ph">
+          <h3>Azur Tours — Ski vrtić</h3>
+          <span class="badge v">Ski vrtić</span>
+        </div>
+        
+          <div class="row"><span class="k">Dob</span><span class="v">4 – 6 godina</span></div>
+          <div class="row"><span class="k">Termini</span><span class="v">3.–8.1.2027.</span></div>
+          <div class="row"><span class="k">Trajanje</span><span class="v">6 dana, ned–pet, 10:00–13:00</span></div>
+          <div class="row"><span class="k">Cijena</span><span class="v price">na upit</span></div>
+        <div class="pills"><a class="pill call" href="tel:+38514811389">📞 +385 1 4811 389</a><a class="pill web" href="https://azurtours.hr" target="_blank" rel="noopener">🌐 azurtours.hr</a><a class="pill mail" href="mailto:azurtours@azurtours.hr">✉️ azurtours@azurtours.hr</a></div>
+      </article>
+      </div>
+    </div>
+  </details>
+</div>
+<div class="empty" id="empty" hidden><div>Nema programa za odabrane filtere. Pokušajte promijeniti dob, državu ili vrstu.</div></div>
+
+<footer>
+  <p><strong>Vaša škola nije na popisu?</strong> Javite se na <a href="mailto:info@zagrebzaklince.com">info@zagrebzaklince.com</a> sa nazivom škole, skijalištem, dobnom granicom, terminima, cijenom i kontaktom pa ćemo je dodati.</p>
+  <p>Zagreb za Klince · <a href="/">zagrebzaklince.com</a></p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+const RESORTS = [{"id":"sljeme","n":"Sljeme","c":"Hrvatska","lat":45.9025445,"lng":15.9460169,"d":"do 3 h"},{"id":"platak","n":"Platak","c":"Hrvatska","lat":45.4254581,"lng":14.564929,"d":"do 3 h"},{"id":"krvavec","n":"Krvavec","c":"Slovenija","lat":46.2967391,"lng":14.520736,"d":"do 3 h"},{"id":"kranjska-gora","n":"Kranjska Gora","c":"Slovenija","lat":46.4849534,"lng":13.7794784,"d":"do 3 h"},{"id":"mariborsko-pohorje","n":"Mariborsko Pohorje","c":"Slovenija","lat":46.5331695,"lng":15.5995804,"d":"do 3 h"},{"id":"rogla","n":"Rogla","c":"Slovenija","lat":46.4532945,"lng":15.332441,"d":"do 3 h"},{"id":"tarvisio","n":"Tarvisio (Monte Lussari)","c":"Italija","lat":46.5067645,"lng":13.5343192,"d":""},{"id":"weinebene","n":"Weinebene","c":"Austrija","lat":46.8401243,"lng":15.0161181,"d":"do 3 h"},{"id":"nassfeld","n":"Nassfeld","c":"Austrija","lat":46.5636806,"lng":13.2741857,"d":"3 – 5 h"},{"id":"bad-kleinkirchheim","n":"Bad Kleinkirchheim","c":"Austrija","lat":46.8140976,"lng":13.7969771,"d":"3 – 5 h"},{"id":"obertauern","n":"Obertauern","c":"Austrija","lat":47.2485894,"lng":13.5594678,"d":"3 – 5 h"},{"id":"gerlitzen","n":"Gerlitzen Alpe","c":"Austrija","lat":46.6953299,"lng":13.9140064,"d":"3 – 5 h"},{"id":"katschberg","n":"Katschberg","c":"Austrija","lat":47.0591777,"lng":13.6155855,"d":"3 – 5 h"},{"id":"kreischberg","n":"Kreischberg","c":"Austrija","lat":47.0990966,"lng":14.0856984,"d":"3 – 5 h"},{"id":"zauchensee","n":"Altenmarkt-Zauchensee","c":"Austrija","lat":47.2906831,"lng":13.4571807,"d":"3 – 5 h"},{"id":"sillian","n":"Sillian","c":"Austrija","lat":46.7505562,"lng":12.4333082,"d":"5 – 7 h"},{"id":"matrei","n":"Matrei in Osttirol","c":"Austrija","lat":46.9905145,"lng":12.5433835,"d":"5 – 7 h"},{"id":"folgaria","n":"Folgaria","c":"Italija","lat":45.916297,"lng":11.1712463,"d":"3 – 5 h"},{"id":"andalo","n":"Andalo (Paganella)","c":"Italija","lat":46.1636792,"lng":11.0034759,"d":"5 – 7 h"},{"id":"pinzolo","n":"Pinzolo","c":"Italija","lat":46.1635334,"lng":10.7658005,"d":"5 – 7 h"},{"id":"passo-tonale","n":"Passo Tonale","c":"Italija","lat":46.2564381,"lng":10.5808235,"d":"5 – 7 h"},{"id":"alta-badia","n":"Alta Badia (La Villa)","c":"Italija","lat":46.583426,"lng":11.9047637,"d":"5 – 7 h"},{"id":"sexten","n":"3 Zinnen Dolomites (Sexten)","c":"Italija","lat":46.6971736,"lng":12.3580661,"d":"5 – 7 h"},{"id":"kronplatz","n":"Kronplatz (Plan de Corones)","c":"Italija","lat":46.7386315,"lng":11.9576188,"d":"5 – 7 h"},{"id":"val-cenis","n":"Val Cenis","c":"Francuska","lat":45.2884966,"lng":6.903738,"d":"preko 10 h"}];
+const EU = [{"n":"Norway","k":0,"g":{"type":"MultiPolygon","coordinates":[[[[15.14,79.67],[15.52,80.02],[16.99,80.05],[18.25,79.7],[21.54,78.96],[19.03,78.56],[18.47,77.83],[17.6,77.64],[17.12,76.81],[15.91,76.77],[13.76,77.38],[14.67,77.74],[13.17,78.02],[11.22,78.87],[10.45,79.65],[13.17,80.01],[13.72,79.66],[15.14,79.67]]],[[[31.1,69.56],[29.4,69.16],[28.59,69.07],[29.01,69.77],[27.73,70.16],[26.18,69.83],[25.69,69.09],[24.73,68.65],[23.66,68.89],[22.36,68.84],[21.25,69.37],[20.64,69.11],[20.03,69.07],[19.88,68.41],[17.99,68.57],[17.73,68.01],[16.77,68.01],[16.11,67.3],[15.11,66.19],[13.56,64.79],[13.92,64.44],[13.57,64.05],[12.58,64.07],[11.93,63.13],[11.99,61.8],[12.63,61.29],[12.3,60.12],[11.47,59.43],[11.03,58.86],[10.36,59.47],[8.38,58.31],[7.05,58.08],[5.66,58.59],[5.31,59.66],[4.99,61.97],[5.91,62.62],[8.55,63.45],[10.53,64.49],[12.36,65.88],[14.76,67.81],[16.44,68.56],[19.18,69.82],[21.38,70.26],[23.02,70.2],[24.55,71.03],[26.37,70.99],[28.16,71.19],[31.29,70.45],[30,70.19],[31.1,69.56]]],[[[27.41,80.06],[25.93,79.52],[23.02,79.4],[20.08,79.57],[19.9,79.84],[18.46,79.86],[17.37,80.32],[20.46,80.6],[21.91,80.36],[22.92,80.66],[25.45,80.41],[27.41,80.06]]],[[[24.72,77.85],[22.49,77.45],[20.73,77.68],[21.41,77.93],[20.81,78.25],[22.88,78.46],[23.28,78.08],[24.72,77.85]]]]}},{"n":"France","k":1,"g":{"type":"MultiPolygon","coordinates":[[[[-51.66,4.16],[-52.25,3.24],[-52.56,2.5],[-52.94,2.12],[-53.42,2.05],[-53.56,2.33],[-53.78,2.38],[-54.09,2.11],[-54.52,2.31],[-54.27,2.73],[-54.18,3.19],[-54.01,3.62],[-54.4,4.21],[-54.48,4.9],[-53.96,5.76],[-53.62,5.65],[-52.88,5.41],[-51.82,4.57],[-51.66,4.16]]],[[[6.19,49.46],[6.66,49.2],[8.1,49.02],[7.59,48.33],[7.47,47.62],[7.19,47.45],[6.74,47.54],[6.77,47.29],[6.04,46.73],[6.02,46.27],[6.5,46.43],[6.84,45.99],[6.8,45.71],[7.1,45.33],[6.75,45.03],[7.01,44.25],[7.55,44.13],[7.44,43.69],[6.53,43.13],[4.56,43.4],[3.1,43.07],[2.99,42.47],[1.83,42.34],[0.7,42.8],[0.34,42.58],[-1.5,43.03],[-1.9,43.42],[-1.38,44.02],[-1.19,46.01],[-2.23,47.06],[-2.96,47.57],[-4.49,47.95],[-4.59,48.68],[-3.3,48.9],[-1.62,48.64],[-1.94,49.78],[-0.99,49.35],[1.34,50.13],[1.64,50.95],[2.51,51.15],[2.66,50.8],[3.12,50.78],[3.59,50.38],[4.29,49.91],[4.8,49.99],[5.68,49.53],[5.9,49.44],[6.19,49.46]]],[[[8.75,42.63],[9.39,43.01],[9.56,42.15],[9.23,41.38],[8.78,41.58],[8.54,42.26],[8.75,42.63]]]]}},{"n":"Tunisia","k":0,"g":{"type":"Polygon","coordinates":[[[9.48,30.31],[9.06,32.1],[8.44,32.51],[8.43,32.75],[7.61,33.34],[7.53,34.1],[8.14,34.66],[8.38,35.48],[8.22,36.43],[8.42,36.95],[9.51,37.35],[10.21,37.23],[10.18,36.72],[11.03,37.09],[11.1,36.9],[10.6,36.41],[10.59,35.95],[10.94,35.7],[10.81,34.83],[10.15,34.33],[10.34,33.79],[10.86,33.77],[11.11,33.29],[11.49,33.14],[11.43,32.37],[10.95,32.08],[10.64,31.76],[9.95,31.38],[10.06,30.96],[9.97,30.54],[9.48,30.31]]]}},{"n":"Algeria","k":0,"g":{"type":"Polygon","coordinates":[[[-8.69,27.4],[-8.66,27.59],[-8.67,27.66],[-8.67,28.84],[-7.06,29.58],[-6.06,29.73],[-5.24,30],[-4.86,30.5],[-3.69,30.9],[-3.65,31.64],[-3.07,31.72],[-2.62,32.09],[-1.31,32.26],[-1.13,32.65],[-1.39,32.86],[-1.73,33.92],[-1.79,34.53],[-2.17,35.17],[-1.21,35.72],[-0.13,35.89],[0.5,36.3],[1.47,36.61],[3.16,36.78],[4.82,36.86],[5.32,36.72],[6.26,37.11],[7.33,37.12],[7.74,36.89],[8.42,36.95],[8.22,36.43],[8.38,35.48],[8.14,34.66],[7.53,34.1],[7.61,33.34],[8.43,32.75],[8.44,32.51],[9.06,32.1],[9.48,30.31],[9.8,29.42],[9.86,28.96],[9.68,28.14],[9.76,27.69],[9.63,27.14],[9.71,26.51],[9.32,26.09],[9.91,25.37],[9.95,24.94],[10.31,24.38],[10.77,24.56],[11.56,24.1],[12,23.47],[8.57,21.57],[5.68,19.6],[4.27,19.16],[3.16,19.06],[3.15,19.69],[2.68,19.86],[2.06,20.14],[1.82,20.61],[-1.55,22.79],[-4.92,24.97],[-8.69,27.4]]]}},{"n":"Sweden","k":0,"g":{"type":"Polygon","coordinates":[[[11.03,58.86],[11.47,59.43],[12.3,60.12],[12.63,61.29],[11.99,61.8],[11.93,63.13],[12.58,64.07],[13.57,64.05],[13.92,64.44],[13.56,64.79],[15.11,66.19],[16.11,67.3],[16.77,68.01],[17.73,68.01],[17.99,68.57],[19.88,68.41],[20.03,69.07],[20.64,69.11],[21.98,68.62],[23.54,67.94],[23.57,66.4],[23.9,66.01],[22.18,65.72],[21.21,65.03],[21.37,64.41],[19.78,63.61],[17.85,62.75],[17.12,61.34],[17.83,60.64],[18.79,60.08],[17.87,58.95],[16.83,58.72],[16.45,57.04],[15.88,56.1],[14.67,56.2],[14.1,55.41],[12.94,55.36],[12.62,56.31],[11.79,57.44],[11.03,58.86]]]}},{"n":"Belarus","k":0,"g":{"type":"Polygon","coordinates":[[[28.18,56.17],[29.23,55.92],[29.37,55.67],[29.9,55.79],[30.88,55.55],[30.97,55.08],[30.76,54.81],[31.38,54.16],[31.79,53.97],[31.73,53.79],[32.41,53.62],[32.69,53.35],[32.3,53.13],[31.5,53.17],[31.3,53.07],[31.54,52.74],[31.79,52.1],[30.93,52.04],[30.62,51.82],[30.56,51.32],[30.16,51.42],[29.26,51.37],[28.99,51.6],[28.62,51.43],[28.24,51.57],[27.46,51.59],[26.34,51.83],[25.33,51.91],[24.55,51.89],[24.01,51.62],[23.53,51.58],[23.51,52.02],[23.2,52.49],[23.8,52.69],[23.81,53.09],[23.53,53.47],[23.48,53.91],[24.45,53.91],[25.54,54.28],[25.77,54.85],[26.59,55.17],[26.49,55.61],[27.1,55.78],[28.18,56.17]]]}},{"n":"Ukraine","k":0,"g":{"type":"Polygon","coordinates":[[[31.79,52.1],[32.16,52.06],[32.41,52.29],[32.72,52.24],[33.75,52.33],[34.39,51.77],[34.14,51.57],[34.22,51.26],[35.02,51.21],[35.38,50.77],[35.36,50.58],[36.62,50.23],[37.39,50.38],[38.01,49.92],[38.59,49.93],[40.07,49.6],[40.08,49.31],[39.67,48.78],[39.9,48.23],[39.74,47.9],[38.77,47.83],[38.26,47.55],[38.22,47.1],[37.42,47.02],[36.76,46.7],[35.82,46.65],[34.96,46.27],[35.01,45.74],[34.86,45.77],[34.73,45.97],[34.41,46],[33.7,46.22],[33.44,45.97],[33.3,46.08],[31.74,46.33],[31.67,46.71],[30.75,46.58],[30.38,46.03],[29.6,45.29],[29.15,45.46],[28.68,45.3],[28.23,45.49],[28.49,45.6],[28.66,45.94],[28.94,46.26],[28.86,46.44],[29.07,46.52],[29.17,46.38],[29.76,46.35],[30.03,46.42],[29.84,46.53],[29.91,46.67],[29.56,46.93],[29.41,47.35],[29.05,47.51],[29.12,47.85],[28.67,48.12],[28.26,48.16],[27.52,48.47],[26.86,48.37],[26.62,48.22],[26.2,48.22],[25.95,47.99],[25.21,47.89],[24.87,47.74],[24.4,47.98],[23.76,47.99],[23.14,48.1],[22.71,47.88],[22.64,48.15],[22.08,48.42],[22.28,48.83],[22.56,49.09],[22.78,49.03],[22.52,49.48],[23.43,50.31],[23.92,50.43],[24.03,50.71],[23.53,51.58],[24.01,51.62],[24.55,51.89],[25.33,51.91],[26.34,51.83],[27.46,51.59],[28.24,51.57],[28.62,51.43],[28.99,51.6],[29.26,51.37],[30.16,51.42],[30.56,51.32],[30.62,51.82],[30.93,52.04],[31.79,52.1]]]}},{"n":"Poland","k":0,"g":{"type":"Polygon","coordinates":[[[23.48,53.91],[23.53,53.47],[23.81,53.09],[23.8,52.69],[23.2,52.49],[23.51,52.02],[23.53,51.58],[24.03,50.71],[23.92,50.43],[23.43,50.31],[22.52,49.48],[22.78,49.03],[22.56,49.09],[21.61,49.47],[20.89,49.33],[20.42,49.43],[19.82,49.22],[19.32,49.57],[18.91,49.44],[18.85,49.5],[18.39,49.99],[17.65,50.05],[17.56,50.36],[16.87,50.47],[16.72,50.22],[16.18,50.42],[16.24,50.7],[15.49,50.78],[15.02,51.11],[14.61,51.75],[14.69,52.09],[14.44,52.63],[14.07,52.98],[14.35,53.25],[14.12,53.76],[14.8,54.05],[16.36,54.51],[17.62,54.85],[18.62,54.68],[18.7,54.44],[19.66,54.43],[20.89,54.31],[22.73,54.33],[23.24,54.22],[23.48,53.91]]]}},{"n":"Austria","k":1,"g":{"type":"Polygon","coordinates":[[[16.98,48.12],[16.9,47.72],[16.34,47.71],[16.53,47.5],[16.2,46.85],[16.01,46.68],[15.14,46.66],[14.63,46.43],[13.81,46.51],[12.38,46.77],[12.15,47.11],[11.17,46.94],[11.05,46.75],[10.44,46.89],[9.93,46.92],[9.48,47.1],[9.63,47.35],[9.6,47.52],[9.89,47.58],[10.4,47.3],[10.54,47.57],[11.42,47.52],[12.14,47.7],[12.62,47.67],[12.93,47.47],[13.03,47.64],[12.88,48.29],[13.24,48.42],[13.6,48.88],[14.34,48.56],[14.9,48.96],[15.26,49.04],[16.03,48.73],[16.5,48.79],[16.96,48.6],[16.88,48.47],[16.98,48.12]]]}},{"n":"Hungary","k":0,"g":{"type":"Polygon","coordinates":[[[22.08,48.42],[22.64,48.15],[22.71,47.88],[22.1,47.67],[21.63,46.99],[21.02,46.32],[20.22,46.13],[19.6,46.17],[18.83,45.91],[18.46,45.76],[17.63,45.95],[16.88,46.38],[16.57,46.5],[16.37,46.84],[16.2,46.85],[16.53,47.5],[16.34,47.71],[16.9,47.72],[16.98,48.12],[17.49,47.87],[17.86,47.76],[18.7,47.88],[18.78,48.08],[19.18,48.11],[19.66,48.27],[19.77,48.2],[20.24,48.33],[20.48,48.56],[20.8,48.62],[21.87,48.32],[22.08,48.42]]]}},{"n":"Moldova","k":0,"g":{"type":"Polygon","coordinates":[[[26.62,48.22],[26.86,48.37],[27.52,48.47],[28.26,48.16],[28.67,48.12],[29.12,47.85],[29.05,47.51],[29.41,47.35],[29.56,46.93],[29.91,46.67],[29.84,46.53],[30.03,46.42],[29.76,46.35],[29.17,46.38],[29.07,46.52],[28.86,46.44],[28.94,46.26],[28.66,45.94],[28.49,45.6],[28.23,45.49],[28.05,45.95],[28.16,46.37],[28.13,46.81],[27.55,47.41],[27.23,47.83],[26.92,48.12],[26.62,48.22]]]}},{"n":"Romania","k":0,"g":{"type":"Polygon","coordinates":[[[28.23,45.49],[28.68,45.3],[29.15,45.46],[29.6,45.29],[29.63,45.04],[29.14,44.82],[28.84,44.91],[28.56,43.71],[27.97,43.81],[27.24,44.18],[26.07,43.94],[25.57,43.69],[24.1,43.74],[23.33,43.9],[22.94,43.82],[22.66,44.24],[22.47,44.41],[22.71,44.58],[22.46,44.7],[22.15,44.48],[21.56,44.77],[21.48,45.18],[20.87,45.42],[20.76,45.74],[20.22,46.13],[21.02,46.32],[21.63,46.99],[22.1,47.67],[22.71,47.88],[23.14,48.1],[23.76,47.99],[24.4,47.98],[24.87,47.74],[25.21,47.89],[25.95,47.99],[26.2,48.22],[26.62,48.22],[26.92,48.12],[27.23,47.83],[27.55,47.41],[28.13,46.81],[28.16,46.37],[28.05,45.95],[28.23,45.49]]]}},{"n":"Lithuania","k":0,"g":{"type":"Polygon","coordinates":[[[26.49,55.61],[26.59,55.17],[25.77,54.85],[25.54,54.28],[24.45,53.91],[23.48,53.91],[23.24,54.22],[22.73,54.33],[22.65,54.58],[22.76,54.86],[22.31,55.02],[21.27,55.19],[21.05,56.03],[22.2,56.34],[23.88,56.27],[24.86,56.37],[25,56.16],[25.53,56.1],[26.49,55.61]]]}},{"n":"Latvia","k":0,"g":{"type":"Polygon","coordinates":[[[27.29,57.47],[27.77,57.24],[27.86,56.76],[28.18,56.17],[27.1,55.78],[26.49,55.61],[25.53,56.1],[25,56.16],[24.86,56.37],[23.88,56.27],[22.2,56.34],[21.05,56.03],[21.09,56.78],[21.58,57.41],[22.52,57.75],[23.32,57.01],[24.12,57.03],[24.31,57.79],[25.17,57.97],[25.6,57.85],[26.46,57.48],[27.29,57.47]]]}},{"n":"Estonia","k":0,"g":{"type":"Polygon","coordinates":[[[27.98,59.48],[28.13,59.3],[27.42,58.72],[27.72,57.79],[27.29,57.47],[26.46,57.48],[25.6,57.85],[25.17,57.97],[24.31,57.79],[24.43,58.38],[24.06,58.26],[23.43,58.61],[23.34,59.19],[24.6,59.47],[25.86,59.61],[26.95,59.45],[27.98,59.48]]]}},{"n":"Germany","k":0,"g":{"type":"Polygon","coordinates":[[[14.12,53.76],[14.35,53.25],[14.07,52.98],[14.44,52.63],[14.69,52.09],[14.61,51.75],[15.02,51.11],[14.57,51],[14.31,51.12],[14.06,50.93],[13.34,50.73],[12.97,50.48],[12.24,50.27],[12.41,49.97],[12.52,49.55],[13.03,49.31],[13.6,48.88],[13.24,48.42],[12.88,48.29],[13.03,47.64],[12.93,47.47],[12.62,47.67],[12.14,47.7],[11.42,47.52],[10.54,47.57],[10.4,47.3],[9.89,47.58],[9.6,47.52],[8.52,47.83],[8.32,47.61],[7.47,47.62],[7.59,48.33],[8.1,49.02],[6.66,49.2],[6.19,49.46],[6.24,49.9],[6.04,50.13],[6.16,50.8],[5.99,51.85],[6.59,51.85],[6.84,52.23],[7.09,53.14],[6.91,53.48],[7.1,53.69],[7.94,53.75],[8.12,53.53],[8.8,54.02],[8.57,54.4],[8.53,54.96],[9.28,54.83],[9.92,54.98],[9.94,54.6],[10.95,54.36],[10.94,54.01],[11.96,54.2],[12.52,54.47],[13.65,54.08],[14.12,53.76]]]}},{"n":"Bulgaria","k":0,"g":{"type":"Polygon","coordinates":[[[22.66,44.24],[22.94,43.82],[23.33,43.9],[24.1,43.74],[25.57,43.69],[26.07,43.94],[27.24,44.18],[27.97,43.81],[28.56,43.71],[28.04,43.29],[27.68,42.58],[28,42.01],[27.14,42.14],[26.12,41.83],[26.11,41.33],[25.2,41.23],[24.49,41.58],[23.69,41.31],[22.95,41.34],[22.88,42],[22.38,42.32],[22.55,42.46],[22.44,42.58],[22.61,42.9],[22.98,43.21],[22.5,43.64],[22.41,44.01],[22.66,44.24]]]}},{"n":"Greece","k":0,"g":{"type":"MultiPolygon","coordinates":[[[[26.29,35.3],[26.16,35],[24.72,34.92],[24.73,35.09],[23.51,35.28],[23.7,35.71],[24.25,35.37],[25.03,35.43],[25.77,35.35],[25.75,35.18],[26.29,35.3]]],[[[22.95,41.34],[23.69,41.31],[24.49,41.58],[25.2,41.23],[26.11,41.33],[26.12,41.83],[26.6,41.56],[26.29,40.94],[26.06,40.82],[25.45,40.85],[24.92,40.95],[23.72,40.69],[24.41,40.12],[23.9,39.96],[23.34,39.96],[22.82,40.48],[22.63,40.26],[22.85,39.66],[23.35,39.19],[22.97,38.97],[23.53,38.51],[24.02,38.22],[24.04,37.65],[23.11,37.92],[23.41,37.41],[22.78,37.3],[23.15,36.42],[22.49,36.41],[21.67,36.84],[21.3,37.64],[21.12,38.31],[20.73,38.77],[20.22,39.34],[20.15,39.63],[20.62,40.11],[20.67,40.44],[21,40.58],[21.02,40.84],[21.67,40.93],[22.06,41.15],[22.6,41.13],[22.76,41.3],[22.95,41.34]]]]}},{"n":"Turkey","k":0,"g":{"type":"MultiPolygon","coordinates":[[[[44.77,37.17],[44.29,37],[43.94,37.26],[42.78,37.39],[42.35,37.23],[41.21,37.07],[40.68,37.09],[39.52,36.72],[38.7,36.71],[38.17,36.9],[37.07,36.62],[36.74,36.82],[36.69,36.26],[36.42,36.04],[36.15,35.82],[35.78,36.28],[36.16,36.65],[35.55,36.56],[34.71,36.8],[34.03,36.22],[32.51,36.11],[31.7,36.64],[30.62,36.68],[30.39,36.26],[29.7,36.15],[28.73,36.68],[27.64,36.66],[27.05,37.65],[26.32,38.21],[26.8,38.99],[26.17,39.46],[27.28,40.42],[28.82,40.46],[29.24,41.22],[31.15,41.09],[32.35,41.74],[33.51,42.02],[35.17,42.04],[36.91,41.33],[38.35,40.95],[39.51,41.1],[40.37,41.01],[41.55,41.54],[42.62,41.58],[43.58,41.09],[43.75,40.74],[43.66,40.25],[44.4,40],[44.79,39.71],[44.11,39.43],[44.42,38.28],[44.22,37.97],[44.77,37.17]]],[[[26.12,41.83],[27.14,42.14],[28,42.01],[28.11,41.62],[28.99,41.3],[28.81,41.06],[27.62,41],[27.19,40.69],[26.36,40.15],[26.04,40.62],[26.06,40.82],[26.29,40.94],[26.6,41.56],[26.12,41.83]]]]}},{"n":"Albania","k":0,"g":{"type":"Polygon","coordinates":[[[21.02,40.84],[21,40.58],[20.67,40.44],[20.62,40.11],[20.15,39.63],[19.98,39.69],[19.96,39.91],[19.41,40.25],[19.32,40.73],[19.4,41.41],[19.54,41.72],[19.37,41.88],[19.31,42.2],[19.74,42.69],[19.8,42.5],[20.07,42.59],[20.28,42.32],[20.52,42.22],[20.59,41.86],[20.46,41.52],[20.6,41.09],[21.02,40.84]]]}},{"n":"Croatia","k":1,"g":{"type":"Polygon","coordinates":[[[16.57,46.5],[16.88,46.38],[17.63,45.95],[18.46,45.76],[18.83,45.91],[19.07,45.52],[19.39,45.24],[19.01,44.86],[18.55,45.08],[17.86,45.07],[17,45.23],[16.53,45.21],[16.32,45],[15.96,45.23],[15.75,44.82],[16.24,44.35],[16.46,44.04],[16.91,43.67],[17.3,43.45],[17.67,43.03],[18.56,42.65],[18.45,42.48],[17.51,42.85],[16.93,43.21],[16.01,43.51],[15.18,44.24],[15.38,44.32],[14.92,44.74],[14.9,45.08],[14.26,45.23],[13.95,44.8],[13.66,45.14],[13.68,45.48],[13.71,45.5],[14.41,45.47],[14.6,45.64],[14.93,45.47],[15.33,45.45],[15.32,45.73],[15.67,45.83],[15.77,46.24],[16.57,46.5]]]}},{"n":"Switzerland","k":0,"g":{"type":"Polygon","coordinates":[[[9.6,47.52],[9.63,47.35],[9.48,47.1],[9.93,46.92],[10.44,46.89],[10.36,46.48],[9.92,46.31],[9.18,46.44],[8.97,46.04],[8.49,46],[8.32,46.16],[7.76,45.82],[7.27,45.78],[6.84,45.99],[6.5,46.43],[6.02,46.27],[6.04,46.73],[6.77,47.29],[6.74,47.54],[7.19,47.45],[7.47,47.62],[8.32,47.61],[8.52,47.83],[9.6,47.52]]]}},{"n":"Luxembourg","k":0,"g":{"type":"Polygon","coordinates":[[[6.04,50.13],[6.24,49.9],[6.19,49.46],[5.9,49.44],[5.68,49.53],[5.78,50.09],[6.04,50.13]]]}},{"n":"Belgium","k":0,"g":{"type":"Polygon","coordinates":[[[6.16,50.8],[6.04,50.13],[5.78,50.09],[5.68,49.53],[4.8,49.99],[4.29,49.91],[3.59,50.38],[3.12,50.78],[2.66,50.8],[2.51,51.15],[3.31,51.35],[4.05,51.27],[4.97,51.47],[5.61,51.04],[6.16,50.8]]]}},{"n":"Netherlands","k":0,"g":{"type":"Polygon","coordinates":[[[6.91,53.48],[7.09,53.14],[6.84,52.23],[6.59,51.85],[5.99,51.85],[6.16,50.8],[5.61,51.04],[4.97,51.47],[4.05,51.27],[3.31,51.35],[3.83,51.62],[4.71,53.09],[6.08,53.51],[6.91,53.48]]]}},{"n":"Portugal","k":0,"g":{"type":"Polygon","coordinates":[[[-9.03,41.88],[-8.67,42.14],[-8.26,42.28],[-8.01,41.79],[-7.42,41.79],[-7.25,41.92],[-6.67,41.88],[-6.39,41.38],[-6.85,41.11],[-6.86,40.33],[-7.03,40.19],[-7.07,39.71],[-7.5,39.63],[-7.1,39.03],[-7.37,38.37],[-7.03,38.08],[-7.17,37.8],[-7.54,37.43],[-7.45,37.1],[-7.86,36.84],[-8.38,36.98],[-8.9,36.87],[-8.75,37.65],[-8.84,38.27],[-9.29,38.36],[-9.53,38.74],[-9.45,39.39],[-9.05,39.76],[-8.98,40.16],[-8.77,40.76],[-8.79,41.18],[-8.99,41.54],[-9.03,41.88]]]}},{"n":"Spain","k":0,"g":{"type":"Polygon","coordinates":[[[-7.45,37.1],[-7.54,37.43],[-7.17,37.8],[-7.03,38.08],[-7.37,38.37],[-7.1,39.03],[-7.5,39.63],[-7.07,39.71],[-7.03,40.19],[-6.86,40.33],[-6.85,41.11],[-6.39,41.38],[-6.67,41.88],[-7.25,41.92],[-7.42,41.79],[-8.01,41.79],[-8.26,42.28],[-8.67,42.14],[-9.03,41.88],[-8.98,42.59],[-9.39,43.03],[-7.98,43.75],[-6.76,43.57],[-5.41,43.57],[-4.35,43.4],[-3.52,43.46],[-1.9,43.42],[-1.5,43.03],[0.34,42.58],[0.7,42.8],[1.83,42.34],[2.99,42.47],[3.04,41.89],[2.09,41.23],[0.81,41.01],[0.72,40.68],[0.11,40.12],[-0.28,39.31],[0.11,38.74],[-0.47,38.29],[-0.68,37.64],[-1.44,37.44],[-2.15,36.67],[-3.41,36.66],[-4.37,36.68],[-5,36.32],[-5.38,35.95],[-5.87,36.03],[-6.24,36.37],[-6.52,36.94],[-7.45,37.1]]]}},{"n":"Ireland","k":0,"g":{"type":"Polygon","coordinates":[[[-6.2,53.87],[-6.03,53.15],[-6.79,52.26],[-8.56,51.67],[-9.98,51.82],[-9.17,52.86],[-9.69,53.88],[-8.33,54.67],[-7.57,55.13],[-7.37,54.6],[-7.57,54.06],[-6.95,54.07],[-6.2,53.87]]]}},{"n":"Italy","k":1,"g":{"type":"MultiPolygon","coordinates":[[[[10.44,46.89],[11.05,46.75],[11.17,46.94],[12.15,47.11],[12.38,46.77],[13.81,46.51],[13.7,46.02],[13.94,45.59],[13.14,45.74],[12.33,45.38],[12.38,44.89],[12.26,44.6],[12.59,44.09],[13.53,43.59],[14.03,42.76],[15.14,41.96],[15.92,41.96],[16.17,41.74],[15.89,41.54],[16.79,41.18],[17.52,40.88],[18.38,40.36],[18.48,40.17],[18.29,39.81],[17.74,40.28],[16.87,40.44],[16.45,39.8],[17.17,39.43],[17.05,38.9],[16.63,38.84],[16.1,37.99],[15.68,37.91],[15.69,38.22],[15.89,38.75],[16.11,38.96],[15.72,39.54],[15.41,40.05],[15,40.17],[14.7,40.61],[14.06,40.79],[13.63,41.19],[12.89,41.25],[12.11,41.71],[11.19,42.36],[10.51,42.93],[10.2,43.92],[9.7,44.04],[8.89,44.37],[8.43,44.23],[7.85,43.77],[7.44,43.69],[7.55,44.13],[7.01,44.25],[6.75,45.03],[7.1,45.33],[6.8,45.71],[6.84,45.99],[7.27,45.78],[7.76,45.82],[8.32,46.16],[8.49,46],[8.97,46.04],[9.18,46.44],[9.92,46.31],[10.36,46.48],[10.44,46.89]]],[[[14.76,38.14],[15.52,38.23],[15.16,37.44],[15.31,37.13],[15.1,36.62],[14.33,37],[13.83,37.1],[12.43,37.61],[12.57,38.13],[13.74,38.04],[14.76,38.14]]],[[[8.71,40.9],[9.21,41.21],[9.81,40.5],[9.67,39.18],[9.21,39.24],[8.81,38.91],[8.43,39.17],[8.39,40.38],[8.16,40.95],[8.71,40.9]]]]}},{"n":"Denmark","k":0,"g":{"type":"MultiPolygon","coordinates":[[[[9.92,54.98],[9.28,54.83],[8.53,54.96],[8.12,55.52],[8.09,56.54],[8.26,56.81],[8.54,57.11],[9.42,57.17],[9.78,57.45],[10.58,57.73],[10.55,57.22],[10.25,56.89],[10.37,56.61],[10.91,56.46],[10.67,56.08],[10.37,56.19],[9.65,55.47],[9.92,54.98]]],[[[12.37,56.11],[12.69,55.61],[12.09,54.8],[11.04,55.36],[10.9,55.78],[12.37,56.11]]]]}},{"n":"United Kingdom","k":0,"g":{"type":"MultiPolygon","coordinates":[[[[-6.2,53.87],[-6.95,54.07],[-7.57,54.06],[-7.37,54.6],[-7.57,55.13],[-6.73,55.17],[-5.66,54.56],[-6.2,53.87]]],[[[-3.09,53.4],[-3.09,53.4],[-2.95,53.98],[-3.62,54.6],[-3.63,54.61],[-4.84,54.79],[-5.08,55.06],[-4.72,55.51],[-5.05,55.78],[-5.59,55.31],[-5.65,56.27],[-6.15,56.78],[-5.79,57.82],[-5.01,58.63],[-4.21,58.55],[-3,58.63],[-4.07,57.55],[-3.05,57.69],[-1.96,57.68],[-2.22,56.87],[-3.12,55.97],[-2.09,55.91],[-2.01,55.8],[-1.11,54.62],[-0.43,54.46],[0.19,53.32],[0.47,52.93],[1.68,52.74],[1.56,52.1],[1.05,51.81],[1.45,51.29],[0.55,50.77],[-0.79,50.78],[-2.49,50.5],[-2.96,50.7],[-3.62,50.23],[-4.54,50.34],[-5.24,49.96],[-5.78,50.16],[-4.31,51.21],[-3.41,51.43],[-3.42,51.43],[-4.98,51.59],[-5.27,51.99],[-4.22,52.3],[-4.77,52.84],[-4.58,53.5],[-3.09,53.4]]]]}},{"n":"Iceland","k":0,"g":{"type":"Polygon","coordinates":[[[-14.51,66.46],[-14.74,65.81],[-13.61,65.13],[-14.91,64.36],[-17.79,63.68],[-18.66,63.5],[-19.97,63.64],[-22.76,63.96],[-21.78,64.4],[-23.96,64.89],[-22.19,65.08],[-22.23,65.38],[-24.33,65.61],[-23.65,66.26],[-22.13,66.41],[-20.58,65.73],[-19.06,66.28],[-17.8,65.99],[-16.17,66.53],[-14.51,66.46]]]}},{"n":"Slovenia","k":1,"g":{"type":"Polygon","coordinates":[[[13.81,46.51],[14.63,46.43],[15.14,46.66],[16.01,46.68],[16.2,46.85],[16.37,46.84],[16.57,46.5],[15.77,46.24],[15.67,45.83],[15.32,45.73],[15.33,45.45],[14.93,45.47],[14.6,45.64],[14.41,45.47],[13.71,45.5],[13.94,45.59],[13.7,46.02],[13.81,46.51]]]}},{"n":"Finland","k":0,"g":{"type":"Polygon","coordinates":[[[28.59,69.07],[28.45,68.36],[29.98,67.7],[29.05,66.94],[30.22,65.81],[29.54,64.95],[30.44,64.2],[30.04,63.55],[31.52,62.87],[31.14,62.36],[30.21,61.78],[28.07,60.5],[26.26,60.42],[24.5,60.06],[22.87,59.85],[22.29,60.39],[21.32,60.72],[21.54,61.7],[21.06,62.61],[21.54,63.19],[22.44,63.82],[24.73,64.9],[25.4,65.11],[25.3,65.53],[23.9,66.01],[23.57,66.4],[23.54,67.94],[21.98,68.62],[20.64,69.11],[21.25,69.37],[22.36,68.84],[23.66,68.89],[24.73,68.65],[25.69,69.09],[26.18,69.83],[27.73,70.16],[29.01,69.77],[28.59,69.07]]]}},{"n":"Slovakia","k":0,"g":{"type":"Polygon","coordinates":[[[22.56,49.09],[22.28,48.83],[22.08,48.42],[21.87,48.32],[20.8,48.62],[20.48,48.56],[20.24,48.33],[19.77,48.2],[19.66,48.27],[19.18,48.11],[18.78,48.08],[18.7,47.88],[17.86,47.76],[17.49,47.87],[16.98,48.12],[16.88,48.47],[16.96,48.6],[17.1,48.82],[17.54,48.8],[17.89,48.9],[17.91,49],[18.11,49.04],[18.17,49.27],[18.4,49.31],[18.56,49.49],[18.85,49.5],[18.91,49.44],[19.32,49.57],[19.82,49.22],[20.42,49.43],[20.89,49.33],[21.61,49.47],[22.56,49.09]]]}},{"n":"Czechia","k":0,"g":{"type":"Polygon","coordinates":[[[15.02,51.11],[15.49,50.78],[16.24,50.7],[16.18,50.42],[16.72,50.22],[16.87,50.47],[17.56,50.36],[17.65,50.05],[18.39,49.99],[18.85,49.5],[18.56,49.49],[18.4,49.31],[18.17,49.27],[18.11,49.04],[17.91,49],[17.89,48.9],[17.54,48.8],[17.1,48.82],[16.96,48.6],[16.5,48.79],[16.03,48.73],[15.26,49.04],[14.9,48.96],[14.34,48.56],[13.6,48.88],[13.03,49.31],[12.52,49.55],[12.41,49.97],[12.24,50.27],[12.97,50.48],[13.34,50.73],[14.06,50.93],[14.31,51.12],[14.57,51],[15.02,51.11]]]}},{"n":"N. Cyprus","k":0,"g":{"type":"Polygon","coordinates":[[[32.73,35.14],[32.8,35.14],[32.95,35.39],[33.67,35.37],[34.58,35.67],[33.9,35.25],[33.98,35.06],[33.87,35.09],[33.68,35.02],[33.53,35.04],[33.47,35],[33.46,35.1],[33.38,35.16],[33.19,35.17],[32.92,35.09],[32.73,35.14]]]}},{"n":"Cyprus","k":0,"g":{"type":"Polygon","coordinates":[[[32.73,35.14],[32.92,35.09],[33.19,35.17],[33.38,35.16],[33.46,35.1],[33.47,35],[33.53,35.04],[33.68,35.02],[33.87,35.09],[33.98,35.06],[34,34.98],[32.98,34.57],[32.49,34.7],[32.26,35.1],[32.73,35.14]]]}},{"n":"Morocco","k":0,"g":{"type":"Polygon","coordinates":[[[-2.17,35.17],[-1.79,34.53],[-1.73,33.92],[-1.39,32.86],[-1.13,32.65],[-1.31,32.26],[-2.62,32.09],[-3.07,31.72],[-3.65,31.64],[-3.69,30.9],[-4.86,30.5],[-5.24,30],[-6.06,29.73],[-7.06,29.58],[-8.67,28.84],[-8.67,27.66],[-8.82,27.66],[-8.79,27.12],[-9.41,27.09],[-9.74,26.86],[-10.19,26.86],[-10.55,26.99],[-11.39,26.88],[-11.72,26.1],[-12.03,26.03],[-12.5,24.77],[-13.89,23.69],[-14.22,22.31],[-14.63,21.86],[-14.75,21.5],[-17,21.42],[-17.02,21.42],[-16.97,21.89],[-16.59,22.16],[-16.26,22.68],[-16.33,23.02],[-15.98,23.72],[-15.42,24.36],[-15.09,24.52],[-14.82,25.1],[-14.8,25.64],[-14.44,26.25],[-13.78,26.62],[-13.14,27.64],[-13.12,27.65],[-12.62,28.04],[-11.69,28.15],[-10.9,28.83],[-10.4,29.1],[-9.56,29.93],[-9.82,31.18],[-9.43,32.04],[-9.3,32.57],[-8.66,33.24],[-7.66,33.7],[-6.91,34.11],[-6.24,35.15],[-5.93,35.76],[-5.19,35.76],[-4.59,35.33],[-3.64,35.4],[-2.6,35.18],[-2.17,35.17]]]}},{"n":"Libya","k":0,"g":{"type":"Polygon","coordinates":[[[25,22],[25,20],[23.85,20],[23.84,19.58],[19.85,21.49],[15.86,23.41],[14.85,22.86],[14.14,22.49],[13.58,23.04],[12,23.47],[11.56,24.1],[10.77,24.56],[10.31,24.38],[9.95,24.94],[9.91,25.37],[9.32,26.09],[9.71,26.51],[9.63,27.14],[9.76,27.69],[9.68,28.14],[9.86,28.96],[9.8,29.42],[9.48,30.31],[9.97,30.54],[10.06,30.96],[9.95,31.38],[10.64,31.76],[10.95,32.08],[11.43,32.37],[11.49,33.14],[12.66,32.79],[13.08,32.88],[13.92,32.71],[15.24,32.27],[15.71,31.38],[16.61,31.18],[18.02,30.76],[19.09,30.27],[19.58,30.53],[20.05,30.99],[19.82,31.75],[20.13,32.24],[20.85,32.71],[21.54,32.84],[22.89,32.64],[23.24,32.19],[23.61,32.19],[23.93,32.02],[24.92,31.9],[25.17,31.57],[24.8,31.09],[24.96,30.66],[24.7,30.04],[25,29.24],[25,25.68],[25,22]]]}},{"n":"Bosnia and Herz.","k":0,"g":{"type":"Polygon","coordinates":[[[18.56,42.65],[17.67,43.03],[17.3,43.45],[16.91,43.67],[16.46,44.04],[16.24,44.35],[15.75,44.82],[15.96,45.23],[16.32,45],[16.53,45.21],[17,45.23],[17.86,45.07],[18.55,45.08],[19.01,44.86],[19.37,44.86],[19.12,44.42],[19.6,44.04],[19.45,43.57],[19.22,43.52],[19.03,43.43],[18.71,43.2],[18.56,42.65]]]}},{"n":"Macedonia","k":0,"g":{"type":"Polygon","coordinates":[[[22.38,42.32],[22.88,42],[22.95,41.34],[22.76,41.3],[22.6,41.13],[22.06,41.15],[21.67,40.93],[21.02,40.84],[20.6,41.09],[20.46,41.52],[20.59,41.86],[20.72,41.85],[20.76,42.05],[21.35,42.21],[21.58,42.25],[21.92,42.3],[22.38,42.32]]]}},{"n":"Serbia","k":0,"g":{"type":"Polygon","coordinates":[[[18.83,45.91],[19.6,46.17],[20.22,46.13],[20.76,45.74],[20.87,45.42],[21.48,45.18],[21.56,44.77],[22.15,44.48],[22.46,44.7],[22.71,44.58],[22.47,44.41],[22.66,44.24],[22.41,44.01],[22.5,43.64],[22.98,43.21],[22.61,42.9],[22.44,42.58],[22.55,42.46],[22.38,42.32],[21.92,42.3],[21.58,42.25],[21.54,42.32],[21.66,42.44],[21.77,42.68],[21.63,42.68],[21.44,42.86],[21.27,42.91],[21.14,43.07],[20.96,43.13],[20.81,43.27],[20.63,43.22],[20.5,42.88],[20.26,42.81],[20.34,42.9],[19.96,43.11],[19.63,43.21],[19.49,43.35],[19.22,43.52],[19.45,43.57],[19.6,44.04],[19.12,44.42],[19.37,44.86],[19.01,44.86],[19.39,45.24],[19.07,45.52],[18.83,45.91]]]}},{"n":"Montenegro","k":0,"g":{"type":"Polygon","coordinates":[[[20.07,42.59],[19.8,42.5],[19.74,42.69],[19.31,42.2],[19.37,41.88],[19.16,41.96],[18.88,42.28],[18.45,42.48],[18.56,42.65],[18.71,43.2],[19.03,43.43],[19.22,43.52],[19.49,43.35],[19.63,43.21],[19.96,43.11],[20.34,42.9],[20.26,42.81],[20.07,42.59]]]}},{"n":"Kosovo","k":0,"g":{"type":"Polygon","coordinates":[[[20.59,41.86],[20.52,42.22],[20.28,42.32],[20.07,42.59],[20.26,42.81],[20.5,42.88],[20.63,43.22],[20.81,43.27],[20.96,43.13],[21.14,43.07],[21.27,42.91],[21.44,42.86],[21.63,42.68],[21.77,42.68],[21.66,42.44],[21.54,42.32],[21.58,42.25],[21.35,42.21],[20.76,42.05],[20.72,41.85],[20.59,41.86]]]}}];
+const ZG = {lat:45.8130, lng:15.9780};
+const COLORS = {"Hrvatska":"#D8768C","Slovenija":"#6E9E82","Austrija":"#5D8AB0","Italija":"#E39A5F","Francuska":"#8E6BB0"};
+const st = {country:"", type:"", age:"", drive:"", q:""};
+const norm = t => (t||"").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/đ/g,"d");
+let map, layer, userHasMoved = false;
+
+function initMap(){
+  try {
+    map = L.map('map', {scrollWheelZoom:false}).setView([46.6, 13.2], 5);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution:'&copy; OpenStreetMap suradnici', maxZoom:18}).addTo(map);
+    layer = L.layerGroup().addTo(map);
+    map.createPane('base'); map.getPane('base').style.zIndex = 150;
+    EU.forEach(f => L.geoJSON({type:'Feature', geometry:f.g}, {pane:'base', interactive:false, style:{color:'#9fb3bd', weight:1, fillColor: f.k ? '#F7E9D6' : '#EEF1EC', fillOpacity:1}}).addTo(map));
+    [['Hrvatska',45.25,16.6],['Slovenija',46.12,14.85],['Austrija',47.45,13.6],['Italija',43.6,12.0],['Francuska',46.4,2.6],['Njemačka',51.0,10.3],['Mađarska',47.2,19.3],['Švicarska',46.8,8.2],['BiH',44.2,17.8]].forEach(c => L.marker([c[1], c[2]], {pane:'base', interactive:false, icon:L.divIcon({className:'', html:'<div style="font:700 11px Nunito Sans,sans-serif;color:#6B5459;white-space:nowrap;text-align:center;letter-spacing:.04em;text-transform:uppercase">'+c[0]+'</div>', iconSize:[90,16], iconAnchor:[45,8]})}).addTo(map));
+    L.marker([ZG.lat, ZG.lng], {icon:L.divIcon({className:'', html:'<div style="background:#3B2A2E;color:#fff;font:800 12px Nunito Sans,sans-serif;padding:4px 9px;border-radius:99px;border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.35);white-space:nowrap;text-align:center">🏠 Zagreb</div>', iconSize:[78,26], iconAnchor:[39,13]})}).addTo(map);
+  } catch(e) { map = null; }
+}
+
+function pin(color, n){
+  return L.divIcon({className:'', html:'<div class="mk" style="background:'+color+'"><span>'+n+'</span></div>', iconSize:[30,30], iconAnchor:[15,30], popupAnchor:[0,-26]});
+}
+
+function openResort(id, scroll){
+  const el = document.getElementById(id); if(!el) return;
+  el.open = true;
+  if(scroll) el.scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+function apply(){
+  const q = norm(st.q), age = st.age === "" ? null : parseFloat(st.age);
+  let vis = 0, visR = 0;
+  const shownResorts = [];
+  document.querySelectorAll('.resort').forEach(rEl => {
+    const rName = norm(rEl.querySelector('h2').textContent);
+    let n = 0;
+    const okCountry = !st.country || rEl.dataset.country === st.country;
+    const okDrive = !st.drive || rEl.dataset.drive === st.drive;
+    rEl.querySelectorAll('.prog').forEach(p => {
+      let ok = okCountry && okDrive;
+      if(ok && st.type && p.dataset.t !== st.type) ok = false;
+      if(ok && age !== null){
+        const mn = p.dataset.amin === "" ? null : parseFloat(p.dataset.amin);
+        const mx = p.dataset.amax === "" ? null : parseFloat(p.dataset.amax);
+        if(mn !== null && age < Math.floor(mn)) ok = false;
+        if(mx !== null && age > Math.floor(mx)+0.99) ok = false;
+      }
+      if(ok && q && !(rName.includes(q) || norm(p.textContent).includes(q))) ok = false;
+      p.hidden = !ok;
+      if(ok) n++;
+    });
+    rEl.hidden = n === 0;
+    rEl.querySelector('.rcount').textContent = n;
+    if(n){ visR++; vis += n; shownResorts.push({id:rEl.id, n}); }
+  });
+  document.getElementById('count').textContent = vis + " programa u " + visR + " skijališta";
+  document.getElementById('empty').hidden = visR > 0;
+  if(!map) return;
+  layer.clearLayers();
+  const pts = [[ZG.lat, ZG.lng]];
+  shownResorts.forEach(s => {
+    const r = RESORTS.find(x => x.id === s.id);
+    const m = L.marker([r.lat, r.lng], {icon:pin(COLORS[r.c]||"#D8768C", s.n), title:r.n}).addTo(layer);
+    m.bindPopup('<b>'+r.n+'</b><br>'+r.c+(r.d?' · vožnja '+r.d:'')+'<br>'+s.n+' programa<br><button type="button" data-open="'+r.id+'">Prikaži škole</button>');
+    pts.push([r.lat, r.lng]);
+  });
+  if(pts.length > 1) map.fitBounds(pts, {padding:[40,40], maxZoom:9});
+}
+
+function bind(){
+  document.querySelectorAll('#cChips .chip').forEach(b => b.addEventListener('click', () => {
+    document.querySelectorAll('#cChips .chip').forEach(x => x.classList.remove('active')); b.classList.add('active'); st.country = b.dataset.v; apply();
+  }));
+  document.querySelectorAll('#tChips .chip').forEach(b => b.addEventListener('click', () => {
+    document.querySelectorAll('#tChips .chip').forEach(x => x.classList.remove('active')); b.classList.add('active'); st.type = b.dataset.v; apply();
+  }));
+  document.getElementById('age').addEventListener('change', e => { st.age = e.target.value; apply(); });
+  document.getElementById('drive').addEventListener('change', e => { st.drive = e.target.value; apply(); });
+  document.getElementById('q').addEventListener('input', e => { st.q = e.target.value.trim(); apply(); });
+  document.getElementById('reset').addEventListener('click', () => {
+    st.country = st.type = st.age = st.drive = st.q = "";
+    document.getElementById('age').value = ""; document.getElementById('drive').value = ""; document.getElementById('q').value = "";
+    document.querySelectorAll('.chip').forEach(x => x.classList.toggle('active', x.dataset.v === ""));
+    apply();
+  });
+  document.querySelectorAll('.onmap').forEach(b => b.addEventListener('click', () => {
+    const r = RESORTS.find(x => x.id === b.dataset.id);
+    if(map && r){ window.scrollTo({top: document.getElementById('map').offsetTop - 20, behavior:'smooth'}); map.setView([r.lat, r.lng], 11); }
+  }));
+  document.addEventListener('click', e => {
+    const b = e.target.closest('button[data-open]'); if(b){ openResort(b.dataset.open, true); }
+  });
+  if(location.hash){ openResort(location.hash.slice(1), true); }
+}
+
+initMap();
+bind();
+apply();
+</script>
+</body>
+</html>
